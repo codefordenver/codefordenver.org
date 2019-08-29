@@ -27,16 +27,5 @@ export default {
   text-align: center;
   color:#0B1A1D;
 }
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #0B1A1D;
-}
-
-#nav a.router-link-exact-active {
-  color: #E14E54;
-}
 </style>
