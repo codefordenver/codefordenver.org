@@ -38,6 +38,33 @@ export default new Router({
       component: function () { 
         return import(/* webpackChunkName: "project" */ './views/ProjectPage.vue')
       }
-    }
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: function () {
+        return import(/* webpackChunkName: "projects" */ './views/ProjectPage.vue')
+      }
+    },
+    {
+      path: '/resources',
+      name: 'resources',
+      component: function () {
+        return import(/* webpackChunkName: "resources" */ './views/ProjectPage.vue')
+      }
+    }, {
+      path: '/about',
+      name: 'about',
+      component: function () {
+        return import(/* webpackChunkName: "about" */ './views/About.vue')
+      }
+    },
+    // {
+    //   path: '/login',
+    //   name: 'login',
+    //   component: function () {
+    //     return import(/* webpackChunkName: "login" */ './views/login.vue')
+    //   }
+    // }
   ]
 })
