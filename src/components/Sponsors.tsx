@@ -3,7 +3,7 @@ import { Grid, Image, Header } from "semantic-ui-react";
 
 export function Sponsors() {
   return (
-    <Grid style={{margin: '5em 0'}}columns='equal'>
+    <Grid style={{ margin: "5em 0" }} columns='equal'>
       <Header as='h2' content='Our sponsors' />
       <Grid.Row>
         <Grid.Column>
@@ -16,10 +16,7 @@ export function Sponsors() {
         </Grid.Column>
         <Grid.Column>
           <Image
-            src={
-              process.env.PUBLIC_URL +
-              "/images/sponsors/galvanize.svg"
-            }
+            src={process.env.PUBLIC_URL + "/images/sponsors/galvanize.svg"}
           />
         </Grid.Column>
         <Grid.Column>
