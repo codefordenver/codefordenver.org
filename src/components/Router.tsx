@@ -7,10 +7,18 @@ import { Volunteer } from "../pages/Volunteer";
 import { Projects } from "../pages/Projects";
 import { Project } from "../pages/ProjectDetail";
 
-export const HOME = "/";
-export const ABOUT = "/about";
-export const VOLUNTEER = "/volunteer";
-export const PROJECTS = "/projects";
+export enum PathURL {
+  HOME = "/",
+  ABOUT = "/about",
+  VOLUNTEER = "/volunteer",
+  PROJECTS = "/projects",
+}
+
+export enum ExternalURL{
+  GITHUB = "",
+  MEETUP = "",
+  OPEN_COLLECTIVE="https://opencollective.com/codefordenver",
+}
 
 export function AppRouter() {
   return (

@@ -1,8 +1,8 @@
-import React, { useState, MouseEvent } from "react";
-import { Menu } from "semantic-ui-react";
+import React from "react";
+import { Menu, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { RouteComponentProps } from "react-router-dom";
-import { HOME, ABOUT, VOLUNTEER, PROJECTS } from "./Router";
+import { PathURL, ExternalURL } from "./Router";
 
 export function Nav(router: RouteComponentProps) {
   const activeItem = router.location.pathname;
@@ -15,51 +15,48 @@ export function Nav(router: RouteComponentProps) {
 
       <Menu.Item
         as={Link}
-        to={HOME}
+        to={PathURL.HOME}
         position='right'
-        active={activeItem === HOME}
+        active={activeItem === PathURL.HOME}
       >
         Home
       </Menu.Item>
 
       <Menu.Item
         as={Link}
-        to={ABOUT}
-        active={activeItem === ABOUT}
+        to={PathURL.ABOUT}
+        active={activeItem === PathURL.ABOUT}
       >
         About
       </Menu.Item>
 
       <Menu.Item
         as={Link}
-        to={PROJECTS}
-        active={activeItem === PROJECTS}
-      >
-        Projects
-      </Menu.Item>
-
-      <Menu.Item
-        as={Link}
-        to={VOLUNTEER}
-        active={activeItem === VOLUNTEER}
+        to={PathURL.VOLUNTEER}
+        active={activeItem === PathURL.VOLUNTEER}
       >
         Volunteer
       </Menu.Item>
 
       <Menu.Item
         as={Link}
-        to={`${PROJECTS}/project_one`}
-        active={activeItem === `${PROJECTS}/project_one`}
+        to={PathURL.PROJECTS}
+        active={activeItem === PathURL.PROJECTS}
       >
-        Example Project 1
+        Featured Projects
       </Menu.Item>
 
-      <Menu.Item
-        as={Link}
-        to={`${PROJECTS}/project_two`}
-        active={activeItem === `${PROJECTS}/project_two`}
-      >
-        Example Project 2
+      <Menu.Item>
+        <Button
+          as='a'
+          href={ExternalURL.OPEN_COLLECTIVE}
+          circular
+          basic
+          color='red'
+          size='mini'
+        >
+          <strong>Donate</strong>
+        </Button>
       </Menu.Item>
     </Menu>
   );
