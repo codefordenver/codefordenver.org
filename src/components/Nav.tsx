@@ -1,66 +1,65 @@
-import React, { useState, MouseEvent } from "react";
-import { Menu } from "semantic-ui-react";
+import React from "react";
+import { Container, Menu, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { RouteComponentProps } from "react-router-dom";
-import { HOME, ABOUT, VOLUNTEER, PROJECTS } from "./Router";
+import { PathURL, ExternalURL } from "./Router";
 
 export function Nav(router: RouteComponentProps) {
   const activeItem = router.location.pathname;
 
   return (
     <Menu pointing stackable secondary>
-      <Menu.Item>
-        <img src='https://react.semantic-ui.com/logo.png' />
-      </Menu.Item>
+      <Container>
+        <Menu.Item>
+          <img style={{width: '100px', height:'auto'}} src={process.env.PUBLIC_URL + '/images/logos/Horizontal Logo_red.png'} />
+        </Menu.Item>
 
-      <Menu.Item
-        as={Link}
-        to={HOME}
-        position='right'
-        active={activeItem === HOME}
-      >
-        Home
-      </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to={PathURL.HOME}
+          position='right'
+          active={activeItem === PathURL.HOME}
+        >
+          Home
+        </Menu.Item>
 
-      <Menu.Item
-        as={Link}
-        to={ABOUT}
-        active={activeItem === ABOUT}
-      >
-        About
-      </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to={PathURL.ABOUT}
+          active={activeItem === PathURL.ABOUT}
+        >
+          About
+        </Menu.Item>
 
-      <Menu.Item
-        as={Link}
-        to={PROJECTS}
-        active={activeItem === PROJECTS}
-      >
-        Projects
-      </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to={PathURL.VOLUNTEER}
+          active={activeItem === PathURL.VOLUNTEER}
+        >
+          Volunteer
+        </Menu.Item>
 
-      <Menu.Item
-        as={Link}
-        to={VOLUNTEER}
-        active={activeItem === VOLUNTEER}
-      >
-        Volunteer
-      </Menu.Item>
+        <Menu.Item
+          as={Link}
+          to={PathURL.PROJECTS}
+          active={activeItem === PathURL.PROJECTS}
+        >
+          Featured Projects
+        </Menu.Item>
 
-      <Menu.Item
-        as={Link}
-        to={`${PROJECTS}/project_one`}
-        active={activeItem === `${PROJECTS}/project_one`}
-      >
-        Example Project 1
-      </Menu.Item>
-
-      <Menu.Item
-        as={Link}
-        to={`${PROJECTS}/project_two`}
-        active={activeItem === `${PROJECTS}/project_two`}
-      >
-        Example Project 2
-      </Menu.Item>
+        <Menu.Item>
+          <Button
+            as='a'
+            href={ExternalURL.OPEN_COLLECTIVE}
+            circular
+            basic
+            color='red'
+            size='mini'
+          >
+            <strong>Donate</strong>
+          </Button>
+        </Menu.Item>
+      </Container>
     </Menu>
   );
 }
