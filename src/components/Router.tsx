@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Container } from "semantic-ui-react";
 import { Nav } from "./Nav";
+import { Footer } from "./Footer";
 import { Home } from "../pages/Home";
 import { About } from "../pages/About";
 import { Volunteer } from "../pages/Volunteer";
@@ -14,24 +16,28 @@ export enum PathURL {
   PROJECTS = "/projects",
 }
 
-export enum ExternalURL{
-  GITHUB = "",
-  MEETUP = "",
-  OPEN_COLLECTIVE="https://opencollective.com/codefordenver",
+export enum ExternalURL {
+  GITHUB = "https://github.com/codefordenver",
+  MEETUP = "https://www.meetup.com/CodeForDenver/",
+  OPEN_COLLECTIVE = "https://opencollective.com/codefordenver",
+  FACEBOOK = "https://www.facebook.com/codefordenver/",
 }
 
 export function AppRouter() {
   return (
     <Router>
       <div>
-      <Route component={Nav}/>
-        <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/about' exact component={About} />
-          <Route path='/volunteer' exact component={Volunteer} />
-          <Route path='/projects' exact component={Projects} />
-          <Route path='/projects/:name' component={Project} />
-        </Switch>
+        <Route component={Nav} />
+        <Container>
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/about' exact component={About} />
+            <Route path='/volunteer' exact component={Volunteer} />
+            <Route path='/projects' exact component={Projects} />
+            <Route path='/projects/:name' component={Project} />
+          </Switch>
+        </Container>
+        <Route component={Footer} />
       </div>
     </Router>
   );
