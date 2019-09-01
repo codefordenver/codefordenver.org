@@ -1,6 +1,10 @@
 import React from "react";
+import { Sponsors } from "../components/Sponsors";
 
 export function Home() {
-  return <h2>CFD Home</h2>;
+  return (
+    <>
+      <Sponsors />
+    </>
+  );
 }
-

@@ -24,7 +24,7 @@ export function Footer(router: RouteComponentProps) {
                 We meet on most Monday nights. Join us, everyone is welcome!
               </p>
               <p>
-                RSVP on <a style={meetup__css} href={ExternalURL.MEETUP}>Meetup</a> profile to see
+                RSVP on our <a style={meetup__css} href={ExternalURL.MEETUP}>Meetup</a> page to see
                 the full schedule of events and to let us know you’re coming.
               </p>
 
