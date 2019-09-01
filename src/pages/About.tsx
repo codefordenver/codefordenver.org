@@ -1,5 +1,10 @@
 import React from "react";
+import { Sponsors } from "../components/Sponsors";
 
 export function About() {
-  return <h2>About Us</h2>;
+  return (
+    <>
+      <Sponsors />
+    </>
+  );
 }
