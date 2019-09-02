@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Image, Header, Segment, Input, Button } from "semantic-ui-react";
+import { Grid, Image, Header, Segment, Button } from "semantic-ui-react";
 
 export function Volunteer() {
   return (

@@ -2,7 +2,6 @@ import React, { CSSProperties } from "react";
 import {
   Segment,
   Grid,
-  Container,
   List,
 } from "semantic-ui-react";
 import { Header, Icon } from "semantic-ui-react";
