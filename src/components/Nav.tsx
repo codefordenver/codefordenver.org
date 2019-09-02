@@ -8,8 +8,7 @@ export function Nav(router: RouteComponentProps) {
   const activeItem = router.location.pathname;
 
   return (
-    <Menu pointing stackable secondary>
-      <Container>
+    <Menu pointing stackable secondary className="bg-white">
         <Menu.Item>
           <Link to="/">
             <img alt='Code for Denver Logo' style={{width: '100px', height:'auto'}} src={process.env.PUBLIC_URL + '/images/logos/Horizontal Logo_red.png'} />
@@ -61,7 +60,6 @@ export function Nav(router: RouteComponentProps) {
             <strong>Donate</strong>
           </Button>
         </Menu.Item>
-      </Container>
     </Menu>
   );
 }

@@ -31,7 +31,6 @@ export function Featured() {
         return (
             <Segment inverted vertical style={{ padding: "2em" }}>
                 <Header as='h2' content='Featured Projects' style={{ marginBottom: "2em" }}/>
-                <Container>
                     <Grid divided inverted stackable>
                         <Grid.Row columns='equal'>
                             {
@@ -40,7 +39,6 @@ export function Featured() {
                             }
                         </Grid.Row>
                     </Grid>
-                </Container>
             </Segment>
         )
     }
