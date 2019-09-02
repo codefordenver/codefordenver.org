@@ -12,7 +12,7 @@ export function Nav(router: RouteComponentProps) {
       <Container>
         <Menu.Item>
           <Link to="/">
-            <img style={{width: '100px', height:'auto'}} src={process.env.PUBLIC_URL + '/images/logos/Horizontal Logo_red.png'} />
+            <img alt='Code for Denver Logo' style={{width: '100px', height:'auto'}} src={process.env.PUBLIC_URL + '/images/logos/Horizontal Logo_red.png'} />
           </Link>
         </Menu.Item>
 

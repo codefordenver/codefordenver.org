@@ -1,7 +1,6 @@
 import React from "react";
 import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { RouteComponentProps } from "react-router-dom";
 import { PathURL } from "../components/Router";
 
 export function Projects() {
