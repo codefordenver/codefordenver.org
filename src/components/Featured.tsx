@@ -25,7 +25,7 @@ export function Featured() {
     const content = useContext(ContentfulContext)
 
     if (content) {
-        const items = get(content, "items", [])
+        const items = get(content, "items", []).slice(0, 3)
         const assets = get(content, "includes.Asset", [])
 
         return (
