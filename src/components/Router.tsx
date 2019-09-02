@@ -44,7 +44,6 @@ export function AppRouter() {
     <Router>
       <ContentfulContext.Provider value={ data }>
         <Route component={Nav} />
-        <Container>
           <Segment style={{ padding: "10em 0", display: loading ? 'block': 'none' }}>
             <Loader active={loading} />
           </Segment>
@@ -55,7 +54,6 @@ export function AppRouter() {
               <Route path='/projects' exact component={Projects} />
               <Route path='/projects/:name' component={Project} />
             </Switch>
-        </Container>
         <Route component={Footer} />
       </ContentfulContext.Provider>
     </Router>
