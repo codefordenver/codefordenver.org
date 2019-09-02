@@ -1,0 +1,41 @@
+version: 2.1
+jobs:
+  build_test_deploy:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - restore_cache: # special step to restore the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
+      - run:
+          name: Setup Dependencies
+          command: npm install
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+      - run: # run tests
+          name: Run Test
+          command: npm test
+      - run: # build amd deploy
+          name: Run deploy
+          command: |
+            git config --global user.email "dviramontes@gmail.com"
+            git config --global user.name "dviramontes"
+            npm run build
+            # TODO: add CNAME when domain is pointed at GH static URL
+            # cp CNAME build
+            # cp circleci config to skip the build for gh-pages branch
+            cp -r .circleci build
+            ./node_modules/.bin/gh-pages -t -d build
+
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - build_test_deploy:
+          name: deploy
+          filters:
+            branches:
+              only:
+                - master

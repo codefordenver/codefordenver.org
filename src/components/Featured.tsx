@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Container, Grid, Header, List, Segment } from "semantic-ui-react";
+import { Grid, Header, List, Segment } from "semantic-ui-react";
 import ContentfulContext from "../context/contentful"
 import get from 'lodash.get'
 import { Image } from "semantic-ui-react"
