@@ -3,13 +3,13 @@ import { Grid, Image, Header, Segment, Input, Button } from "semantic-ui-react";
 
 export function Banner() {
   return (
-    <Segment inverted vertical style={{ paddingTop: "0", paddingBottom: "0" }}>
+    <Segment inverted vertical style={{ padding: "0em"}}>
       <Grid columns='equal' stackable>
-        <Grid.Row style={{ paddingTop: "0", paddingBottom: "0" }}>
+        <Grid.Row style={{ padding: "0em"}}>
           <Grid.Column>
             <Image src={process.env.PUBLIC_URL + "/images/denver-banner.jpg"} />
           </Grid.Column>
-          <Grid.Column verticalAlign='middle' style={{marginRight: '1em'}}>
+          <Grid.Column verticalAlign='middle' style={{margin: '1em'}}>
             <p>
               Code for Denver is building the next great generation of civic
               hackers, innovators, and disruptors here in Colorado.
@@ -21,7 +21,7 @@ export function Banner() {
               of our most pressing 21st century problems
             </p>
             <Header inverted as='h4' content='Join our newsletter!' />  
-            <Grid style={{ paddingBottom: "1em" }}>
+            <Grid style={{ padding: "1em 0em" }}>
               <Grid.Column floated='left' width={10}>
                 <Input inverted fluid placeholder='Enter your email address' />
               </Grid.Column>
