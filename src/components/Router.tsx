@@ -42,13 +42,12 @@ export function AppRouter() {
 
   return (
     <Router>
-      <div>
+      <ContentfulContext.Provider value={ data }>
         <Route component={Nav} />
         <Container>
           <Segment style={{ padding: "10em 0", display: loading ? 'block': 'none' }}>
             <Loader active={loading} />
           </Segment>
-          <ContentfulContext.Provider value={ data }>
             <Switch>
               <Route path='/' exact component={Home} />
               <Route path='/about' exact component={About} />
@@ -56,10 +55,9 @@ export function AppRouter() {
               <Route path='/projects' exact component={Projects} />
               <Route path='/projects/:name' component={Project} />
             </Switch>
-          </ContentfulContext.Provider>
         </Container>
         <Route component={Footer} />
-      </div>
+      </ContentfulContext.Provider>
     </Router>
   );
 }
