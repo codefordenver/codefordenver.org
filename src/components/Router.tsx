@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Container } from "semantic-ui-react";
+import { Container, Loader, Segment } from "semantic-ui-react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { Home } from "../pages/Home";
@@ -8,6 +8,8 @@ import { About } from "../pages/About";
 import { Volunteer } from "../pages/Volunteer";
 import { Projects } from "../pages/Projects";
 import { Project } from "../pages/ProjectDetail";
+import useAxios from "axios-hooks";
+import ContentfulContext from "../context/contentful";
 
 export enum PathURL {
   HOME = "/",
@@ -24,21 +26,38 @@ export enum ExternalURL {
 }
 
 export function AppRouter() {
+  const [{
+    data,
+    loading,
+    error
+  }] = useAxios(`${process.env.REACT_APP_CONTENTFUL_ENDPOINT}`)
+
+  if (error) return (
+      <Container style={{ textAlign: "center" }}>
+        <pre>
+          { error.message }
+        </pre>
+      </Container>
+  )
+
   return (
     <Router>
-      <div>
+      <ContentfulContext.Provider value={ data }>
         <Route component={Nav} />
         <Container>
-          <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/about' exact component={About} />
-            <Route path='/volunteer' exact component={Volunteer} />
-            <Route path='/projects' exact component={Projects} />
-            <Route path='/projects/:name' component={Project} />
-          </Switch>
+          <Segment style={{ padding: "10em 0", display: loading ? 'block': 'none' }}>
+            <Loader active={loading} />
+          </Segment>
+            <Switch>
+              <Route path='/' exact component={Home} />
+              <Route path='/about' exact component={About} />
+              <Route path='/volunteer' exact component={Volunteer} />
+              <Route path='/projects' exact component={Projects} />
+              <Route path='/projects/:name' component={Project} />
+            </Switch>
         </Container>
         <Route component={Footer} />
-      </div>
+      </ContentfulContext.Provider>
     </Router>
   );
 }
