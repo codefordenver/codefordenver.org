@@ -28,7 +28,6 @@ export function AppRouter() {
     <Router>
       <div>
         <Route component={Nav} />
-        <Container className="bg-white">
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/about' exact component={About} />
@@ -36,7 +35,6 @@ export function AppRouter() {
             <Route path='/projects' exact component={Projects} />
             <Route path='/projects/:name' component={Project} />
           </Switch>
-        </Container>
         <Route component={Footer} />
       </div>
     </Router>

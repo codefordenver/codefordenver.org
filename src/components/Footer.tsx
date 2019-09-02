@@ -16,8 +16,7 @@ export function Footer(router: RouteComponentProps) {
 
   return (
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
-      <Container>
-        <Grid divided inverted stackable>
+        <Grid divided inverted stackable style={{margin: "0 1em"}}>
           <Grid.Row columns='equal'>
             <Grid.Column width={6}>
               <p>
@@ -77,7 +76,6 @@ export function Footer(router: RouteComponentProps) {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </Container>
     </Segment>
   );
 }
