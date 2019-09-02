@@ -11,18 +11,15 @@ interface IProject {
     thumbnail: string,
 }
 
-const Project = (props: IProject) => {
-    console.log(props);
-    return (
-        <Grid.Column>
-            <Image src={props.thumbnail} size='small' width={200} />
-            <Header inverted as='h4' content={props.title} />
-            <List link inverted>
-                <List.Item as='p'>{ props.shortDescription }</List.Item>
-            </List>
-        </Grid.Column>
-    )
-}
+const Project = (props: IProject) => (
+    <Grid.Column>
+        <Image src={props.thumbnail} size='small' width={200} />
+        <Header inverted as='h4' content={props.title} />
+        <List link inverted>
+            <List.Item as='p'>{ props.shortDescription }</List.Item>
+        </List>
+    </Grid.Column>
+)
 
 export function Featured() {
     const content = useContext(ContentfulContext)
