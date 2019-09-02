@@ -39,4 +39,3 @@ workflows:
             branches:
               only:
                 - master
-                - CI-56
