@@ -5,7 +5,7 @@ import {
   Container,
   List,
 } from "semantic-ui-react";
-import { Header, Icon, Search } from "semantic-ui-react";
+import { Header, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { RouteComponentProps } from "react-router-dom";
 import { PathURL, ExternalURL } from "./Router";
