@@ -8,7 +8,7 @@ export function Nav(router: RouteComponentProps) {
   const activeItem = router.location.pathname;
 
   return (
-    <Menu pointing stackable secondary>
+    <Menu pointing stackable secondary className="bg-white">
       <Container>
         <Menu.Item>
           <Link to="/">

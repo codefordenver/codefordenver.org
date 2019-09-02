@@ -28,7 +28,7 @@ export function AppRouter() {
     <Router>
       <div>
         <Route component={Nav} />
-        <Container>
+        <Container className="bg-white">
           <Switch>
             <Route path='/' exact component={Home} />
             <Route path='/about' exact component={About} />
