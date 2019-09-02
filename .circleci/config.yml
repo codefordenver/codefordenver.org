@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build_test_deploy:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:1
     steps:
       - checkout
       - restore_cache: # special step to restore the dependency cache
@@ -23,7 +23,8 @@ jobs:
             git config --global user.email "dviramontes@gmail.com"
             git config --global user.name "dviramontes"
             npm run build
-            cp CNAME build
+            # TODO: add CNAME when domain is pointed at GH static URL
+            # cp CNAME build
             # cp circleci config to skip the build for gh-pages branch
             cp -r .circleci build
             ./node_modules/.bin/gh-pages -t -d build
