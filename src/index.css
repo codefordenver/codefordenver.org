@@ -16,3 +16,8 @@ code {
 .bg-white {
   background-color: white !important;
 }
+
+/* color classes */
+.white {
+  color: white !important;
+}
