@@ -6,7 +6,7 @@ export function Sponsors() {
 
   return (
     <Segment style={{ margin: "0" }}>
-      <Grid style={{ padding: "5em 0" }} columns='equal'>
+      <Grid style={{ padding: "5em 0" }} columns='equal' stackable>
         <Header as='h2' content='Our sponsors' />
         <Grid.Row textAlign='center' verticalAlign='middle' columns={3}>
           <Grid.Column>
