@@ -22,32 +22,40 @@ export function Contact() {
     }, { manual: true })
 
     const borderRadius__css: CSSProperties = { borderRadius: 18 }
+    const label__css: CSSProperties = { textAlign: "left" }
 
     return (
         <Segment inverted vertical style={{ padding: "2em", backgroundColor: "#E14E54" }}>
-            <Header as='h1' content='CONTACT US' style={{ marginBottom: "2em" }}/>
-            <Grid divided inverted stackable>
+            <Header as='h1'
+                    content='CONTACT US'
+                    style={{ fontWeight: "bold", marginBottom: "1em", textAlign: "center" }}/>
+            <Grid
+                divided
+                inverted
+                stackable
+                className="segment centered"
+                style={{ backgroundColor: "#E14E54" }}>
                 <Grid.Row>
                     <Form loading={putLoading}>
                         <Form.Field>
-                            <label className="white">Name*</label>
+                            <label className="white" style={label__css}>Name*</label>
                             <input
                                 style={borderRadius__css}
                                 placeholder='Name'
                                 onChange={(e) => setName(e.target.value)}/>
                         </Form.Field>
                         <Form.Field>
-                            <label className="white">Email*</label>
+                            <label className="white" style={label__css}>Email*</label>
                             <input
                                 style={borderRadius__css}
                                 placeholder='Email'
                                 onChange={(e) => setEmail(e.target.value)}/>
                         </Form.Field>
                         <Form.Field>
-                            <label className="white">Message*</label>
+                            <label className="white" style={label__css}>Message*</label>
                             <TextArea
                                 style={borderRadius__css}
-                                maxlength={280}
+                                maxLength={280}
                                 rows={5}
                                 cols={33}
                                 placeholder='Less than 280 characters please.'
@@ -55,7 +63,7 @@ export function Contact() {
                         </Form.Field>
                         <Button
                             fluid
-                            style={borderRadius__css}
+                            style={{...borderRadius__css, marginTop: "3em"}}
                             inverted
                             size={"large"}
                             type='submit'
