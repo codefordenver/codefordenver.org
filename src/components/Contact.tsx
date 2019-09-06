@@ -25,26 +25,26 @@ export function Contact() {
 
     return (
         <Segment inverted vertical style={{ padding: "2em", backgroundColor: "#E14E54" }}>
-            <Header as='h2' content='CONTACT US' style={{ marginBottom: "2em" }}/>
+            <Header as='h1' content='CONTACT US' style={{ marginBottom: "2em" }}/>
             <Grid divided inverted stackable>
                 <Grid.Row>
                     <Form loading={putLoading}>
                         <Form.Field>
-                            <label className="white">Name</label>
+                            <label className="white">Name*</label>
                             <input
                                 style={borderRadius__css}
                                 placeholder='Name'
                                 onChange={(e) => setName(e.target.value)}/>
                         </Form.Field>
                         <Form.Field>
-                            <label className="white">Email</label>
+                            <label className="white">Email*</label>
                             <input
                                 style={borderRadius__css}
                                 placeholder='Email'
                                 onChange={(e) => setEmail(e.target.value)}/>
                         </Form.Field>
                         <Form.Field>
-                            <label className="white">Message</label>
+                            <label className="white">Message*</label>
                             <TextArea
                                 style={borderRadius__css}
                                 maxlength={280}
