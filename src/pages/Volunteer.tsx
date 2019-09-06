@@ -12,7 +12,8 @@ export function Volunteer() {
                 <Header as='h2'>Volunteer</Header>
                 <div style={{maxWidth: "640px", marginTop: "14px", marginBottom: "14px"}}>
                     <div style={{padding: "56.25% 0 0 0", position: "relative"}}>
-                        <iframe src="https://player.vimeo.com/video/167822653?title=0&byline=0&portrait=0"
+                        <iframe title="Code for Denver - The 2016 Story Video"
+                                src="https://player.vimeo.com/video/167822653?title=0&byline=0&portrait=0"
                                 style={{
                                     position: "absolute",
                                     top: 0,
@@ -107,6 +108,7 @@ export function Volunteer() {
                             <div style={{maxWidth: "640px", marginTop: "14px", marginBottom: "14px"}}>
                                 <div style={{padding: "56.25% 0 0 0", position: "relative"}}>
                                     <iframe
+                                        title="Code for Denver meeting location"
                                         src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=Galvanize+-+Denver+(Platte)`}
                                         style={{
                                             position: "absolute",
