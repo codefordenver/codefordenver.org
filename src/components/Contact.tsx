@@ -44,16 +44,24 @@ export function Contact() {
                                 onChange={(e) => setEmail(e.target.value)}/>
                         </Form.Field>
                         <Form.Field>
-                            <label className="white">Message Us</label>
+                            <label className="white">Message</label>
                             <TextArea
                                 style={borderRadius__css}
                                 maxlength={280}
                                 rows={5}
                                 cols={33}
-                                placeholder='in less than 280 characters please'
+                                placeholder='Less than 280 characters please.'
                                 onChange={(e, { value }) => setMessage(value)}/>
                         </Form.Field>
-                        <Button inverted type='submit' onClick={() => executePut() }>Send us a message</Button>
+                        <Button
+                            fluid
+                            style={borderRadius__css}
+                            inverted
+                            size={"large"}
+                            type='submit'
+                            onClick={() => executePut() }>
+                            Send us a message
+                        </Button>
                     </Form>
                 </Grid.Row>
             </Grid>
