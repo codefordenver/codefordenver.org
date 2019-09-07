@@ -10,7 +10,7 @@ export function Nav(router: RouteComponentProps) {
   return (
     <Menu pointing stackable secondary className="bg-white navHeader">
           <Link to="/">
-            <img alt='Code for Denver Logo' style={{width: '160px', height:'auto', margin: '2em 0em 0em 2em'}} src={process.env.PUBLIC_URL + '/images/logos/Horizontal Logo_red.png'} />
+            <img className="navLogo" alt='Code for Denver Logo' src={process.env.PUBLIC_URL + '/images/logos/Horizontal Logo_red.png'} />
           </Link>
 
         <Menu.Item

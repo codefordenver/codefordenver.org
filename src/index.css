@@ -21,11 +21,28 @@ code {
   background-color: white !important;
 }
 
+
 .navHeader{
   padding-bottom:2em;
 }
+
+.navLogo{
+  width: 160px;
+  height: auto; 
+  margin: 2em 0em 0em 2em
+}
+
 .navItem {
   font-size: 16px;
+}
+
+.ui.secondary.pointing.menu .item {
+  padding: 1em 0em 1em 0em;
+  margin: 0em 1em 0em 1em;
+}
+
+.ui.secondary.pointing.menu .item:hover {
+  border-bottom: 2px solid #E14E54 
 }
 
 .ui.secondary.pointing.menu .active.item {
@@ -33,5 +50,5 @@ code {
 }
 
 .ui.secondary.pointing.menu .active.item:hover {
-  border-bottom: 2px solid #c22127 
+  border-bottom: 2px solid #E14E54 
 }
