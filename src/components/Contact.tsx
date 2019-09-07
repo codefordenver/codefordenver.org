@@ -1,5 +1,5 @@
 import React, { CSSProperties, useState } from "react";
-import { Button, Form, Grid, Header, Segment, TextArea } from "semantic-ui-react";
+import { Button, Form, Grid, Header, Segment, TextArea, Message } from "semantic-ui-react";
 import useAxios from "axios-hooks";
 
 export function Contact() {
@@ -7,8 +7,9 @@ export function Contact() {
     const [name, setName] = useState<string>("")
     const [email, setEmail] = useState<string>("")
     const [message, setMessage] = useState<any>("")
+    const [sent, setSent] = useState<boolean>(false)
     const [
-        { data: putData, loading: putLoading, error: putError },
+        { data: postData, loading: postLoading, error: postError },
         executePut
     ] = useAxios({
         url: `${process.env.REACT_APP_MAILER_ENDPOINT}`,
@@ -24,6 +25,24 @@ export function Contact() {
     const borderRadius__css: CSSProperties = { borderRadius: 18 }
     const label__css: CSSProperties = { textAlign: "left" }
 
+    const resetForm = () => {
+        setName("")
+        setEmail("")
+        setMessage("")
+    }
+
+    const handleFormSubmit = async () => {
+        try {
+            await executePut()
+            setSent(true)
+        } catch (e) {
+            console.log(e)
+        } finally {
+            resetForm()
+        }
+    }
+
+
     return (
         <Segment inverted vertical style={{ padding: "2em", backgroundColor: "#E14E54" }}>
             <Header as='h1'
@@ -36,12 +55,22 @@ export function Contact() {
                 className="segment centered"
                 style={{ backgroundColor: "#E14E54" }}>
                 <Grid.Row>
-                    <Form loading={putLoading}>
+                    <Message
+                        success
+                        hidden={!sent}
+                        compact
+                        header="Thanks for reaching out! We'll be in touch soon :)"
+                    />
+                </Grid.Row>
+                <Grid.Row>
+                    <Form loading={postLoading}>
                         <Form.Field>
                             <label className="white" style={label__css}>Name*</label>
                             <input
                                 style={borderRadius__css}
                                 placeholder='Name'
+                                required
+                                value={name}
                                 onChange={(e) => setName(e.target.value)}/>
                         </Form.Field>
                         <Form.Field>
@@ -49,6 +78,8 @@ export function Contact() {
                             <input
                                 style={borderRadius__css}
                                 placeholder='Email'
+                                value={email}
+                                required
                                 onChange={(e) => setEmail(e.target.value)}/>
                         </Form.Field>
                         <Form.Field>
@@ -57,7 +88,9 @@ export function Contact() {
                                 style={borderRadius__css}
                                 maxLength={280}
                                 rows={5}
+                                value={message}
                                 cols={33}
+                                required
                                 placeholder='Less than 280 characters please.'
                                 onChange={(e, { value }) => setMessage(value)}/>
                         </Form.Field>
@@ -66,8 +99,9 @@ export function Contact() {
                             style={{...borderRadius__css, marginTop: "3em"}}
                             inverted
                             size={"large"}
+                            disabled={![name, email, message].every(e => e)}
                             type='submit'
-                            onClick={() => executePut() }>
+                            onClick={() => handleFormSubmit()}>
                             Send us a message
                         </Button>
                     </Form>
