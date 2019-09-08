@@ -11,7 +11,7 @@ export function Volunteer() {
     >
       <Grid columns='equal' stackable>
         <Grid.Row>
-          <Grid.Column>
+          <Grid.Column verticalAlign='middle' className='columnTextLeft'>
             <Header inverted as='h2' content='What we do' />
             <p>
               We build apps, software, and websites for non-profits, local

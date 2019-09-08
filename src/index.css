@@ -52,3 +52,15 @@ code {
 .ui.secondary.pointing.menu .active.item:hover {
   border-bottom: 2px solid #E14E54 
 }
+
+.columnTextRight{
+    margin: 1em 5em 1em 5em;
+    padding-left: 0;
+    padding-right: 1em;
+}
+
+.columnTextLeft{
+  margin: 1em 5em 1em 5em;
+  padding-right: 0;
+  padding-left: 1em;
+}
