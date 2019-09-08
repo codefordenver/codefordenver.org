@@ -36,11 +36,6 @@ code {
   font-size: 16px;
 }
 
-
-/* .ui.secondary.pointing.menu .item:hover {
-  border-bottom: 2px solid #E14E54 
-} */
-
 .ui.secondary.pointing.menu .active.item {
   border-color: #E14E54 
 }
@@ -59,4 +54,8 @@ code {
   margin: 1em 5em 1em 5em;
   padding-right: 0;
   padding-left: 1em;
+}
+
+.ui.segment{
+  border-radius: 0px;
 }
