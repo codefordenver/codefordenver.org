@@ -36,11 +36,6 @@ code {
   font-size: 16px;
 }
 
-
-/* .ui.secondary.pointing.menu .item:hover {
-  border-bottom: 2px solid #E14E54 
-} */
-
 .ui.secondary.pointing.menu .active.item {
   border-color: #E14E54 
 }
