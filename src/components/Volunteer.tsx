@@ -7,10 +7,10 @@ export function Volunteer() {
       inverted
       color='red'
       vertical
-      style={{ padding: "0em 1em", margin: "5em 0em" }}
+      style={{ padding: "0em", margin: "5em 0em" }}
     >
       <Grid columns='equal' stackable>
-        <Grid.Row>
+        <Grid.Row style={{ padding: "0em" }}>
           <Grid.Column verticalAlign='middle' className='columnTextLeft'>
             <Header inverted as='h2' content='What we do' />
             <p>
@@ -25,7 +25,7 @@ export function Volunteer() {
               Volunteer
             </Button>
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column width={8}>
             <Image
               src={process.env.PUBLIC_URL + "/images/CFD-CoffeeOnThePoint.jpg"}
             />
