@@ -74,7 +74,7 @@ export function Contact() {
             style={{ padding: "2em", backgroundColor: "#E14E54" }}>
             <Header as='h1'
                     content='CONTACT US'
-                    style={{ fontWeight: "bold", marginBottom: "1em", textAlign: "center" }}/>
+                    style={{ fontWeight: "bold", textAlign: "center" }}/>
             <Grid
                 divided
                 inverted
@@ -134,7 +134,7 @@ export function Contact() {
                                 className="white"
                                 style={label__css}>Message*</label>
                             <TextArea
-                                style={borderRadius__css}
+                                style={{...borderRadius__css, resize: 'none'}}
                                 maxLength={280}
                                 rows={5}
                                 value={message}
