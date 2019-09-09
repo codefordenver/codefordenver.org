@@ -68,9 +68,10 @@ export function Contact() {
 
 
     return (
-        <Segment inverted
-                 vertical
-                 style={{ padding: "2em", backgroundColor: "#E14E54" }}>
+        <Segment
+            inverted
+            vertical
+            style={{ padding: "2em", backgroundColor: "#E14E54" }}>
             <Header as='h1'
                     content='CONTACT US'
                     style={{ fontWeight: "bold", marginBottom: "1em", textAlign: "center" }}/>
@@ -106,7 +107,9 @@ export function Contact() {
                     <Form loading={loading}
                           onSubmit={handleFormSubmit}>
                         <Form.Field>
-                            <label className="white" style={label__css}>Name*</label>
+                            <label
+                                className="white"
+                                style={label__css}>Name*</label>
                             <input
                                 style={borderRadius__css}
                                 placeholder='Name'
@@ -115,7 +118,9 @@ export function Contact() {
                                 onChange={(e) => setName(e.target.value)}/>
                         </Form.Field>
                         <Form.Field>
-                            <label className="white" style={label__css}>Email*</label>
+                            <label
+                                className="white"
+                                style={label__css}>Email*</label>
                             <input
                                 style={borderRadius__css}
                                 placeholder='Email'
@@ -125,7 +130,9 @@ export function Contact() {
                                 onChange={(e) => setEmail(e.target.value)}/>
                         </Form.Field>
                         <Form.Field>
-                            <label className="white" style={label__css}>Message*</label>
+                            <label
+                                className="white"
+                                style={label__css}>Message*</label>
                             <TextArea
                                 style={borderRadius__css}
                                 maxLength={280}
