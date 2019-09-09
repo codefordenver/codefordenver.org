@@ -39,10 +39,16 @@ export function Contact() {
         setMessage("")
     }
 
+    const resetMessages = () => {
+        setSuccess(false)
+        setInvalid(false)
+    }
+
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         const opts: IEmail = { to, email, subject: name, body: message }
         e.preventDefault()
         setLoading(true)
+        resetMessages()
         try {
             const res = await sendEmail(opts)
             if (get(res, 'status') === 200) {
