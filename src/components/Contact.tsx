@@ -1,34 +1,34 @@
 import React, { CSSProperties, useState } from "react";
 import { Button, Form, Grid, Header, Message, Segment, TextArea } from "semantic-ui-react";
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
+import get from 'lodash.get';
 
 interface IEmail {
     to: string;
     subject: string;
     email: string;
-    message: string;
+    body: string;
 }
 
-async function sendEmail({ to, email, subject, message}: IEmail) {
+async function sendEmail({ to, email, subject, body}: IEmail) {
     const { REACT_APP_MAILER_ENDPOINT } = process.env;
-    const opts: AxiosRequestConfig = {
-        data: {
-            to,
-            from: email,
-            subject: `Contact Form | ${subject} `,
-            body: message,
-        },
+    const data = {
+        to,
+        from: email,
+        subject: `Contact Form | ${subject} `,
+        body,
     }
-    const res = await axios.post(`${REACT_APP_MAILER_ENDPOINT}`, opts)
-    console.log(res)
+    return await axios.post(`${REACT_APP_MAILER_ENDPOINT}`, data)
 }
 
 export function Contact() {
-    const to = "david@codefordenver.org"
+    const to = "hello@codefordenver.org"
     const [name, setName] = useState<string>("")
     const [email, setEmail] = useState<string>("")
     const [message, setMessage] = useState<any>("")
+    const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<boolean>(false)
+    const [invalid, setInvalid] = useState<boolean>(false)
     const [success, setSuccess] = useState<boolean>(false)
     const borderRadius__css: CSSProperties = { borderRadius: 18 }
     const label__css: CSSProperties = { textAlign: "left" }
@@ -40,18 +40,23 @@ export function Contact() {
     }
 
     const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        const opts: IEmail = { to, email, subject: name, message }
-
+        const opts: IEmail = { to, email, subject: name, body: message }
         e.preventDefault()
-
+        setLoading(true)
         try {
             const res = await sendEmail(opts)
-            console.log({ res })
-
+            if (get(res, 'status') === 200) {
+                setSuccess(true)
+                resetForm()
+            }
         } catch (err) {
-            console.log({ err })
+            if (get(err, 'response.data') === 'Error: invalid from email') {
+                setInvalid(true)
+                return
+            }
+            setError(true)
         } finally {
-            resetForm()
+            setLoading(false)
         }
     }
 
@@ -83,10 +88,17 @@ export function Contact() {
                         header="Oh no! Looks like something went wrong."
                         content="Sorry for the inconvenience. Please get in touch with hello@codefordenver.org directly."
                     />
+                    <Message
+                        error
+                        hidden={!invalid}
+                        compact
+                        header="Oh no! Looks like an invalid email was provided."
+                        content="Please check email and try again."
+                    />
                 </Grid.Row>
                 <Grid.Row>
-                    <Form loading={false}
-                          onSubmit={async (e) => handleFormSubmit(e)}>
+                    <Form loading={loading}
+                          onSubmit={handleFormSubmit}>
                         <Form.Field>
                             <label className="white" style={label__css}>Name*</label>
                             <input
