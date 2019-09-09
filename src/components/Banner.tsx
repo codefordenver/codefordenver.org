@@ -4,7 +4,7 @@ import { Grid, Image, Header, Segment, Input, Button } from "semantic-ui-react";
 export function Banner() {
   return (
     <Segment inverted vertical style={{ padding: "0em" }}>
-      <Grid columns='equal' stackable>
+      <Grid columns='equal' stackable doubling>
         <Grid.Row style={{ padding: "0em" }}>
           <Grid.Column width={8}>
             <Image src={process.env.PUBLIC_URL + "/images/denver-banner.jpg"} />
