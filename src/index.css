@@ -21,6 +21,11 @@ code {
   background-color: white !important;
 }
 
+/* color classes */
+.white {
+  color: white !important;
+}
+
 
 .navHeader{
   padding-bottom:2em;
@@ -28,7 +33,7 @@ code {
 
 .navLogo{
   width: 160px;
-  height: auto; 
+  height: auto;
   margin: 2em 0em 0em 2em
 }
 
@@ -37,11 +42,11 @@ code {
 }
 
 .ui.secondary.pointing.menu .active.item {
-  border-color: #E14E54 
+  border-color: #E14E54
 }
 
 .ui.secondary.pointing.menu .active.item:hover {
-  border-bottom: 2px solid #E14E54 
+  border-bottom: 2px solid #E14E54
 }
 
 .columnTextRight{
