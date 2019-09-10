@@ -4,8 +4,10 @@ import { BannerContent } from "./BannerContent";
 export function Banner() {
   const [email, setEmail] = React.useState<string>("");
   const [success, setSuccess] = React.useState<boolean>(false);
+
   const handleSubmit = () => {
     console.log("Submitting form");
+    console.log("Email is : " + email);
     setSuccess(true);
   };
 
@@ -36,7 +38,7 @@ export function Banner() {
                 name='email'
                 onChange={(e, { value }) => setEmail(value)}
               />
-              <Form.Button content='Submit' />
+              <Form.Button color="red" content='Submit' />
             </Form.Group>
           </Form>
         ) : (
