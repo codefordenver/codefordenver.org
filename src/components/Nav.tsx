@@ -1,13 +1,19 @@
-import React, { useState, Dispatch, SetStateAction } from "react";
-import { Menu, Responsive, Button, Icon } from "semantic-ui-react";
+import React from "react";
+import {
+  Menu,
+  Responsive,
+  Button,
+  Icon,
+  SemanticICONS,
+} from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { RouteComponentProps } from "react-router-dom";
-import { PathURL, ExternalURL } from "./Router";
 import { NavMenuItems } from "./NavMenuItems";
 import { NavSidebar } from "./NavSidebar";
 
 export function Nav(props: any) {
   const [visible, setVisible] = React.useState<boolean>(false);
+  const icon: SemanticICONS = visible ? "arrow right" : "bars";
+
   return (
     <>
       <Responsive minWidth={768}>
@@ -39,19 +45,13 @@ export function Nav(props: any) {
           </Link>
           <Menu.Item
             as={Button}
-            exact
             position='right'
-            activeClassName='active'
             onClick={() => setVisible(!visible)}
           >
-            <Icon name='bars' />
+            <Icon name={icon} />
           </Menu.Item>
         </Menu>
-        <NavSidebar
-          visible={visible}
-        >
-          {props.children}
-        </NavSidebar>
+        <NavSidebar visible={visible}>{props.children}</NavSidebar>
       </Responsive>
     </>
   );

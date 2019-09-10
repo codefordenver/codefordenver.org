@@ -1,7 +1,9 @@
 import React from "react";
-import { Grid, Image, Header, Segment, Input, Button } from "semantic-ui-react";
+import { Grid, Image, Header, Segment, Input, Label } from "semantic-ui-react";
 
 export function Banner() {
+  const [email, setEmail] = React.useState<string>("");
+  const [success, setSuccess] = React.useState<boolean>(false);
   return (
     <>
       <Segment inverted vertical style={{ padding: "0em" }}>
@@ -28,18 +30,29 @@ export function Banner() {
           </Grid.Row>
         </Grid>
       </Segment>
-      <Segment>
-        <Header as='h4' content='Join our newsletter!' />
-        <Grid style={{ padding: "1em 0em" }}>
-          <Grid.Column floated='left' width={10}>
-            <Input fluid placeholder='Enter your email address' />
-          </Grid.Column>
-          <Grid.Column floated='right' width={6}>
-            <Button circular color='red'>
-              Sign up!
-            </Button>
-          </Grid.Column>
-        </Grid>
+      <Segment textAlign="center">
+        <Header
+          textAlign='center'
+          as='h4'
+          content='Want to stay up to date on civic tech in Colorado?  Join our newsletter!'
+        />
+        {!success ? (
+          <Input
+            action={{
+              color: "red",
+              content: "Copy",
+              onClick: () => {
+                console.log(email);
+                setSuccess(true);
+              },
+            }}
+            type='email'
+            placeholder='Enter email'
+            onChange={(e, { value }) => setEmail(value)}
+          />
+        ) : (
+          <Label color="red" size="big">You are now on the list!  👍</Label>
+        )}
       </Segment>
     </>
   );

@@ -1,11 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import {
-  Button,
-  Header,
-  Icon,
-  Image,
   Menu,
-  Segment,
   Sidebar,
 } from "semantic-ui-react";
 import { NavMenuItems } from "./NavMenuItems";

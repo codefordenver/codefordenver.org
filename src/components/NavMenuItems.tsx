@@ -1,7 +1,6 @@
 import React from "react";
 import { Menu, Button } from "semantic-ui-react";
-import { Link, NavLink } from "react-router-dom";
-import { RouteComponentProps } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { PathURL, ExternalURL } from "./Router";
 
 export function NavMenuItems() {
