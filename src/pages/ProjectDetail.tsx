@@ -1,7 +1,5 @@
-import React from "react";
-import {
-  RouteComponentProps,
-} from "react-router-dom";
+import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
 type TParams = { name: string };
 
