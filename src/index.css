@@ -45,13 +45,13 @@ code {
 }
 
 .columnTextRight{
-    margin: 1em 5em 1em 5em;
+    margin: 1em 2.5vw 1em 2.5vw;
     padding-left: 0;
     padding-right: 1em;
 }
 
 .columnTextLeft{
-  margin: 1em 5em 1em 5em;
+  margin: 1em 2.5vw 1em 2.5vw;
   padding-right: 0;
   padding-left: 1em;
 }
