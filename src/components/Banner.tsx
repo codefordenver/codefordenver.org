@@ -36,7 +36,6 @@ export function Banner() {
             type='email'
             placeholder='Enter email'
             onChange={(e, { value }) => setEmail(value)}
-            style={{maxWidth:'320px'}}
           />
         ) : (
           <Label color='red' size='big'>
