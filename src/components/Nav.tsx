@@ -10,8 +10,21 @@ import { Link } from "react-router-dom";
 import { NavMenuItems } from "./NavMenuItems";
 import { NavSidebar } from "./NavSidebar";
 
+export interface ISidebar extends ISidebarClose {
+  children: any;
+  visible: boolean;
+}
+
+export interface ISidebarClose {
+  hideSidebar: () => void;
+}
+
 export function Nav(props: any) {
   const [visible, setVisible] = React.useState<boolean>(false);
+  const hideSidebar = () => {
+    console.log("hiding side bar");
+    setVisible(false);
+  };
   const icon: SemanticICONS = visible ? "arrow right" : "bars";
 
   return (
@@ -27,7 +40,7 @@ export function Nav(props: any) {
               }
             />
           </Link>
-          <NavMenuItems />
+          <NavMenuItems hideSidebar={hideSidebar}  />
         </Menu>
         {props.children}
       </Responsive>
@@ -51,7 +64,9 @@ export function Nav(props: any) {
             <Icon name={icon} />
           </Menu.Item>
         </Menu>
-        <NavSidebar visible={visible}>{props.children}</NavSidebar>
+        <NavSidebar visible={visible} hideSidebar={hideSidebar}>
+          {props.children}
+        </NavSidebar>
       </Responsive>
     </>
   );

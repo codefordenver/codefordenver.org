@@ -4,8 +4,9 @@ import {
   Sidebar,
 } from "semantic-ui-react";
 import { NavMenuItems } from "./NavMenuItems";
+import {ISidebar} from "./Nav";
 
-export function NavSidebar(props: any) {
+export function NavSidebar(props: ISidebar) {
   return (
     <>
       <Sidebar.Pushable>
@@ -15,9 +16,10 @@ export function NavSidebar(props: any) {
           icon='labeled'
           vertical
           visible={props.visible}
+          onHide={props.hideSidebar}
           direction='right'
         >
-          <NavMenuItems />
+          <NavMenuItems hideSidebar={props.hideSidebar}/>
         </Sidebar>
 
         <Sidebar.Pusher>{props.children}</Sidebar.Pusher>

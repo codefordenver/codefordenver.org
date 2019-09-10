@@ -2,8 +2,9 @@ import React from "react";
 import { Menu, Button } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 import { PathURL, ExternalURL } from "./Router";
+import { ISidebarClose } from "./Nav";
 
-export function NavMenuItems() {
+export function NavMenuItems(props: ISidebarClose) {
   return (
     <>
       <Menu.Item
@@ -13,6 +14,7 @@ export function NavMenuItems() {
         position='right'
         activeClassName='active'
         className='navItem'
+        onClick={props.hideSidebar}
       >
         Home
       </Menu.Item>
@@ -23,6 +25,7 @@ export function NavMenuItems() {
         to={PathURL.ABOUT}
         activeClassName='active'
         className='navItem'
+        onClick={props.hideSidebar}
       >
         About
       </Menu.Item>
@@ -33,6 +36,7 @@ export function NavMenuItems() {
         to={PathURL.VOLUNTEER}
         activeClassName='active'
         className='navItem'
+        onClick={props.hideSidebar}
       >
         Volunteer
       </Menu.Item>
@@ -43,6 +47,7 @@ export function NavMenuItems() {
         to={PathURL.PROJECTS}
         activeClassName='active'
         className='navItem'
+        onClick={props.hideSidebar}
       >
         Featured Projects
       </Menu.Item>
@@ -55,6 +60,7 @@ export function NavMenuItems() {
           basic
           color='red'
           size='mini'
+          onClick={props.hideSidebar}
         >
           <strong>Donate</strong>
         </Button>

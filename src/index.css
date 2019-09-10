@@ -24,6 +24,11 @@ code {
 
 .navHeader{
   padding-bottom:2em;
+  margin-bottom: 0em;
+}
+
+.navHeader.menu{
+  margin-bottom: 0em;
 }
 
 .navLogo{
@@ -46,14 +51,10 @@ code {
 
 .columnTextRight{
     margin: 1em 2.5vw 1em 2.5vw;
-    padding-left: 0;
-    padding-right: 1em;
 }
 
 .columnTextLeft{
   margin: 1em 1vw 1em 1vw;
-  padding-right: 0;
-  padding-left: 1em;
 }
 
 .ui.segment{
