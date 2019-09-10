@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Header, Grid, Segment, } from "semantic-ui-react";
-
+import { Link } from "react-router-dom";
+import { PathURL, ExternalURL } from "./Router";
 export function AboutOrg() {
 
   return (
@@ -16,7 +17,10 @@ export function AboutOrg() {
               and government trying to address some of our most
               pressing 21st century problems.
             </p>
-            <Button circular color='black'>
+            <Button circular 
+              color='black'
+              as={Link}
+              to={PathURL.VOLUNTEER} >
               Join Us   
             </Button>
           </Grid.Column>
@@ -37,7 +41,10 @@ export function AboutOrg() {
               If you’d like to learn more about how to support Code
               for Denver, reach out.
             </p>
-            <Button circular color='black'>
+            <Button circular
+             color='black'
+              as='a'
+              href={ExternalURL.OPEN_COLLECTIVE}>
               Donate
             </Button>
           </Grid.Column>
