@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Image, Header, Segment, Button } from "semantic-ui-react";
+import { Grid, Image, Header } from "semantic-ui-react";
 
 export function VolunteerContent(props: any) {
   return (

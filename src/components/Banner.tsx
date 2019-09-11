@@ -6,7 +6,6 @@ import {
   Label,
   Responsive,
   Grid,
-  GridColumn,
 } from "semantic-ui-react";
 import { BannerContent } from "./BannerContent";
 export function Banner() {
@@ -41,7 +40,7 @@ export function Banner() {
         <Grid stackable centered>
           <Grid.Row>
             {!success ? (
-              <Form style={{paddingTop: '1em'}}fluid onSubmit={handleSubmit}>
+              <Form style={{paddingTop: '1em'}} onSubmit={handleSubmit}>
                   <Form.Input
                     placeholder='Email'
                     name='email'
@@ -55,8 +54,8 @@ export function Banner() {
                   />
               </Form>
             ) : (
-              <Label color='red' size='big'>
-                You are now on the list! 👍
+              <Label style={{marginTop: '1em'}}  color='red' size='big'>
+                You are now on the list! <span role="img" aria-label="Thumbs-up Emoji">👍</span>
               </Label>
             )}
           </Grid.Row>
