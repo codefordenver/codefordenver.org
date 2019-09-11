@@ -1,39 +1,66 @@
 import React from "react";
-import { Grid, Image, Header, Segment, Input, Button } from "semantic-ui-react";
-
+import {
+  Header,
+  Segment,
+  Form,
+  Label,
+  Responsive,
+  Grid,
+} from "semantic-ui-react";
+import { BannerContent } from "./BannerContent";
 export function Banner() {
+  const [email, setEmail] = React.useState<string>("");
+  const [success, setSuccess] = React.useState<boolean>(false);
+
+  const handleSubmit = () => {
+    console.log("Submitting form");
+    console.log("Email is : " + email);
+    setSuccess(true);
+  };
+
   return (
-    <Segment inverted vertical style={{ padding: "0em" }}>
-      <Grid columns='equal' stackable>
-        <Grid.Row style={{ padding: "0em" }}>
-          <Grid.Column width={8}>
-            <Image src={process.env.PUBLIC_URL + "/images/denver-banner.jpg"} />
-          </Grid.Column>
-          <Grid.Column verticalAlign='middle' className='columnTextRight'>
-            <p>
-              Code for Denver is building the next great generation of civic
-              hackers, innovators, and disruptors here in Colorado.
-            </p>
-            <p>
-              We are a Code for America Brigade community with regular meetups
-              and other events to help bring together creative problem solvers
-              with local community groups and government trying to address some
-              of our most pressing 21st century problems
-            </p>
-            <Header inverted as='h4' content='Join our newsletter!' />
-            <Grid style={{ padding: "1em 0em" }}>
-              <Grid.Column floated='left' width={10}>
-                <Input inverted fluid placeholder='Enter your email address' />
-              </Grid.Column>
-              <Grid.Column floated='right' width={6}>
-                <Button circular color='red'>
-                  Sign up!
-                </Button>
-              </Grid.Column>
-            </Grid>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
+    <>
+      <Segment inverted vertical style={{ padding: "0em" }}>
+        <>
+          <Responsive minWidth={1024}>
+            <BannerContent columnWidth={8} />
+          </Responsive>
+
+          <Responsive maxWidth={1023}>
+            <BannerContent columnWidth={16} />
+          </Responsive>
+        </>
+      </Segment>
+
+      <Segment textAlign="center" style={{ padding: "2em" }}>
+        <Header
+          as='h4'
+          content='Want to stay up to date on civic tech in Colorado?  Join our newsletter!'
+        />
+        <Grid stackable centered>
+          <Grid.Row>
+            {!success ? (
+              <Form style={{paddingTop: '1em'}} onSubmit={handleSubmit}>
+                  <Form.Input
+                    placeholder='Email'
+                    name='email'
+                    onChange={(e, { value }) => setEmail(value)}
+                  />
+                  <Form.Button
+                    fluid
+                    disabled={!email}
+                    color='red'
+                    content='Submit'
+                  />
+              </Form>
+            ) : (
+              <Label style={{marginTop: '1em'}}  color='red' size='big'>
+                You are now on the list! <span role="img" aria-label="Thumbs-up Emoji">👍</span>
+              </Label>
+            )}
+          </Grid.Row>
+        </Grid>
+      </Segment>
+    </>
   );
 }
