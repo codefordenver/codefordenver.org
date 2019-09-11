@@ -1,5 +1,13 @@
 import React from "react";
-import { Header, Segment, Form, Label, Responsive } from "semantic-ui-react";
+import {
+  Header,
+  Segment,
+  Form,
+  Label,
+  Responsive,
+  Grid,
+  GridColumn,
+} from "semantic-ui-react";
 import { BannerContent } from "./BannerContent";
 export function Banner() {
   const [email, setEmail] = React.useState<string>("");
@@ -25,27 +33,34 @@ export function Banner() {
         </>
       </Segment>
 
-      <Segment textAlign="center">
+      <Segment textAlign="center" style={{ padding: "2em" }}>
         <Header
           as='h4'
           content='Want to stay up to date on civic tech in Colorado?  Join our newsletter!'
         />
-        {!success ? (
-          <Form className="formTest" onSubmit={handleSubmit}>
-            <Form.Group>
-              <Form.Input
-                placeholder='Email'
-                name='email'
-                onChange={(e, { value }) => setEmail(value)}
-              />
-              <Form.Button color="red" content='Submit' />
-            </Form.Group>
-          </Form>
-        ) : (
-          <Label color='red' size='big'>
-            You are now on the list! 👍
-          </Label>
-        )}
+        <Grid stackable centered>
+          <Grid.Row>
+            {!success ? (
+              <Form style={{paddingTop: '1em'}}fluid onSubmit={handleSubmit}>
+                  <Form.Input
+                    placeholder='Email'
+                    name='email'
+                    onChange={(e, { value }) => setEmail(value)}
+                  />
+                  <Form.Button
+                    fluid
+                    disabled={!email}
+                    color='red'
+                    content='Submit'
+                  />
+              </Form>
+            ) : (
+              <Label color='red' size='big'>
+                You are now on the list! 👍
+              </Label>
+            )}
+          </Grid.Row>
+        </Grid>
       </Segment>
     </>
   );
