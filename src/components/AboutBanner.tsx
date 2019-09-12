@@ -24,18 +24,15 @@ export function AboutBanner() {
           }}>
             <Header as="h1" size="huge" style={{fontSize:"4rem"}} color="red">
               An intentionally inclusive community of problem solvers
-              </Header>
+            </Header>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row only='mobile' style={{backgroundColor:"black"}}>
         <Grid.Column
-          style={{
-            backgroundColor: "rgba(255, 255, 255, 0.7)"
-          }}
-          >
+          style={{ backgroundColor: "rgba(255, 255, 255, 0.7)" }}>
           <Header as="h1" size="large" color="red">
             An intentionally inclusive community of problem solvers
-              </Header>
+          </Header>
         </Grid.Column>
       </Grid.Row>
     </Grid> 
