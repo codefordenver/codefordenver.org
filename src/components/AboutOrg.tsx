@@ -35,11 +35,11 @@ export function AboutOrg() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Column>
-            <Header>Our Sponsors</Header>
+            <Header as="h2">Our Sponsors</Header>
             <p>
               We couldn’t do any of this work without our sponsors.
               If you’d like to learn more about how to support Code
-              for Denver, reach out.
+              for Denver, <a href="">reach out</a>.
             </p>
             <Button circular
              color='black'
