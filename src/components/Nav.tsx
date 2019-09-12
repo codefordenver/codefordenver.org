@@ -1,65 +1,73 @@
 import React from "react";
-import { Menu, Button } from "semantic-ui-react";
+import {
+  Menu,
+  Responsive,
+  Button,
+  Icon,
+  SemanticICONS,
+} from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { RouteComponentProps } from "react-router-dom";
-import { PathURL, ExternalURL } from "./Router";
+import { NavMenuItems } from "./NavMenuItems";
+import { NavSidebar } from "./NavSidebar";
 
-export function Nav(router: RouteComponentProps) {
-  const activeItem = router.location.pathname;
+export interface ISidebar extends ISidebarClose {
+  children: any;
+  visible: boolean;
+}
+
+export interface ISidebarClose {
+  hideSidebar: () => void;
+}
+
+export function Nav(props: any) {
+  const [visible, setVisible] = React.useState<boolean>(false);
+  const hideSidebar = () => {
+    console.log("hiding side bar");
+    setVisible(false);
+  };
+  const icon: SemanticICONS = visible ? "arrow right" : "bars";
 
   return (
-    <Menu pointing stackable secondary className="bg-white">
-        <Menu.Item>
-          <Link to="/">
-            <img alt='Code for Denver Logo' style={{width: '100px', height:'auto'}} src={process.env.PUBLIC_URL + '/images/logos/Horizontal Logo_red.png'} />
+    <>
+      <Responsive minWidth={768}>
+        <Menu pointing stackable secondary className='bg-white navHeader'>
+          <Link to='/'>
+            <img
+              className='navLogo'
+              alt='Code for Denver Logo'
+              src={
+                process.env.PUBLIC_URL + "/images/logos/Horizontal Logo_red.png"
+              }
+            />
           </Link>
-        </Menu.Item>
+          <NavMenuItems hideSidebar={hideSidebar}  />
+        </Menu>
+        {props.children}
+      </Responsive>
 
-        <Menu.Item
-          as={Link}
-          to={PathURL.HOME}
-          position='right'
-          active={activeItem === PathURL.HOME}
-        >
-          Home
-        </Menu.Item>
-
-        <Menu.Item
-          as={Link}
-          to={PathURL.ABOUT}
-          active={activeItem === PathURL.ABOUT}
-        >
-          About
-        </Menu.Item>
-
-        <Menu.Item
-          as={Link}
-          to={PathURL.VOLUNTEER}
-          active={activeItem === PathURL.VOLUNTEER}
-        >
-          Volunteer
-        </Menu.Item>
-
-        <Menu.Item
-          as={Link}
-          to={PathURL.PROJECTS}
-          active={activeItem === PathURL.PROJECTS}
-        >
-          Featured Projects
-        </Menu.Item>
-
-        <Menu.Item>
-          <Button
-            as='a'
-            href={ExternalURL.OPEN_COLLECTIVE}
-            circular
-            basic
-            color='red'
-            size='mini'
+      <Responsive maxWidth={767}>
+        <Menu pointing secondary className='bg-white navHeader'>
+          <Link to='/'>
+            <img
+              className='navLogo'
+              alt='Code for Denver Logo'
+              src={
+                process.env.PUBLIC_URL + "/images/logos/Horizontal Logo_red.png"
+              }
+            />
+          </Link>
+          <Menu.Item
+            as={Button}
+            position='right'
+            onClick={() => setVisible(!visible)}
           >
-            <strong>Donate</strong>
-          </Button>
-        </Menu.Item>
-    </Menu>
+            <Icon name={icon} />
+          </Menu.Item>
+        </Menu>
+        <NavSidebar visible={visible} hideSidebar={hideSidebar}>
+          {props.children}
+        </NavSidebar>
+      </Responsive>
+    </>
   );
 }
