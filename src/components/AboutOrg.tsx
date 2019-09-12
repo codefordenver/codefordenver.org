@@ -5,7 +5,7 @@ import { PathURL, ExternalURL } from "./Router";
 export function AboutOrg() {
 
   return (
-    <Segment style={{ margin: "0", border: "0" }}>
+    <Segment style={{ margin: "0", padding:"10vh 0 5vh"}}>
       <Grid container stackable columns={2} className="bg-white">
         <Grid.Row>
           <Grid.Column>
