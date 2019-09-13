@@ -69,6 +69,7 @@ export function Contact() {
 
     return (
         <Segment
+            id="Contact"
             inverted
             vertical
             style={{ padding: "2em", backgroundColor: "#E14E54" }}>
