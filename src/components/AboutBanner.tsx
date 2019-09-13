@@ -12,7 +12,7 @@ export function AboutBanner() {
       <Grid.Row>
         <Grid.Column>
           <Header 
-            style={{ margin: "2vh 10vw 2vh", fontSize: "2.7rem"}}
+            style={{ margin: "3vh 10vw 0.5vh", fontSize: "2rem"}}
             as="h1"
             size="huge">
               About
