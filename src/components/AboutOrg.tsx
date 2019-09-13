@@ -10,7 +10,7 @@ export function AboutOrg() {
       <Grid container stackable columns={2} className="bg-white">
         <Grid.Row>
           <Grid.Column>
-            <Header as='h2'>Our Organization</Header>
+            <Header as="h2">Our Organization</Header>
             <p>
               We are a Code for America Brigade community with
               regular meetups and other events to help bring together
@@ -19,7 +19,7 @@ export function AboutOrg() {
               pressing 21st century problems.
             </p>
             <Button circular 
-              color='black'
+              color="black"
               as={Link}
               to={PathURL.VOLUNTEER} >
               Join Us   
@@ -43,12 +43,13 @@ export function AboutOrg() {
               for Denver,
               <HashLink
                 to="/About#Contact"
-                scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+                style={{ color:" #E14E54"}}
+                scroll={el => el.scrollIntoView({ behavior: "smooth", block: "end" })}
               > contact us</HashLink>.
             </p>
             <Button circular
-             color='black'
-              as='a'
+             color="black"
+              as="a"
               href={ExternalURL.OPEN_COLLECTIVE}>
               Donate
             </Button>
