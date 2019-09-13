@@ -25,7 +25,7 @@ export function Sponsors() {
           <Grid.Column style={{ padding: 0 }}>
             <Image
               style={image__css}
-              src={process.env.PUBLIC_URL + "/images/sponsors/galvanize.svg"}
+              src={process.env.PUBLIC_URL + "/images/sponsors/galvanize.png"}
             />
           </Grid.Column>
           <Grid.Column style={{ padding: 0 }}>
