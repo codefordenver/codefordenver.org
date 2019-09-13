@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Header, Grid, Segment, } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { PathURL, ExternalURL } from "./Router";
+import { HashLink } from "react-router-hash-link";
 export function AboutOrg() {
 
   return (
@@ -39,7 +40,11 @@ export function AboutOrg() {
             <p>
               We couldn’t do any of this work without our sponsors.
               If you’d like to learn more about how to support Code
-              for Denver, <a href="">reach out</a>.
+              for Denver,
+              <HashLink
+                to="/About#Contact"
+                scroll={el => el.scrollIntoView({ behavior: 'auto', block: 'end' })}
+              > contact us</HashLink>.
             </p>
             <Button circular
              color='black'
