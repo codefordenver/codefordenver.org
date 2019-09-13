@@ -6,10 +6,21 @@ export function AboutBanner() {
   return(
     <Grid 
       verticalAlign="middle"
-      centered
       columns={1}
-      style={{ margin: "0", border: "none" }}>
+      style={{ margin: "0", border: "none" }}
+      className="bg-white">
+      <Grid.Row>
+        <Grid.Column>
+          <Header 
+            style={{ margin: "2vh 10vw 2vh", fontSize: "2.7rem"}}
+            as="h1"
+            size="huge">
+              About
+            </Header>
+        </Grid.Column>
+      </Grid.Row>
       <Grid.Row 
+        centered
         only="tablet computer"
         style={{ 
         height: "55vh",
@@ -24,7 +35,7 @@ export function AboutBanner() {
           width: "75vw"
           }}>
             <Header 
-            as="h1"
+            as="h2"
             size="huge"
             style={{fontSize:"2.7rem"}}
             textAlign="center"
