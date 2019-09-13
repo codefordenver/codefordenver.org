@@ -43,7 +43,7 @@ export function AboutOrg() {
               for Denver,
               <HashLink
                 to="/About#Contact"
-                scroll={el => el.scrollIntoView({ behavior: 'auto', block: 'end' })}
+                scroll={el => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
               > contact us</HashLink>.
             </p>
             <Button circular
