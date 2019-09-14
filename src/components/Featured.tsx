@@ -6,6 +6,7 @@ import { Image } from "semantic-ui-react"
 import { contentfulDataMapper } from '../helpers'
 
 interface IProject {
+    link: string,
     title: string,
     shortDescription: string,
     thumbnail: string,
@@ -13,8 +14,8 @@ interface IProject {
 
 const Project = (props: IProject) => (
     <Grid.Column>
-        <Image src={props.thumbnail} size='small' width={200} />
-        <Header inverted as='h4' content={props.title} />
+        <Image src={props.thumbnail} centered size={'medium'} />
+        <Header inverted as='a' content={props.title} href={props.link} />
         <List link inverted>
             <List.Item as='p'>{ props.shortDescription }</List.Item>
         </List>
