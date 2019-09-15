@@ -5,9 +5,8 @@ import {
   List,
 } from "semantic-ui-react";
 import { Header, Icon } from "semantic-ui-react";
-import { Link } from "react-router-dom";
 import { RouteComponentProps } from "react-router-dom";
-import { PathURL, ExternalURL } from "./Router";
+import { ExternalURL } from "./Router";
 
 export function Footer(router: RouteComponentProps) {
   const social__css: CSSProperties = { color: "white", opacity: 0.9 };
