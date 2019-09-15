@@ -42,9 +42,6 @@ export function Footer(router: RouteComponentProps) {
               <Header inverted as='h4' content='Home' />
               <List link inverted>
                 <List.Item as='a'>What We Do</List.Item>
-                <List.Item as={Link} to={PathURL.PROJECTS}>
-                  Featured Projects
-                </List.Item>
               </List>
             </Grid.Column>
             <Grid.Column>
