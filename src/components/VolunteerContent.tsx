@@ -3,7 +3,7 @@ import { Grid, Image, Header } from "semantic-ui-react";
 
 export function VolunteerContent(props: any) {
   return (
-    <Grid columns='equal' stackable>
+    <Grid id="Us" columns='equal' stackable>
       <Grid.Row style={{ padding: "0em" }}>
         <Grid.Column verticalAlign='middle' className='columnTextLeft'>
           <Header inverted as='h2' content='What we do' />

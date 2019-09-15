@@ -41,17 +41,6 @@ export function NavMenuItems(props: ISidebarClose) {
         Volunteer
       </Menu.Item>
 
-      <Menu.Item
-        as={NavLink}
-        exact
-        to={PathURL.PROJECTS}
-        activeClassName='active'
-        className='navItem'
-        onClick={props.hideSidebar}
-      >
-        Featured Projects
-      </Menu.Item>
-
       <Menu.Item className='navItem'>
         <Button
           as='a'

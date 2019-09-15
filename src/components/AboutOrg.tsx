@@ -1,62 +1,62 @@
 import React from "react";
-import { Button, Header, Grid, Segment, } from "semantic-ui-react";
+import { Button, Header, Grid, Segment } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { PathURL, ExternalURL } from "./Router";
 import { HashLink } from "react-router-hash-link";
 export function AboutOrg() {
-
   return (
-    <Segment style={{ margin: "0", padding:"10vh 0 5vh"}}>
-      <Grid container stackable columns={2} className="bg-white">
+    <Segment id='Organization' style={{ margin: "0", padding: "10vh 0 5vh" }}>
+      <Grid container stackable columns={2} className='bg-white'>
         <Grid.Row>
           <Grid.Column>
-            <Header as="h2">Our Organization</Header>
+            <Header as='h2'>Our Organization</Header>
             <p>
-              We are a Code for America Brigade community with
-              regular meetups and other events to help bring together
-              creative problem solvers with local community groups
-              and government trying to address some of our most
-              pressing 21st century problems.
+              We are a Code for America Brigade community with regular meetups
+              and other events to help bring together creative problem solvers
+              with local community groups and government trying to address some
+              of our most pressing 21st century problems.
             </p>
-            <Button circular 
-              color="black"
-              as={Link}
-              to={PathURL.VOLUNTEER} >
-              Join Us   
+            <Button circular color='black' as={Link} to={PathURL.VOLUNTEER}>
+              Join Us
             </Button>
           </Grid.Column>
           <Grid.Column>
-            <Header as="h2">Our Vision</Header>
+            <Header as='h2'>Our Vision</Header>
             <p>
-              The Denver Community will be better served
-              by empowering local governments and nonprofits
-              through technology.
+              The Denver Community will be better served by empowering local
+              governments and nonprofits through technology.
             </p>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column>
-            <Header as="h2">Our Sponsors</Header>
+          <Grid.Column id='Sponsors'>
+            <Header as='h2'>Our Sponsors</Header>
             <p>
-              We couldn’t do any of this work without our sponsors.
-              If you’d like to learn more about how to support Code
-              for Denver,
+              We couldn’t do any of this work without our sponsors. If you’d
+              like to learn more about how to support Code for Denver,
               <HashLink
-                to="/About#Contact"
-                style={{ color:" #E14E54"}}
-                scroll={el => el.scrollIntoView({ behavior: "smooth", block: "end" })}
-              > contact us</HashLink>.
+                to='/About#Contact'
+                style={{ color: " #E14E54" }}
+                scroll={(el) =>
+                  el.scrollIntoView({ behavior: "smooth", block: "end" })
+                }
+              >
+                {" "}
+                contact us
+              </HashLink>
+              .
             </p>
-            <Button circular
-             color="black"
-              as="a"
-              href={ExternalURL.OPEN_COLLECTIVE}>
+            <Button
+              circular
+              color='black'
+              as='a'
+              href={ExternalURL.OPEN_COLLECTIVE}
+            >
               Donate
             </Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
-  )
+  );
 }
-

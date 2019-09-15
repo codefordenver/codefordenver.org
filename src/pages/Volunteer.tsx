@@ -26,7 +26,7 @@ export function Volunteer() {
                     </div>
                 </div>
                 <script src="https://player.vimeo.com/api/player.js"/>
-                <Grid columns={2} stackable>
+                <Grid id="How" columns={2} stackable>
                     <Grid.Row columns={2}>
                         <Grid.Column>
                             <Header as='h3'>How we work</Header>
@@ -42,7 +42,7 @@ export function Volunteer() {
                                 month.
                             </p>
                         </Grid.Column>
-                        <Grid.Column>
+                        <Grid.Column id="Culture">
                             <Header as='h3'>Culture</Header>
                             <p>
                                 Code for Denver is an intentionally inclusive community of problem
@@ -57,7 +57,7 @@ export function Volunteer() {
                             </p>
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row columns={2}>
+                    <Grid.Row id="Join" columns={2}>
                         <Grid.Column>
                             <Header as='h3'>Join us</Header>
                             <p>
@@ -124,7 +124,7 @@ export function Volunteer() {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-                <Header as='h2'>Frequently Asked Questions</Header>
+                <Header id="FAQ" as='h2'>Frequently Asked Questions</Header>
                 <p style={question__css}>
                     How do you find projects?
                 </p>
