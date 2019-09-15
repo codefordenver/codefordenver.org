@@ -1,5 +1,6 @@
 import React from "react";
-import { Grid, Image, Header, Segment, Button } from "semantic-ui-react";
+import { Segment, Responsive } from "semantic-ui-react";
+import { VolunteerContent } from "./VolunteerContent";
 
 export function Volunteer() {
   return (
@@ -9,29 +10,15 @@ export function Volunteer() {
       vertical
       style={{ padding: "0em", margin: "5em 0em" }}
     >
-      <Grid columns='equal' stackable>
-        <Grid.Row style={{ padding: "0em" }}>
-          <Grid.Column verticalAlign='middle' className='columnTextLeft'>
-            <Header inverted as='h2' content='What we do' />
-            <p>
-              We build apps, software, and websites for non-profits, local
-              government, and the community that serve their needs. Who we work
-              with and what we work on are determined on project pitch nights.
-              To stay on top of projects throughout the year, we host weekly
-              project nights for all members, and a special onboarding new
-              members night once a month.
-            </p>
-            <Button circular basic inverted color='red'>
-              Volunteer
-            </Button>
-          </Grid.Column>
-          <Grid.Column width={8}>
-            <Image
-              src={process.env.PUBLIC_URL + "/images/CFD-CoffeeOnThePoint.jpg"}
-            />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+      <>
+        <Responsive minWidth={1024}>
+          <VolunteerContent columnWidth={8} />
+        </Responsive>
+
+        <Responsive maxWidth={1023}>
+          <VolunteerContent columnWidth={16} />
+        </Responsive>
+      </>
     </Segment>
   );
 }
