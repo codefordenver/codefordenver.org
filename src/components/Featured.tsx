@@ -6,6 +6,7 @@ import { Image } from "semantic-ui-react"
 import { contentfulDataMapper } from '../helpers'
 
 interface IProject {
+    link: string,
     title: string,
     shortDescription: string,
     thumbnail: string,
@@ -13,20 +14,20 @@ interface IProject {
 
 const Project = (props: IProject) => (
     <Grid.Column>
-        <Image src={props.thumbnail} size='small' width={200} />
-        <Header inverted as='h4' content={props.title} />
+        <Image src={props.thumbnail} centered size={'medium'} />
+        <Header inverted as='a' content={props.title} href={props.link} />
         <List link inverted>
             <List.Item as='p'>{ props.shortDescription }</List.Item>
         </List>
     </Grid.Column>
-)
+);
 
 export function Featured() {
-    const content = useContext(ContentfulContext)
+    const content = useContext(ContentfulContext);
 
     if (content) {
-        const items = get(content, "items", []).slice(0, 3)
-        const assets = get(content, "includes.Asset", [])
+        const items = get(content, "items", []).slice(0, 3);
+        const assets = get(content, "includes.Asset", []);
 
         return (
             <Segment inverted vertical style={{ padding: "2em" }}>
