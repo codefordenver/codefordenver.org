@@ -5,9 +5,9 @@ import { PathURL, ExternalURL } from "./Router";
 import { HashLink } from "react-router-hash-link";
 export function AboutOrg() {
   return (
-    <Segment id='Organization' style={{ margin: "0", padding: "10vh 0 5vh" }}>
+    <Segment style={{ margin: "0", padding: "10vh 0 5vh" }}>
       <Grid container stackable columns={2} className='bg-white'>
-        <Grid.Row>
+        <Grid.Row id='Organization'>
           <Grid.Column>
             <Header as='h2'>Our Organization</Header>
             <p>
@@ -28,8 +28,8 @@ export function AboutOrg() {
             </p>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-          <Grid.Column id='Sponsors'>
+        <Grid.Row id='Sponsors'>
+          <Grid.Column>
             <Header as='h2'>Our Sponsors</Header>
             <p>
               We couldn’t do any of this work without our sponsors. If you’d

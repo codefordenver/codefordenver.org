@@ -26,8 +26,8 @@ export function Volunteer() {
                     </div>
                 </div>
                 <script src="https://player.vimeo.com/api/player.js"/>
-                <Grid id="How" columns={2} stackable>
-                    <Grid.Row columns={2}>
+                <Grid columns={2} stackable>
+                    <Grid.Row id="How" columns={2}>
                         <Grid.Column>
                             <Header as='h3'>How we work</Header>
                             <p>
