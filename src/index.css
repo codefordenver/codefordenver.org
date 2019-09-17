@@ -1,5 +1,5 @@
-html{
-  font-size:22px;
+html {
+  font-size: 22px;
 }
 
 body {
@@ -26,20 +26,19 @@ code {
   color: white !important;
 }
 
-
-.navHeader{
-  padding-bottom:2em;
+.navHeader {
+  padding-bottom: 2em;
   margin-bottom: 0em;
 }
 
-.navHeader.menu{
+.navHeader.menu {
   margin-bottom: 0em;
 }
 
-.navLogo{
+.navLogo {
   width: 160px;
   height: auto;
-  margin: 2em 0em 0em 2em
+  margin: 2em 0em 0em 2em;
 }
 
 .navItem {
@@ -47,22 +46,22 @@ code {
 }
 
 .ui.secondary.pointing.menu .active.item {
-  border-color: #E14E54
+  border-color: #e14e54;
 }
 
 .ui.secondary.pointing.menu .active.item:hover {
-  border-bottom: 2px solid #E14E54
+  border-bottom: 2px solid #e14e54;
 }
 
-.columnTextRight{
-    margin: 1em 2.5vw 1em 2.5vw;
+.columnTextRight {
+  margin: 1em 2.5vw 1em 2.5vw;
 }
 
-.columnTextLeft{
+.columnTextLeft {
   margin: 1em 1vw 1em 1vw;
 }
 
-.ui.segment{
+.ui.segment {
   border-radius: 0px;
   border: #f2f2f2;
 }
