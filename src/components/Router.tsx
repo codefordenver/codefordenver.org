@@ -54,17 +54,19 @@ export function AppRouter() {
       <ContentfulContext.Provider value={data}>
         <Nav>
           <Segment
-            style={{ padding: "10em 0", display: loading ? "block" : "none" }}
+            style={{ padding: "10em 0", margin:"0", display: loading ? "block" : "none" }}
           >
             <Loader active={loading} />
           </Segment>
-          <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/about' exact component={About} />
-            <Route path='/volunteer' exact component={Volunteer} />
-            <Route path='/projects' exact component={Projects} />
-            <Route path='/projects/:name' component={Project} />
-          </Switch>
+          <Segment style={{padding:"0", margin:"0", display: loading ? "none" : "block" }}>
+            <Switch>
+              <Route path='/' exact component={Home} />
+              <Route path='/about' exact component={About} />
+              <Route path='/volunteer' exact component={Volunteer} />
+              <Route path='/projects' exact component={Projects} />
+              <Route path='/projects/:name' component={Project} />
+            </Switch>
+          </Segment>
           <Route component={Footer} />
         </Nav>
       </ContentfulContext.Provider>
