@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { Container, Loader, Segment } from "semantic-ui-react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
@@ -13,9 +13,21 @@ import ContentfulContext from "../context/contentful";
 
 export enum PathURL {
   HOME = "/",
+  HOME_US = "/#Us",
+  HOME_FEATURED = "/#Featured",
   ABOUT = "/about",
+  ABOUT_ORGANIZATION = "/about#Organization",
+  ABOUT_SPONSORS = "/about#Sponsors",
+  ABOUT_CONTACT = "/about#Contact",
   VOLUNTEER = "/volunteer",
+  VOLUNTEER_CULTURE = "/volunteer#Culture",
+  VOLUNTEER_HOW = "/volunteer#How",
+  VOLUNTEER_JOIN = "/volunteer#Join",
+  VOLUNTEER_FAQ = "/volunteer#FAQ",
   PROJECTS = "/projects",
+  RESOURCES = "",
+  RESOURCES_CURRENT_PROJECTS = "",
+  RESOURCES_MEMBERS = "",
 }
 
 export enum ExternalURL {

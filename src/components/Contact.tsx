@@ -81,7 +81,7 @@ export function Contact() {
                 stackable
                 className="segment centered"
                 style={{ backgroundColor: "#E14E54" }}>
-                <Grid.Row>
+                <Grid.Row id="Contact">
                     <Message
                         success
                         hidden={!success}
