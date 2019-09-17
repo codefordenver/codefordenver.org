@@ -34,7 +34,10 @@ export enum ExternalURL {
   GITHUB = 'https://github.com/codefordenver',
   MEETUP = 'https://www.meetup.com/CodeForDenver/',
   OPEN_COLLECTIVE = 'https://opencollective.com/codefordenver',
-  FACEBOOK = 'https://www.facebook.com/codefordenver/'
+  FACEBOOK = 'https://www.facebook.com/codefordenver/',
+  GALVANIZE = 'https://www.galvanize.com',
+  GARYCOMMUNITY = 'https://www.garycommunity.org',
+  JETBRAINS = 'https://www.jetbrains.com'
 }
 
 export function AppRouter() {
