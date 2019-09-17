@@ -1,5 +1,6 @@
 import React, { CSSProperties } from "react";
 import { Grid, Image, Header, Segment } from "semantic-ui-react";
+import { ExternalURL } from "./Router";
 
 type Props = {
   show?:boolean
@@ -25,26 +26,32 @@ export function Sponsors(props: Props) {
         <Grid.Row textAlign='center' verticalAlign='middle' columns={3}>
           <Grid.Column style={{ padding: 0 }}>
             <Image
-              style={image__css}
-              src={
-                process.env.PUBLIC_URL +
-                "/images/sponsors/sponsor-gary_community_investments-300x236.png"
-              }
+                as='a'
+                href={ExternalURL.GARYCOMMUNITY}
+                style={image__css}
+                src={
+                  process.env.PUBLIC_URL +
+                  "/images/sponsors/sponsor-gary_community_investments-300x236.png"
+                }
             />
           </Grid.Column>
           <Grid.Column style={{ padding: 0 }}>
             <Image
-              style={image__css}
-              src={process.env.PUBLIC_URL + "/images/sponsors/galvanize.png"}
+                as='a'
+                href={ExternalURL.GALVANIZE}
+                style={image__css}
+                src={process.env.PUBLIC_URL + "/images/sponsors/galvanize.png"}
             />
           </Grid.Column>
           <Grid.Column style={{ padding: 0 }}>
             <Image
-              style={image__css}
-              src={
-                process.env.PUBLIC_URL +
-                "/images/sponsors/jetbrains-variant-4-700x391.png"
-              }
+                as='a'
+                href={ExternalURL.JETBRAINS}
+                style={image__css}
+                src={
+                  process.env.PUBLIC_URL +
+                  "/images/sponsors/jetbrains-variant-4-700x391.png"
+                }
             />
           </Grid.Column>
         </Grid.Row>
