@@ -69,7 +69,6 @@ export function Contact() {
 
     return (
         <Segment
-            id="Contact"
             inverted
             vertical
             style={{ padding: "2em", backgroundColor: "#E14E54" }}>
@@ -82,7 +81,7 @@ export function Contact() {
                 stackable
                 className="segment centered"
                 style={{ backgroundColor: "#E14E54" }}>
-                <Grid.Row>
+                <Grid.Row id="Contact">
                     <Message
                         success
                         hidden={!success}
