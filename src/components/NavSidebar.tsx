@@ -1,10 +1,7 @@
-import React from "react";
-import {
-  Menu,
-  Sidebar,
-} from "semantic-ui-react";
-import { NavMenuItems } from "./NavMenuItems";
-import {ISidebar} from "./Nav";
+import React from 'react';
+import { Menu, Sidebar } from 'semantic-ui-react';
+import { NavMenuItems } from './NavMenuItems';
+import { ISidebar } from './Nav';
 
 export function NavSidebar(props: ISidebar) {
   return (
@@ -12,14 +9,14 @@ export function NavSidebar(props: ISidebar) {
       <Sidebar.Pushable>
         <Sidebar
           as={Menu}
-          animation='overlay'
-          icon='labeled'
+          animation="overlay"
+          icon="labeled"
           vertical
           visible={props.visible}
           onHide={props.hideSidebar}
-          direction='right'
+          direction="right"
         >
-          <NavMenuItems hideSidebar={props.hideSidebar}/>
+          <NavMenuItems hideSidebar={props.hideSidebar} />
         </Sidebar>
 
         <Sidebar.Pusher>{props.children}</Sidebar.Pusher>
