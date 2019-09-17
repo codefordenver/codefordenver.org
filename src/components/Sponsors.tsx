@@ -14,7 +14,7 @@ export function Sponsors(props: Props) {
   const showHeader = onAbout();
 
   function onAbout() {
-    if(props.show == null) {
+    if(props.show === null) {
       return <Header as='h2' content='Our sponsors' />
     };
   };
