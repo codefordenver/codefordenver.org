@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { Container, Loader, Segment } from "semantic-ui-react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
