@@ -23,7 +23,9 @@ export function Nav(props: any) {
   const [visible, setVisible] = React.useState<boolean>(false);
   const hideSidebar = (event: React.MouseEvent<HTMLElement>) => {
     setVisible(false);
-    event.stopPropagation();
+    if (event !== null) {
+      event.stopPropagation();
+    }
   };
   const icon: SemanticICONS = visible ? 'arrow right' : 'bars';
   return (
