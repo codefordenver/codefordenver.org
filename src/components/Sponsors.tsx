@@ -16,7 +16,7 @@ export function Sponsors(props: Props) {
 
   function onAbout() {
     if (props.show === null) {
-      return <Header as="h2" content="Our sponsors" />;
+      return <Header as="h3" content="Our sponsors" />;
     }
   }
   return (

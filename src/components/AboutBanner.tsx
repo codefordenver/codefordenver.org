@@ -34,7 +34,7 @@ export function AboutBanner() {
           }}
         >
           <Header
-            as="h2"
+            as="h3"
             style={{ fontSize: '2.7rem' }}
             textAlign="center"
             color="red"
