@@ -11,7 +11,7 @@ export function Volunteer() {
 
   return (
     <>
-      <Segment style={{ padding: '5em' }}>
+      <Segment style={{ padding: '1rem 2rem' }}>
         <Header as="h2">Volunteer</Header>
         <div
           style={{ maxWidth: '640px', marginTop: '14px', marginBottom: '14px' }}

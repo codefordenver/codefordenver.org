@@ -10,12 +10,8 @@ export function AboutBanner() {
       className="bg-white"
     >
       <Grid.Row>
-        <Grid.Column>
-          <Header
-            style={{ margin: '3vh 10vw 0.5vh', fontSize: '2rem' }}
-            as="h1"
-            size="huge"
-          >
+        <Grid.Column style={{ padding: '0' }}>
+          <Header style={{ margin: '0 2rem' }} as="h2">
             About
           </Header>
         </Grid.Column>
@@ -39,7 +35,6 @@ export function AboutBanner() {
         >
           <Header
             as="h2"
-            size="huge"
             style={{ fontSize: '2.7rem' }}
             textAlign="center"
             color="red"
