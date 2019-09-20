@@ -4,14 +4,15 @@ import { ExternalURL } from '../components/Router';
 
 export function Volunteer() {
   const button__css: CSSProperties = {
-    paddingRight: '2em',
-    paddingLeft: '2em'
+    paddingRight: '2rem',
+    paddingLeft: '2rem',
+    margin: '1rem .5rem 0rem'
   };
   const question__css: CSSProperties = { color: '#E14E54' };
 
   return (
     <>
-      <Segment style={{ padding: '5em' }}>
+      <Segment style={{ padding: '1rem 2rem' }}>
         <Header as="h2">Volunteer</Header>
         <div
           style={{ maxWidth: '640px', marginTop: '14px', marginBottom: '14px' }}
@@ -91,29 +92,18 @@ export function Volunteer() {
               <a style={{ color: 'black' }} href={ExternalURL.FACEBOOK}>
                 <Icon size="large" name="facebook" />
               </a>
-              <Grid
-                columns={2}
-                style={{ margin: '3em' }}
-                stackable
-                textAlign="center"
-              >
-                <Grid.Row columns={2}>
-                  <Grid.Column>
-                    <a href={ExternalURL.MEETUP}>
-                      <Button circular color="black" style={button__css}>
-                        Meetup
-                      </Button>
-                    </a>
-                  </Grid.Column>
-                  <Grid.Column>
-                    <a href="contact">
-                      <Button circular color="black" style={button__css}>
-                        Contact
-                      </Button>
-                    </a>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
+              <div style={{ textAlign: 'center' }}>
+                <a href={ExternalURL.MEETUP}>
+                  <Button circular color="black" style={button__css}>
+                    Meetup
+                  </Button>
+                </a>
+                <a href="contact">
+                  <Button circular color="black" style={button__css}>
+                    Contact
+                  </Button>
+                </a>
+              </div>
             </Grid.Column>
             <Grid.Column>
               <div

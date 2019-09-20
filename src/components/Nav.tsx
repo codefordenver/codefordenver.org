@@ -16,17 +16,18 @@ export interface ISidebar extends ISidebarClose {
 }
 
 export interface ISidebarClose {
-  hideSidebar: () => void;
+  hideSidebar: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
 export function Nav(props: any) {
   const [visible, setVisible] = React.useState<boolean>(false);
-  const hideSidebar = () => {
-    console.log('hiding side bar');
+  const hideSidebar = (event: React.MouseEvent<HTMLElement>) => {
     setVisible(false);
+    if (event !== null) {
+      event.stopPropagation();
+    }
   };
   const icon: SemanticICONS = visible ? 'arrow right' : 'bars';
-
   return (
     <>
       <Responsive minWidth={768}>
