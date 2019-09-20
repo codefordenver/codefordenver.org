@@ -4,7 +4,8 @@ import {
   Responsive,
   Button,
   Icon,
-  SemanticICONS
+  SemanticICONS,
+  SidebarProps
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { NavMenuItems } from './NavMenuItems';
@@ -16,12 +17,18 @@ export interface ISidebar extends ISidebarClose {
 }
 
 export interface ISidebarClose {
-  hideSidebar: (event: Event) => void;
+  hideSidebar: (
+    event: React.MouseEvent<HTMLElement>,
+    data: SidebarProps
+  ) => void;
 }
 
 export function Nav(props: any) {
   const [visible, setVisible] = React.useState<boolean>(false);
-  const hideSidebar = (event: Event) => {
+  const hideSidebar = (
+    event: React.MouseEvent<HTMLElement>,
+    data: SidebarProps
+  ) => {
     setVisible(false);
     event.stopPropagation();
   };
