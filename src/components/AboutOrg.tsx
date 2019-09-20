@@ -5,8 +5,8 @@ import { PathURL, ExternalURL } from './Router';
 import { HashLink } from 'react-router-hash-link';
 export function AboutOrg() {
   return (
-    <Segment style={{ margin: '0', padding: '10vh 0 5vh' }}>
-      <Grid container stackable columns={2} className="bg-white">
+    <Segment style={{ margin: '0', padding: '1rem 2rem' }}>
+      <Grid stackable columns={2} className="bg-white">
         <Grid.Row id="Organization">
           <Grid.Column>
             <Header as="h3">Our Organization</Header>
