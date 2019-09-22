@@ -5,26 +5,8 @@ import { BannerContent } from './BannerContent';
 export function Banner() {
   return (
     <>
-      <Segment
-        color="red"
-        inverted
-        textAlign="center"
-        style={{ padding: '2em 1em 2em 1em', margin: 0 }}
-      >
-        <Header
-          as="h4"
-          content="This weekend is Code for Denver's National Day of Civic Hacking event.
-          Come on 9/21 to help us journey map the record clearance process here in
-          Colorado!"
-        />
-        <Button
-          color="blue"
-          as="a"
-          href="https://www.meetup.com/CodeForDenver/events/264392549/"
-        >
-          RSVP Today!
-        </Button>
-      </Segment>
+      <Segment style={{ padding: '0em' }} />{' '}
+      {/* This segment fixes the header spacing on the home page*/}
       <Segment inverted vertical style={{ padding: '0em' }}>
         <>
           <Responsive minWidth={1024}>
@@ -36,7 +18,6 @@ export function Banner() {
           </Responsive>
         </>
       </Segment>
-
       <Segment textAlign="center" style={{ padding: '0em' }}>
         <Header
           style={{ margin: '1em' }}
