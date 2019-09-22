@@ -1,18 +1,18 @@
-import React from "react";
-import { Grid, Image } from "semantic-ui-react";
+import React from 'react';
+import { Grid, Image } from 'semantic-ui-react';
 
 export function BannerContent(props: any) {
   return (
     <>
-      <Grid columns='equal' stackable doubling>
-        <Grid.Row style={{ padding: "0em" }}>
-          <Grid.Column width={props.columnWidth} style={{ padding: "0em" }}>
+      <Grid columns="equal" stackable doubling>
+        <Grid.Row style={{ padding: '0em' }}>
+          <Grid.Column width={props.columnWidth} style={{ padding: '0em' }}>
             <Image
               fluid
-              src={process.env.PUBLIC_URL + "/images/denver-banner.jpg"}
+              src={process.env.PUBLIC_URL + '/images/denver-banner.jpg'}
             />
           </Grid.Column>
-          <Grid.Column verticalAlign='middle' className='columnTextRight'>
+          <Grid.Column verticalAlign="middle" className="columnTextRight">
             <p>
               Code for Denver is building the next great generation of civic
               hackers, innovators, and disruptors here in Colorado.
