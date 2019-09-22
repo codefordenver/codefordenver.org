@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Segment, Responsive, Button } from 'semantic-ui-react';
+import { Header, Segment, Responsive } from 'semantic-ui-react';
 import { BannerContent } from './BannerContent';
 
 export function Banner() {
