@@ -5,11 +5,11 @@ import { PathURL, ExternalURL } from './Router';
 import { HashLink } from 'react-router-hash-link';
 export function AboutOrg() {
   return (
-    <Segment style={{ margin: '0', padding: '10vh 0 5vh' }}>
-      <Grid container stackable columns={2} className="bg-white">
+    <Segment style={{ margin: '0', padding: '1rem 2rem' }}>
+      <Grid stackable columns={2} className="bg-white">
         <Grid.Row id="Organization">
           <Grid.Column>
-            <Header as="h2">Our Organization</Header>
+            <Header as="h3">Our Organization</Header>
             <p>
               We are a Code for America Brigade community with regular meetups
               and other events to help bring together creative problem solvers
@@ -21,7 +21,7 @@ export function AboutOrg() {
             </Button>
           </Grid.Column>
           <Grid.Column>
-            <Header as="h2">Our Vision</Header>
+            <Header as="h3">Our Vision</Header>
             <p>
               The Denver Community will be better served by empowering local
               governments and nonprofits through technology.
@@ -30,7 +30,7 @@ export function AboutOrg() {
         </Grid.Row>
         <Grid.Row id="Sponsors">
           <Grid.Column>
-            <Header as="h2">Our Sponsors</Header>
+            <Header as="h3">Our Sponsors</Header>
             <p>
               We couldn’t do any of this work without our sponsors. If you’d
               like to learn more about how to support Code for Denver,
