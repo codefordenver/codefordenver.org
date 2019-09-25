@@ -1,0 +1,47 @@
+@import '../variables';
+
+#nav-top {
+  font-size: 0.8rem;
+  height: 5rem;
+  background-color: white;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-logo {
+  height: 45px;
+  margin-left: 2.5rem;
+}
+
+.nav-button {
+  font-weight: 500;
+  color: black;
+  vertical-align: middle;
+  padding: 0.25rem 0;
+  margin: 0 0.8rem;
+  border-bottom: 0.1rem solid transparent;
+}
+
+.nav-button:hover {
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.active-nav-button,
+.active-nav-button:hover {
+  border-bottom: 0.1rem solid $red;
+}
+
+#donate-button {
+  color: $red;
+  border-color: $red;
+}
+
+.pill-button,
+.pill-button:hover {
+  vertical-align: middle;
+  padding: 0.5rem 1rem;
+  border: 0.05rem solid;
+  border-radius: 8rem;
+}

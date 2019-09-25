@@ -10,6 +10,7 @@ import { Projects } from '../pages/Projects';
 import { Project } from '../pages/ProjectDetail';
 import useAxios from 'axios-hooks';
 import ContentfulContext from '../context/contentful';
+import '../component-styles/Nav.scss';
 
 export enum PathURL {
   HOME = '/',

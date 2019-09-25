@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
+
 html {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f2f2f2;
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
 }
 
 code {
@@ -24,25 +26,6 @@ code {
 /* color classes */
 .white {
   color: white !important;
-}
-
-.navHeader {
-  padding-bottom: 2em;
-  margin-bottom: 0em;
-}
-
-.navHeader.menu {
-  margin-bottom: 0em;
-}
-
-.navLogo {
-  width: 160px;
-  height: auto;
-  margin: 2em 0em 0em 2em;
-}
-
-.navItem {
-  font-size: 16px;
 }
 
 .ui.secondary.pointing.menu .active.item {

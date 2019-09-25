@@ -16,7 +16,7 @@ export function NavSidebar(props: ISidebar) {
           onHide={props.hideSidebar}
           direction="right"
         >
-          <NavMenuItems hideSidebar={props.hideSidebar} />
+          <NavMenuItems />
         </Sidebar>
 
         <Sidebar.Pusher>{props.children}</Sidebar.Pusher>
