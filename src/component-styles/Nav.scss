@@ -12,13 +12,32 @@
 
 #nav-logo {
   height: 45px;
-  margin-left: 2.5rem;
+  margin-left: 0.8rem;
   vertical-align: middle;
+}
+
+#nav-trigger {
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    cursor: pointer;
+    background-color: $red;
+    color: white;
+    border-radius: 0.25rem;
+    padding: 0.6rem 0.75rem;
+    margin: 0 0.8rem;
+    svg {
+      margin-right: 0.2rem;
+    }
+  }
 }
 
 #nav-buttons {
   display: flex;
   align-items: center;
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .nav-button {
@@ -52,7 +71,8 @@
 #donate-button {
   color: $red;
   border-color: $red;
-  margin: 0 2.5rem 0 1.7rem;
+  margin: 0 0.8rem 0 0;
+  font-weight: 600;
 }
 
 .pill-button,

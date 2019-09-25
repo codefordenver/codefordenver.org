@@ -1,10 +1,16 @@
 import React from 'react';
 import { PathURL, ExternalURL } from './Router';
 import { NavHashLink } from 'react-router-hash-link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 export function NavMenuItems() {
   return (
     <>
+      <span id="nav-trigger">
+        <FontAwesomeIcon icon={faBars} />
+        <span>Menu</span>
+      </span>
       <div id="nav-buttons">
         <NavHashLink
           exact
@@ -33,7 +39,7 @@ export function NavMenuItems() {
           className="pill-button"
           href={ExternalURL.OPEN_COLLECTIVE}
         >
-          <b>Donate</b>
+          Donate
         </a>
       </div>
     </>

@@ -3,15 +3,6 @@ import { NavMenuItems } from './NavMenuItems';
 import { PathURL } from './Router';
 import { NavHashLink } from 'react-router-hash-link';
 
-export interface ISidebar extends ISidebarClose {
-  children: any;
-  visible: boolean;
-}
-
-export interface ISidebarClose {
-  hideSidebar: (event: React.MouseEvent<HTMLElement>) => void;
-}
-
 export function Nav(props: any) {
   return (
     <>
