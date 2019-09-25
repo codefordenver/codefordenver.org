@@ -5,7 +5,7 @@ import { NavHashLink } from 'react-router-hash-link';
 export function NavMenuItems() {
   return (
     <>
-      <div>
+      <div id="nav-buttons">
         <NavHashLink
           exact
           to={PathURL.HOME}
