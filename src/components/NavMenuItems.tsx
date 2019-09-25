@@ -30,7 +30,7 @@ export function NavMenuItems() {
         </NavHashLink>
         <a
           id="donate-button"
-          className="nav-button pill-button"
+          className="pill-button"
           href={ExternalURL.OPEN_COLLECTIVE}
         >
           <b>Donate</b>
