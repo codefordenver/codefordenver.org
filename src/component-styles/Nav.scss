@@ -2,16 +2,19 @@
 
 #nav-top {
   font-size: 0.8rem;
-  height: 5rem;
   background-color: white;
-  vertical-align: middle;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  @media (max-width: $mobile) {
+    flex-wrap: wrap;
+  }
 }
 
 #nav-logo {
-  height: 45px;
+  padding: 1.375rem;
+  height: 2.25rem;
   margin-left: 0.8rem;
   vertical-align: middle;
 }
@@ -40,6 +43,20 @@
   }
 }
 
+#nav-buttons.visible {
+  @media (max-width: $mobile) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#nav-navigation {
+  display: block;
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
 .nav-button {
   display: inline-block;
   font-weight: 500;
@@ -47,8 +64,10 @@
   vertical-align: middle;
   padding: 0.35rem 0 0;
   margin: 0 0.8rem;
-  border-bottom: 0.1rem solid transparent;
-  border-top: 0.1rem solid transparent;
+  @media (max-width: $mobile) {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .nav-button:after {
@@ -66,6 +85,7 @@
 
 .active-nav-button:after,
 .active-nav-button:hover:after {
+  transform: scaleX(1);
   border-bottom: 0.1rem solid $red;
 }
 
@@ -74,6 +94,9 @@
   border-color: $red;
   margin: 0 0.8rem 0 0;
   font-weight: 600;
+  @media (max-width: $mobile) {
+    margin: 0.35rem 0;
+  }
 }
 
 .pill-button,
