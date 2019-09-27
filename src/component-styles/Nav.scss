@@ -10,8 +10,10 @@
   position: fixed;
   z-index: 999;
   width: 100%;
+  border-bottom: 0.1rem solid $red;
   @media (max-width: $mobile) {
     flex-wrap: wrap;
+    border-bottom: 0;
   }
 }
 
@@ -52,13 +54,13 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 227.5ms ease;
+    border-top: 0.1rem solid $red;
   }
 }
 
 #nav-navigation.visible {
   @media (max-width: $mobile) {
-    display: block;
-    max-height: 156px;
+    max-height: 165px;
   }
 }
 
@@ -70,8 +72,8 @@
   padding: 0.35rem 0 0;
   margin: 0 0.8rem;
   @media (max-width: $mobile) {
-    width: 100%;
     text-align: center;
+    padding: 0.35rem 0;
   }
 }
 
@@ -99,8 +101,13 @@
   border-color: $red;
   margin: 0 0.8rem 0 0;
   font-weight: 600;
+  transition: background-color 250ms ease, color 250ms ease;
   @media (max-width: $mobile) {
     margin: 0.35rem 0;
+  }
+  &:hover {
+    background-color: $red;
+    color: white;
   }
 }
 

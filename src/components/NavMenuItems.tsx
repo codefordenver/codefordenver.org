@@ -77,12 +77,14 @@ export class NavMenuItems extends React.Component {
 
   toggleNav = () => {
     let nav = document.getElementById('nav-navigation');
-    if (nav != null) {
-      nav.classList.toggle('visible');
-      if (nav.classList.contains('visible')) {
+    let navButtons = document.getElementById('nav-buttons');
+    if (nav != null && navButtons != null) {
+      if (nav.style.maxHeight === '') {
+        nav.style.maxHeight = navButtons.clientHeight.toString() + 'px';
         document.addEventListener('click', this.handleDocumentClick);
         window.addEventListener('resize', this.handleResize);
       } else {
+        nav.style.maxHeight = '';
         document.removeEventListener('click', this.handleDocumentClick);
         window.removeEventListener('resize', this.handleResize);
       }
@@ -91,8 +93,9 @@ export class NavMenuItems extends React.Component {
 
   hideNav = () => {
     let nav = document.getElementById('nav-navigation');
-    if (nav != null) {
-      nav.classList.remove('visible');
+    let navButtons = document.getElementById('nav-buttons');
+    if (nav != null && navButtons != null) {
+      nav.style.maxHeight = '';
       document.removeEventListener('click', this.handleDocumentClick);
       window.removeEventListener('resize', this.handleResize);
     }
