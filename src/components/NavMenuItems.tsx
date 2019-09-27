@@ -79,6 +79,7 @@ export class NavMenuItems extends React.Component {
     let nav = document.getElementById('nav-navigation');
     let navButtons = document.getElementById('nav-buttons');
     if (nav != null && navButtons != null) {
+      nav.classList.toggle('visible');
       if (nav.style.maxHeight === '') {
         nav.style.maxHeight = navButtons.clientHeight.toString() + 'px';
         document.addEventListener('click', this.handleDocumentClick);
@@ -96,6 +97,7 @@ export class NavMenuItems extends React.Component {
     let navButtons = document.getElementById('nav-buttons');
     if (nav != null && navButtons != null) {
       nav.style.maxHeight = '';
+      nav.classList.remove('visible');
       document.removeEventListener('click', this.handleDocumentClick);
       window.removeEventListener('resize', this.handleResize);
     }

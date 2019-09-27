@@ -55,6 +55,9 @@
     overflow: hidden;
     transition: max-height 227.5ms ease;
     border-top: 0.1rem solid $red;
+    &.visible {
+      border-bottom: 0.1rem solid $red;
+    }
   }
 }
 
@@ -115,7 +118,7 @@
 .pill-button:hover {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   border: 0.05rem solid;
   border-radius: 8rem;
 }
