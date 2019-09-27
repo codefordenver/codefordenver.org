@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
   @media (max-width: $mobile) {
     flex-wrap: wrap;
   }
@@ -54,7 +57,12 @@
   display: block;
   @media (max-width: $mobile) {
     width: 100%;
+    display: none;
   }
+}
+
+#nav-navigation.visible {
+  display: block;
 }
 
 .nav-button {
