@@ -16,7 +16,7 @@
 }
 
 #nav-logo {
-  padding: 1.375rem;
+  padding: 1.375rem 0;
   height: 2.25rem;
   margin-left: 0.8rem;
   vertical-align: middle;
@@ -42,27 +42,25 @@
   display: flex;
   align-items: center;
   @media (max-width: $mobile) {
-    display: none;
-  }
-}
-
-#nav-buttons.visible {
-  @media (max-width: $mobile) {
-    display: flex;
     flex-direction: column;
   }
 }
 
 #nav-navigation {
-  display: block;
   @media (max-width: $mobile) {
     width: 100%;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms linear;
   }
 }
 
 #nav-navigation.visible {
-  display: block;
+  @media (max-width: $mobile) {
+    display: block;
+    max-height: 156px;
+    transition: max-height 250ms linear;
+  }
 }
 
 .nav-button {

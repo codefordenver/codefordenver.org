@@ -12,8 +12,8 @@ export class NavMenuItems extends React.Component {
           <FontAwesomeIcon icon={faBars} />
           <span>Menu</span>
         </span>
-        <div id="nav-navigation" className="collapsed">
-          <div id="nav-buttons" className="visible">
+        <div id="nav-navigation">
+          <div id="nav-buttons">
             <NavHashLink
               exact
               to={PathURL.HOME}
@@ -81,8 +81,10 @@ export class NavMenuItems extends React.Component {
       nav.classList.toggle('visible');
       if (nav.classList.contains('visible')) {
         document.addEventListener('click', this.handleDocumentClick);
+        window.addEventListener('resize', this.handleResize);
       } else {
         document.removeEventListener('click', this.handleDocumentClick);
+        window.removeEventListener('resize', this.handleResize);
       }
     }
   };
@@ -92,6 +94,13 @@ export class NavMenuItems extends React.Component {
     if (nav != null) {
       nav.classList.remove('visible');
       document.removeEventListener('click', this.handleDocumentClick);
+      window.removeEventListener('resize', this.handleResize);
+    }
+  };
+
+  handleResize = () => {
+    if (window.outerWidth > 720) {
+      this.hideNav();
     }
   };
 }
