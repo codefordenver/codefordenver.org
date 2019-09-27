@@ -11,6 +11,7 @@
   z-index: 999;
   width: 100vw;
   border-bottom: 0.1rem solid $red;
+  top: 0;
   @media (max-width: $mobile) {
     flex-wrap: wrap;
     border-bottom: 0;

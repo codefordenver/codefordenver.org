@@ -68,18 +68,18 @@ export function AppRouter() {
           </Segment>
           <Segment
             style={{
-              padding: '0',
-              margin: '0',
               display: loading ? 'none' : 'block'
             }}
           >
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/about" exact component={About} />
-              <Route path="/volunteer" exact component={Volunteer} />
-              <Route path="/projects" exact component={Projects} />
-              <Route path="/projects/:name" component={Project} />
-            </Switch>
+            <div className="content">
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/about" exact component={About} />
+                <Route path="/volunteer" exact component={Volunteer} />
+                <Route path="/projects" exact component={Projects} />
+                <Route path="/projects/:name" component={Project} />
+              </Switch>
+            </div>
           </Segment>
           <Route component={Footer} />
         </Nav>
