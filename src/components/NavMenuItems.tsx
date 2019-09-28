@@ -1,59 +1,127 @@
 import React from 'react';
-import { Menu, Button } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
 import { PathURL, ExternalURL } from './Router';
-import { ISidebarClose } from './Nav';
+import { NavHashLink } from 'react-router-hash-link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-export function NavMenuItems(props: ISidebarClose) {
-  return (
-    <>
-      <Menu.Item
-        as={NavLink}
-        exact
-        to={PathURL.HOME}
-        position="right"
-        activeClassName="active"
-        className="navItem"
-        onClick={props.hideSidebar}
-      >
-        Home
-      </Menu.Item>
+export class NavMenuItems extends React.Component {
+  render() {
+    return (
+      <>
+        <span id="nav-trigger" onClick={this.toggleNav}>
+          <FontAwesomeIcon icon={faBars} />
+          <span>Menu</span>
+        </span>
+        <div id="nav-navigation">
+          <div id="nav-buttons">
+            <NavHashLink
+              exact
+              to={PathURL.HOME}
+              activeClassName="active-nav-button"
+              className="nav-button"
+              onClick={this.hideNav}
+            >
+              Home
+            </NavHashLink>
+            <NavHashLink
+              to={PathURL.ABOUT}
+              activeClassName="active-nav-button"
+              className="nav-button"
+              onClick={this.hideNav}
+            >
+              About
+            </NavHashLink>
+            <NavHashLink
+              to={PathURL.VOLUNTEER}
+              activeClassName="active-nav-button"
+              className="nav-button"
+              onClick={this.hideNav}
+            >
+              Volunteer
+            </NavHashLink>
+            <a
+              id="donate-button"
+              className="pill-button"
+              href={ExternalURL.OPEN_COLLECTIVE}
+            >
+              Donate
+            </a>
+          </div>
+        </div>
+      </>
+    );
+  }
 
-      <Menu.Item
-        as={NavLink}
-        exact
-        to={PathURL.ABOUT}
-        activeClassName="active"
-        className="navItem"
-        onClick={props.hideSidebar}
-      >
-        About
-      </Menu.Item>
+  componentDidMount() {
+    let navTop = document.getElementById('nav-top');
+    document.addEventListener('click', this.handleDocumentClick);
+    if (navTop != null) {
+      navTop.addEventListener('transitionend', this.handleTransitionEnd);
+    }
+  }
 
-      <Menu.Item
-        as={NavLink}
-        exact
-        to={PathURL.VOLUNTEER}
-        activeClassName="active"
-        className="navItem"
-        onClick={props.hideSidebar}
-      >
-        Volunteer
-      </Menu.Item>
+  componentWillUnmount() {
+    let navTop = document.getElementById('nav=top');
+    document.removeEventListener('click', this.handleDocumentClick);
+    if (navTop != null) {
+      navTop.removeEventListener('transitionend', this.handleTransitionEnd);
+    }
+  }
 
-      <Menu.Item className="navItem">
-        <Button
-          as="a"
-          href={ExternalURL.OPEN_COLLECTIVE}
-          circular
-          basic
-          color="red"
-          size="mini"
-          onClick={props.hideSidebar}
-        >
-          <strong>Donate</strong>
-        </Button>
-      </Menu.Item>
-    </>
-  );
+  handleDocumentClick = (e: Event) => {
+    let nav = document.getElementById('nav-navigation');
+    let navTrigger = document.getElementById('nav-trigger');
+    if (
+      nav != null &&
+      e.target instanceof Element &&
+      !nav.contains(e.target as Element) &&
+      navTrigger != null &&
+      !navTrigger.contains(e.target) &&
+      navTrigger !== e.target
+    ) {
+      this.hideNav();
+    }
+  };
+
+  toggleNav = () => {
+    let nav = document.getElementById('nav-navigation');
+    let navTop = document.getElementById('nav-top');
+    if (navTop != null && nav != null) {
+      navTop.classList.add('nav-animatable');
+      nav.classList.toggle('visible');
+      if (nav.classList.contains('visible')) {
+        document.addEventListener('click', this.handleDocumentClick);
+        window.addEventListener('resize', this.handleResize);
+      } else {
+        document.removeEventListener('click', this.handleDocumentClick);
+        window.removeEventListener('resize', this.handleResize);
+      }
+    }
+  };
+
+  hideNav = () => {
+    let nav = document.getElementById('nav-navigation');
+    let navTop = document.getElementById('nav-top');
+    if (navTop != null && nav != null) {
+      navTop.classList.add('nav-animatable');
+      nav.classList.remove('visible');
+      document.removeEventListener('click', this.handleDocumentClick);
+      window.removeEventListener('resize', this.handleResize);
+    }
+  };
+
+  handleResize = () => {
+    let navTop = document.getElementById('nav-top');
+    if (window.outerWidth > 720 && navTop != null) {
+      this.hideNav();
+      navTop.classList.remove('nav-animatable');
+    }
+  };
+
+  handleTransitionEnd = () => {
+    let navTop = document.getElementById('nav-top');
+    if (navTop != null) {
+      navTop.classList.remove('nav-animatable');
+    }
+  };
 }
