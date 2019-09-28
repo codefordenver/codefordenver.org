@@ -71,15 +71,13 @@ export function AppRouter() {
               display: loading ? 'none' : 'block'
             }}
           >
-            <div className="content">
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/about" exact component={About} />
-                <Route path="/volunteer" exact component={Volunteer} />
-                <Route path="/projects" exact component={Projects} />
-                <Route path="/projects/:name" component={Project} />
-              </Switch>
-            </div>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/about" exact component={About} />
+              <Route path="/volunteer" exact component={Volunteer} />
+              <Route path="/projects" exact component={Projects} />
+              <Route path="/projects/:name" component={Project} />
+            </Switch>
           </Segment>
           <Route component={Footer} />
         </Nav>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600&display=swap');
+@import 'variables';
 
 html {
   font-size: 20px;
@@ -20,35 +21,20 @@ code {
 }
 
 .content {
-  margin-top: 5.1rem;
+  z-index: 0;
 }
 
-.bg-white {
-  background-color: white !important;
+.pill-button,
+.pill-button:hover {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border: 0.05rem solid;
+  border-radius: 8rem;
 }
 
-/* color classes */
-.white {
-  color: white !important;
-}
-
-.ui.secondary.pointing.menu .active.item {
-  border-color: #e14e54;
-}
-
-.ui.secondary.pointing.menu .active.item:hover {
-  border-bottom: 2px solid #e14e54;
-}
-
-.columnTextRight {
-  margin: 1em 2.5vw 1em 2.5vw;
-}
-
-.columnTextLeft {
-  margin: 1em 1vw 1em 1vw;
-}
-
-.ui.segment {
-  border-radius: 0px;
-  border: #f2f2f2;
+.desktop-only {
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }

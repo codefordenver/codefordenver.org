@@ -53,11 +53,19 @@ export class NavMenuItems extends React.Component {
   }
 
   componentDidMount() {
+    let navTop = document.getElementById('nav-top');
     document.addEventListener('click', this.handleDocumentClick);
+    if (navTop != null) {
+      navTop.addEventListener('transitionend', this.handleTransitionEnd);
+    }
   }
 
   componentWillUnmount() {
+    let navTop = document.getElementById('nav=top');
     document.removeEventListener('click', this.handleDocumentClick);
+    if (navTop != null) {
+      navTop.removeEventListener('transitionend', this.handleTransitionEnd);
+    }
   }
 
   handleDocumentClick = (e: Event) => {
@@ -77,15 +85,14 @@ export class NavMenuItems extends React.Component {
 
   toggleNav = () => {
     let nav = document.getElementById('nav-navigation');
-    let navButtons = document.getElementById('nav-buttons');
-    if (nav != null && navButtons != null) {
+    let navTop = document.getElementById('nav-top');
+    if (navTop != null && nav != null) {
+      navTop.classList.add('nav-animatable');
       nav.classList.toggle('visible');
-      if (nav.style.maxHeight === '') {
-        nav.style.maxHeight = navButtons.clientHeight.toString() + 'px';
+      if (nav.classList.contains('visible')) {
         document.addEventListener('click', this.handleDocumentClick);
         window.addEventListener('resize', this.handleResize);
       } else {
-        nav.style.maxHeight = '';
         document.removeEventListener('click', this.handleDocumentClick);
         window.removeEventListener('resize', this.handleResize);
       }
@@ -94,9 +101,9 @@ export class NavMenuItems extends React.Component {
 
   hideNav = () => {
     let nav = document.getElementById('nav-navigation');
-    let navButtons = document.getElementById('nav-buttons');
-    if (nav != null && navButtons != null) {
-      nav.style.maxHeight = '';
+    let navTop = document.getElementById('nav-top');
+    if (navTop != null && nav != null) {
+      navTop.classList.add('nav-animatable');
       nav.classList.remove('visible');
       document.removeEventListener('click', this.handleDocumentClick);
       window.removeEventListener('resize', this.handleResize);
@@ -104,8 +111,17 @@ export class NavMenuItems extends React.Component {
   };
 
   handleResize = () => {
-    if (window.outerWidth > 720) {
+    let navTop = document.getElementById('nav-top');
+    if (window.outerWidth > 720 && navTop != null) {
       this.hideNav();
+      navTop.classList.remove('nav-animatable');
+    }
+  };
+
+  handleTransitionEnd = () => {
+    let navTop = document.getElementById('nav-top');
+    if (navTop != null) {
+      navTop.classList.remove('nav-animatable');
     }
   };
 }

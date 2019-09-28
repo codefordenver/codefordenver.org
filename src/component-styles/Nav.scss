@@ -1,5 +1,11 @@
 @import '../variables';
 
+#nav-wrapper {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+}
+
 #nav-top {
   font-size: 0.8rem;
   background-color: white;
@@ -7,14 +13,10 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
-  position: fixed;
-  z-index: 999;
-  width: 100vw;
+  width: 100%;
   border-bottom: 0.1rem solid $red;
-  top: 0;
   @media (max-width: $mobile) {
     flex-wrap: wrap;
-    border-bottom: 0;
   }
 }
 
@@ -41,30 +43,33 @@
   }
 }
 
+.nav-animatable #nav-navigation {
+  transition: transform 250ms ease;
+}
+
+#nav-navigation {
+  @media (max-width: $mobile) {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 5rem;
+    background-color: white;
+    will-change: transform;
+    transform: translateY(-100%);
+    border-top: 0.1rem solid $red;
+    &.visible {
+      border-bottom: 0.1rem solid $red;
+      transform: none;
+    }
+  }
+}
+
 #nav-buttons {
   display: flex;
   align-items: center;
   @media (max-width: $mobile) {
     flex-direction: column;
-  }
-}
-
-#nav-navigation {
-  @media (max-width: $mobile) {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 227.5ms ease;
-    border-top: 0.1rem solid $red;
-    &.visible {
-      border-bottom: 0.1rem solid $red;
-    }
-  }
-}
-
-#nav-navigation.visible {
-  @media (max-width: $mobile) {
-    max-height: 165px;
+    padding: 0.35rem 0;
   }
 }
 
