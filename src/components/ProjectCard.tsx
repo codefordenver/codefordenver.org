@@ -5,10 +5,10 @@ import get from 'lodash.get';
 import { contentfulDataMapper } from '../helpers';
 
 type Props = {
-  title: string;
-  shortDescription: string;
-  thumbnail: string;
-  link: string;
+  title?: string;
+  shortDescription?: string;
+  thumbnail?: string;
+  link?: string;
   screenShots?: string;
   tech?: string;
   sponsor?: string;
