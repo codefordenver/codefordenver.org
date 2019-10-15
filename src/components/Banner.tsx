@@ -1,40 +1,32 @@
 import React from 'react';
-import { Header, Segment, Responsive } from 'semantic-ui-react';
-import { BannerContent } from './BannerContent';
 
 export function Banner() {
   return (
     <>
-      {/* This segment fixes the header spacing on the home page*/}
-      <Segment style={{ padding: '0em' }} />
-
-      <Segment inverted vertical style={{ padding: '0em' }}>
-        <>
-          <Responsive minWidth={1024}>
-            <BannerContent columnWidth={8} />
-          </Responsive>
-
-          <Responsive maxWidth={1023}>
-            <BannerContent columnWidth={16} />
-          </Responsive>
-        </>
-      </Segment>
-      <Segment textAlign="center" style={{ padding: '0em' }}>
-        <Header
-          style={{ margin: '1em' }}
-          as="h4"
-          content="Want to stay up to date on civic tech in Colorado?  Join our newsletter!"
-        />
-        <iframe
-          style={{
-            minWidth: '320px',
-            minHeight: '250px',
-            border: 0
-          }}
-          title="Newsletter Title"
-          src="https://cdn.forms-content.sg-form.com/30a57480-d5c4-11e9-b817-16af1fe961e5"
-        />
-      </Segment>
+      <div>
+        <div className="split-image">
+          <img
+            id="banner-image"
+            className="desktop-only"
+            src={process.env.PUBLIC_URL + '/images/denver-banner.jpg'}
+          />
+          <div className="inverted">
+            <div className="text">
+              <h2>Who we are</h2>
+              <p>
+                Code for Denver is building the next great generation of civic
+                hackers, innovators, and disruptors here in Colorado.
+              </p>
+              <p>
+                We are a Code for America Brigade community with regular meetups
+                and other events to help bring together creative problem solvers
+                with local community groups and government trying to address
+                some of our most pressing 21st century problems
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -24,6 +24,34 @@ code {
   z-index: 0;
 }
 
+.text {
+  padding: 4vw 6vw;
+}
+
+.split-image {
+  display: flex;
+  > * {
+    width: 50%;
+    @media (max-width: $tablet) {
+      font-size: 1.7vw;
+    }
+    @media (max-width: $mobile) {
+      font-size: 1rem;
+      width: 100%;
+    }
+  }
+}
+
+.inverted {
+  background-color: black;
+  color: white;
+}
+
+.secondary {
+  background-color: $red;
+  color: white;
+}
+
 .pill-button,
 .pill-button:hover {
   display: inline-flex;
