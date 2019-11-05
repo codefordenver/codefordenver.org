@@ -30,6 +30,7 @@ code {
 
 .split-image {
   display: flex;
+
   > * {
     width: 50%;
     @media (max-width: $tablet) {
@@ -43,7 +44,7 @@ code {
 }
 
 .inverted {
-  background-color: black;
+  background-color: #232323;
   color: white;
 }
 
@@ -59,6 +60,14 @@ code {
   padding: 0.25rem 0.75rem;
   border: 0.05rem solid;
   border-radius: 8rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .desktop-only {
