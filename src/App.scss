@@ -24,6 +24,10 @@ code {
   z-index: 0;
 }
 
+.separator {
+  height: 4rem;
+}
+
 .text {
   padding: 4vw 6vw;
 }
@@ -71,6 +75,8 @@ code {
     flex-direction: column;
   }
   > * {
+    flex-basis: 0;
+    flex-grow: 1;
     text-align: center;
   }
 }
