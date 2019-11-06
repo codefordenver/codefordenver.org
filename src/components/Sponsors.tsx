@@ -1,5 +1,4 @@
 import React, { CSSProperties } from 'react';
-import { Grid, Image, Header, Segment } from 'semantic-ui-react';
 import { ExternalURL } from './Router';
 
 export function Sponsors() {

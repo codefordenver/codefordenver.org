@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import { Container, Loader, Segment } from 'semantic-ui-react';
+import { Container, Loader } from 'semantic-ui-react';
 import { Nav } from './Nav';
 import { Footer } from './Footer';
 import { Home } from '../pages/Home';

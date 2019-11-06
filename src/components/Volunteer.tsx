@@ -1,6 +1,4 @@
 import React from 'react';
-import { Segment, Responsive, Header, Grid, Image } from 'semantic-ui-react';
-import { VolunteerContent } from './VolunteerContent';
 
 export function Volunteer() {
   return (

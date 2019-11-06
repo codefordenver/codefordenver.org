@@ -57,6 +57,11 @@ code {
   color: white;
 }
 
+.secondary-text {
+  text-decoration-color: $red;
+  color: $red;
+}
+
 .pill-button,
 .pill-button:hover {
   display: inline-flex;
