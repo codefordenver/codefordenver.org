@@ -19,22 +19,6 @@ export function Banner() {
           </Responsive>
         </>
       </Segment>
-      <Segment textAlign="center" style={{ padding: '0em' }}>
-        <Header
-          style={{ margin: '1em' }}
-          as="h4"
-          content="Want to stay up to date on civic tech in Colorado?  Join our newsletter!"
-        />
-        <iframe
-          style={{
-            minWidth: '320px',
-            minHeight: '250px',
-            border: 0
-          }}
-          title="Newsletter Title"
-          src="https://cdn.forms-content.sg-form.com/30a57480-d5c4-11e9-b817-16af1fe961e5"
-        />
-      </Segment>
     </>
   );
 }
