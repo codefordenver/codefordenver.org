@@ -8,7 +8,7 @@ export function Volunteer() {
       inverted
       color="red"
       vertical
-      style={{ padding: '0em', margin: '5em 0em' }}
+      style={{ padding: '0em', margin: '0 0 5rem 0' }}
     >
       <>
         <Responsive minWidth={1024}>

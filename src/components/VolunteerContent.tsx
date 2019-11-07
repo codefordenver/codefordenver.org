@@ -4,8 +4,8 @@ import { Grid, Image, Header } from 'semantic-ui-react';
 export function VolunteerContent(props: any) {
   return (
     <Grid columns="equal" stackable>
-      <Grid.Row id="Us" style={{ padding: '0em' }}>
-        <Grid.Column verticalAlign="middle" className="columnTextLeft">
+      <Grid.Row id="Us" style={{ padding: '0' }}>
+        <Grid.Column verticalAlign="middle" className="columnTextLeft" style={{ padding: '1rem 5rem' }}>
           <Header inverted as="h2" content="What we do" />
           <p>
             We build apps, software, and websites for non-profits, local
@@ -16,7 +16,7 @@ export function VolunteerContent(props: any) {
             once a month.
           </p>
         </Grid.Column>
-        <Grid.Column width={props.columnWidth} style={{ padding: '0em' }}>
+        <Grid.Column width={props.columnWidth} style={{ padding: '0' }}>
           <Image
             src={process.env.PUBLIC_URL + '/images/CFD-CoffeeOnThePoint.jpg'}
           />

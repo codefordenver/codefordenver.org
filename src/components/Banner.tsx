@@ -6,9 +6,9 @@ export function Banner() {
   return (
     <>
       {/* This segment fixes the header spacing on the home page*/}
-      <Segment style={{ padding: '0em' }} />
+      <Segment style={{ padding: '0' }} />
 
-      <Segment inverted vertical style={{ padding: '0em' }}>
+      <Segment inverted vertical style={{ padding: '0' }}>
         <>
           <Responsive minWidth={1024}>
             <BannerContent columnWidth={8} />
