@@ -12,7 +12,7 @@ interface IProject {
 
 const Project = (props: IProject) => (
   <span className="project">
-    <img alt="Project Logo" src={props.thumbnail} width={200} />
+    <img alt="Project Logo" src={props.thumbnail} />
     <h4>{props.title}</h4>
     <p>{props.shortDescription}</p>
   </span>
