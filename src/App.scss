@@ -82,7 +82,12 @@ code {
   > * {
     flex-basis: 0;
     flex-grow: 1;
+    flex-shrink: 1;
+    display: inline-block;
     text-align: center;
+  }
+  img {
+    max-width: 100%;
   }
 }
 
