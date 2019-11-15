@@ -74,11 +74,11 @@ code {
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  place-items: center;
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
   > * {
     text-align: center;
-    justify-self: center;
   }
   img {
     max-width: 100%;

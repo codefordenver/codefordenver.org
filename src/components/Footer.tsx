@@ -19,8 +19,8 @@ export function Footer(router: RouteComponentProps) {
 
   return (
     <>
-      <div id="footer-container" className="inverted">
-        <div id="footer-text" className="text">
+      <div id="footer-container" className="inverted text">
+        <div id="footer-text">
           <p>We meet on most Monday nights. Join us, everyone is welcome!</p>
           <p>
             RSVP on our{' '}

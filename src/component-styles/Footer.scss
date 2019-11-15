@@ -1,16 +1,26 @@
 @import '../variables';
 
 #footer-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   @media (max-width: $tablet) {
-    flex-flow: column;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: auto;
   }
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
 }
 
 #footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  @media (max-width: 1205px), (max-width: 773px) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @media (min-width: 774px) and (max-width: 1150px), (min-width: 1206px) {
+    grid-template-columns: repeat(4, auto);
+  }
+
   span {
     flex-grow: 1;
     padding: 1rem;
@@ -39,10 +49,6 @@
 }
 
 #footer-text {
-  width: 30%;
-  @media (max-width: $tablet) {
-    width: auto;
-  }
   svg {
     font-size: 1.75rem;
     margin-right: 0.5rem;
