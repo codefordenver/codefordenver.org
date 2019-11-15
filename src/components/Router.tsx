@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import { Container, Loader, Segment } from 'semantic-ui-react';
+import { Container, Loader } from 'semantic-ui-react';
 import { Nav } from './Nav';
 import { Footer } from './Footer';
 import { Home } from '../pages/Home';
@@ -57,16 +57,10 @@ export function AppRouter() {
     <Router>
       <ContentfulContext.Provider value={data}>
         <Nav>
-          <Segment
-            style={{
-              padding: '10em 0',
-              margin: '0',
-              display: loading ? 'block' : 'none'
-            }}
-          >
+          <div>
             <Loader active={loading} />
-          </Segment>
-          <Segment
+          </div>
+          <div
             style={{
               display: loading ? 'none' : 'block'
             }}
@@ -78,7 +72,7 @@ export function AppRouter() {
               <Route path="/projects" exact component={Projects} />
               <Route path="/projects/:name" component={Project} />
             </Switch>
-          </Segment>
+          </div>
           <Route component={Footer} />
         </Nav>
       </ContentfulContext.Provider>

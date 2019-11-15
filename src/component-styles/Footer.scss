@@ -1,0 +1,46 @@
+@import '../variables';
+
+#footer-container {
+  display: flex;
+  @media (max-width: $tablet) {
+    flex-flow: column;
+  }
+}
+
+#footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  span {
+    flex-grow: 1;
+    padding: 1rem;
+
+    h4 {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 0.25rem 0;
+
+        a {
+          color: rgba(255, 255, 255, 0.5);
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+#footer-text {
+  width: 30%;
+  @media (max-width: $tablet) {
+    width: auto;
+  }
+}

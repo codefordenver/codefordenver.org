@@ -24,6 +24,44 @@ code {
   z-index: 0;
 }
 
+.separator {
+  height: 4rem;
+}
+
+.text {
+  padding: 4vw 6vw;
+}
+
+.split-image {
+  display: flex;
+
+  > * {
+    width: 50%;
+    @media (max-width: $tablet) {
+      font-size: 1.7vw;
+    }
+    @media (max-width: $mobile) {
+      font-size: 1rem;
+      width: 100%;
+    }
+  }
+}
+
+.inverted {
+  background-color: #232323;
+  color: white;
+}
+
+.secondary {
+  background-color: $red;
+  color: white;
+}
+
+.secondary-text {
+  text-decoration-color: $red;
+  color: $red;
+}
+
 .pill-button,
 .pill-button:hover {
   display: inline-flex;
@@ -31,6 +69,26 @@ code {
   padding: 0.25rem 0.75rem;
   border: 0.05rem solid;
   border-radius: 8rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+  > * {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: inline-block;
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+  }
 }
 
 .desktop-only {

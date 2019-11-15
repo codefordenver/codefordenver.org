@@ -8,7 +8,9 @@ export function Home() {
   return (
     <>
       <Banner />
+      <div className="separator" />
       <Volunteer />
+      <div className="separator" />
       <Featured />
       <Sponsors />
     </>
