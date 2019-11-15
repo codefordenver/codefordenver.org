@@ -48,7 +48,7 @@ code {
 }
 
 .inverted {
-  background-color: #232323;
+  background-color: #1b1c1d;
   color: white;
 }
 
@@ -72,19 +72,13 @@ code {
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  @media (max-width: $mobile) {
-    flex-direction: column;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
   > * {
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
-    display: inline-block;
     text-align: center;
+    justify-self: center;
   }
   img {
     max-width: 100%;

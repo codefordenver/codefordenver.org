@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import ContentfulContext from '../context/contentful';
 import get from 'lodash.get';
 import { contentfulDataMapper } from '../helpers';
-import '../component-styles/Featured-Project.scss';
 
 interface IProject {
   title: string;

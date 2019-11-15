@@ -43,4 +43,8 @@
   @media (max-width: $tablet) {
     width: auto;
   }
+  svg {
+    font-size: 1.75rem;
+    margin-right: 0.5rem;
+  }
 }
