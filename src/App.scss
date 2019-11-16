@@ -77,6 +77,9 @@ code {
   place-items: center;
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
   > * {
     text-align: center;
   }

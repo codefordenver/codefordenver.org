@@ -14,16 +14,17 @@
 #footer-links {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  @media (max-width: 1205px), (max-width: 773px) {
+  align-items: start;
+  justify-items: center;
+  @media (max-width: 773px) {
     grid-template-columns: repeat(2, auto);
   }
-  @media (min-width: 774px) and (max-width: 1150px), (min-width: 1206px) {
-    grid-template-columns: repeat(4, auto);
+  @media (max-width: 419px) {
+    grid-template-columns: auto;
   }
-
   span {
-    flex-grow: 1;
     padding: 1rem;
+    text-align: center;
 
     h4 {
       margin-top: 0;

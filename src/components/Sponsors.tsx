@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import { ExternalURL } from './Router';
 import '../component-styles/Sponsors.scss';
 
