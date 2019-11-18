@@ -38,10 +38,12 @@
         padding: 0.25rem 0;
 
         a {
-          color: rgba(255, 255, 255, 0.5);
+          color: white;
+          opacity: 50%;
+          transition: opacity 250ms ease;
 
           &:hover {
-            color: white;
+            opacity: 100%;
           }
         }
       }
