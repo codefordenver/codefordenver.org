@@ -1,19 +1,30 @@
 @import '../variables';
 
 #footer-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   @media (max-width: $tablet) {
-    flex-flow: column;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: auto;
   }
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
 }
 
 #footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  align-items: start;
+  justify-items: center;
+  @media (max-width: 773px) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @media (max-width: 419px) {
+    grid-template-columns: auto;
+  }
   span {
-    flex-grow: 1;
     padding: 1rem;
+    text-align: center;
 
     h4 {
       margin-top: 0;
@@ -27,10 +38,12 @@
         padding: 0.25rem 0;
 
         a {
-          color: rgba(255, 255, 255, 0.5);
+          color: white;
+          opacity: 50%;
+          transition: opacity 250ms ease;
 
           &:hover {
-            color: white;
+            opacity: 100%;
           }
         }
       }
@@ -39,8 +52,8 @@
 }
 
 #footer-text {
-  width: 30%;
-  @media (max-width: $tablet) {
-    width: auto;
+  svg {
+    font-size: 1.75rem;
+    margin-right: 0.5rem;
   }
 }
