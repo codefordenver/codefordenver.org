@@ -1,14 +1,14 @@
-import React from "react";
-import { Segment, Responsive } from "semantic-ui-react";
-import { VolunteerContent } from "./VolunteerContent";
+import React from 'react';
+import { Segment, Responsive } from 'semantic-ui-react';
+import { VolunteerContent } from './VolunteerContent';
 
 export function Volunteer() {
   return (
     <Segment
       inverted
-      color='red'
+      color="red"
       vertical
-      style={{ padding: "0em", margin: "5em 0em" }}
+      style={{ padding: '0em', margin: '5em 0em' }}
     >
       <>
         <Responsive minWidth={1024}>
