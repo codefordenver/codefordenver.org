@@ -7,7 +7,6 @@ import { Home } from '../pages/Home';
 import { About } from '../pages/About';
 import { Volunteer } from '../pages/Volunteer';
 import { Projects } from '../pages/Projects';
-import { Project } from '../pages/ProjectDetail';
 import useAxios from 'axios-hooks';
 import ContentfulContext from '../context/contentful';
 
@@ -77,7 +76,6 @@ export function AppRouter() {
               <Route path="/about" exact component={About} />
               <Route path="/volunteer" exact component={Volunteer} />
               <Route path="/projects" exact component={Projects} />
-              <Route path="/projects/:name" component={Project} />
             </Switch>
           </Segment>
           <Route component={Footer} />
