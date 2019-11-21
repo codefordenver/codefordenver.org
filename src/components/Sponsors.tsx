@@ -38,9 +38,9 @@ export function Sponsors(props: Props) {
           <Grid.Column style={{ padding: 0 }}>
             <Image
               as="a"
-              href={ExternalURL.GALVANIZE}
+              href={ExternalURL.WORKABILITY}
               style={image__css}
-              src={process.env.PUBLIC_URL + '/images/sponsors/galvanize.png'}
+              src={process.env.PUBLIC_URL + '/images/sponsors/workAbility.png'}
             />
           </Grid.Column>
           <Grid.Column style={{ padding: 0 }}>
