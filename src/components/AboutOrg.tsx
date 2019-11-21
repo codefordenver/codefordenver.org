@@ -58,11 +58,5 @@ export function AboutOrg() {
         </Grid.Row>
       </Grid>
     </Segment>
-<<<<<<< HEAD
-  )
-}
-
-=======
   );
 }
->>>>>>> master
