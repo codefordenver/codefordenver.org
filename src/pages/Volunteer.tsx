@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 import { ExternalURL } from '../components/Router';
-import '../component-styles/Volunteer.scss';
+import '../page-styles/Volunteer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookF,
@@ -24,7 +24,7 @@ export function Volunteer() {
           </div>
         </div>
         <script src="https://player.vimeo.com/api/player.js" />
-        <div className="volunteer-info">
+        <div className="two-col-grid">
           <div>
             <h3>How we work</h3>
             <p>
