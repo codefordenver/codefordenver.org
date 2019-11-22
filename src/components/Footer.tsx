@@ -30,18 +30,19 @@ export function Footer(router: RouteComponentProps) {
             page to see the full schedule of events and to let us know you’re
             coming.
           </p>
+          <span className="social-links">
+            <a style={social__css} href={ExternalURL.MEETUP}>
+              <FontAwesomeIcon icon={faMeetup} />
+            </a>
 
-          <a style={social__css} href={ExternalURL.MEETUP}>
-            <FontAwesomeIcon icon={faMeetup} />
-          </a>
+            <a style={social__css} href={ExternalURL.GITHUB}>
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
 
-          <a style={social__css} href={ExternalURL.GITHUB}>
-            <FontAwesomeIcon icon={faGithub} />
-          </a>
-
-          <a style={social__css} href={ExternalURL.FACEBOOK}>
-            <FontAwesomeIcon icon={faFacebookF} />
-          </a>
+            <a style={social__css} href={ExternalURL.FACEBOOK}>
+              <FontAwesomeIcon icon={faFacebookF} />
+            </a>
+          </span>
         </div>
         <span id="footer-links">
           <span>

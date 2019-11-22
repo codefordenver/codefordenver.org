@@ -88,8 +88,26 @@ code {
   }
 }
 
+.social-links {
+  a {
+    margin-right: 0.5rem;
+
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.page {
+  padding: 0 6vw 4vw;
+}
+
 .desktop-only {
   @media (max-width: $mobile) {
     display: none;
   }
+}
+
+a {
+  color: black;
 }
