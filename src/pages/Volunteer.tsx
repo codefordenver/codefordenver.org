@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import { ExternalURL } from '../components/Router';
 import '../page-styles/Volunteer.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

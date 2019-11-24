@@ -1,8 +1,7 @@
 import React from 'react';
-import { Button, Header, Grid, Segment } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
 import { PathURL, ExternalURL } from './Router';
 import { HashLink } from 'react-router-hash-link';
+
 export function AboutOrg() {
   return (
     <div className="page">
@@ -32,7 +31,7 @@ export function AboutOrg() {
             We couldn’t do any of this work without our sponsors. If you’d like
             to learn more about how to support Code for Denver,
             <HashLink
-              to="/About#Contact"
+              to="/About#contact"
               style={{ color: ' #E14E54' }}
               scroll={el =>
                 el.scrollIntoView({ behavior: 'smooth', block: 'end' })
