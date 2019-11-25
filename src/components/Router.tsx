@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import { Container, Loader } from 'semantic-ui-react';
 import { Nav } from './Nav';
 import { Footer } from './Footer';
 import { Home } from '../pages/Home';
@@ -48,18 +47,15 @@ export function AppRouter() {
 
   if (error)
     return (
-      <Container style={{ textAlign: 'center' }}>
+      <div>
         <pre>{error.message}</pre>
-      </Container>
+      </div>
     );
 
   return (
     <Router>
       <ContentfulContext.Provider value={data}>
         <Nav>
-          <div>
-            <Loader active={loading} />
-          </div>
           <div
             style={{
               display: loading ? 'none' : 'block'
