@@ -1,15 +1,7 @@
-import React, { CSSProperties, useState } from 'react';
-import {
-  Button,
-  Form,
-  Grid,
-  Header,
-  Message,
-  Segment,
-  TextArea
-} from 'semantic-ui-react';
+import React, { ChangeEvent, useState } from 'react';
 import axios from 'axios';
 import get from 'lodash.get';
+import '../component-styles/Contact.scss';
 
 interface IEmail {
   to: string;
@@ -34,12 +26,9 @@ export function Contact() {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<any>('');
-  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const [invalid, setInvalid] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
-  const borderRadius__css: CSSProperties = { borderRadius: 18 };
-  const label__css: CSSProperties = { textAlign: 'left' };
 
   const resetForm = () => {
     setName('');
@@ -55,7 +44,6 @@ export function Contact() {
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     const opts: IEmail = { to, email, subject: name, body: message };
     e.preventDefault();
-    setLoading(true);
     resetMessages();
     try {
       const res = await sendEmail(opts);
@@ -69,106 +57,58 @@ export function Contact() {
         return;
       }
       setError(true);
-    } finally {
-      setLoading(false);
     }
   };
 
   return (
-    <Segment
-      inverted
-      vertical
-      style={{ padding: '2em', backgroundColor: '#E14E54' }}
-    >
-      <Header
-        as="h1"
-        content="CONTACT US"
-        style={{ fontWeight: 'bold', textAlign: 'center' }}
-      />
-      <Grid
-        divided
-        inverted
-        stackable
-        className="segment centered"
-        style={{ backgroundColor: '#E14E54' }}
-      >
-        <Grid.Row id="Contact">
-          <Message
-            success
-            hidden={!success}
-            compact
-            header="Thanks for reaching out! We'll be in touch soon :)"
-          />
-          <Message
-            error
-            hidden={!error}
-            compact
-            header="Oh no! Looks like something went wrong."
-            content="Sorry for the inconvenience. Please get in touch with hello@codefordenver.org directly."
-          />
-          <Message
-            error
-            hidden={!invalid}
-            compact
-            header="Oh no! Looks like an invalid email was provided."
-            content="Please check email and try again."
-          />
-        </Grid.Row>
-        <Grid.Row>
-          <Form loading={loading} onSubmit={handleFormSubmit}>
-            <Form.Field>
-              <label className="white" style={label__css}>
-                Name*
-              </label>
-              <input
-                style={borderRadius__css}
-                placeholder="Name"
-                required
-                value={name}
-                onChange={e => setName(e.target.value)}
-              />
-            </Form.Field>
-            <Form.Field>
-              <label className="white" style={label__css}>
-                Email*
-              </label>
-              <input
-                style={borderRadius__css}
-                placeholder="Email"
-                value={email}
-                type="email"
-                required
-                onChange={e => setEmail(e.target.value)}
-              />
-            </Form.Field>
-            <Form.Field>
-              <label className="white" style={label__css}>
-                Message*
-              </label>
-              <TextArea
-                style={{ ...borderRadius__css, resize: 'none' }}
-                maxLength={280}
-                rows={5}
-                value={message}
-                cols={33}
-                required
-                placeholder="Less than 280 characters please."
-                onChange={(e, { value }) => setMessage(value)}
-              />
-            </Form.Field>
-            <Button
-              fluid
-              style={{ ...borderRadius__css, marginTop: '3em' }}
-              inverted
-              size={'large'}
-              disabled={![name, email, message].every(e => e)}
-              type="submit"
-            >
-              Send us a message
-            </Button>
-          </Form>
-        </Grid.Row>
-      </Grid>
-    </Segment>
+    <div id="contact" className="page secondary">
+      <h1>CONTACT US</h1>
+      <div hidden={!success}>
+        Thanks for reaching out! We'll be in touch soon :)
+      </div>
+      <div hidden={!error}>
+        <h3>Oh no! Looks like something went wrong.</h3>
+        <span>
+          Sorry for the inconvenience. Please get in touch with
+          hello@codefordenver.org directly.
+        </span>
+      </div>
+      <div hidden={!invalid}>
+        <h3>Oh no! Looks like an invalid email was provided.</h3>
+        <span>Please check email and try again.</span>
+      </div>
+      <form id="contact-form" onSubmit={handleFormSubmit}>
+        <label>Name*</label>
+        <input
+          placeholder="Name"
+          required
+          value={name}
+          onChange={e => setName(e.target.value)}
+        />
+        <label>Email*</label>
+        <input
+          placeholder="Email"
+          value={email}
+          type="email"
+          required
+          onChange={e => setEmail(e.target.value)}
+        />
+        <label>Message*</label>
+        <textarea
+          maxLength={280}
+          rows={5}
+          value={message}
+          cols={33}
+          required
+          placeholder="Less than 280 characters please."
+          onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+            setMessage(e.target.value)
+          }
+        />
+        <button disabled={![name, email, message].every(e => e)} type="submit">
+          Send us a message
+        </button>
+      </form>
+    </div>
   );
 }

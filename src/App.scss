@@ -69,6 +69,14 @@ code {
   padding: 0.25rem 0.75rem;
   border: 0.05rem solid;
   border-radius: 8rem;
+  &.secondary {
+    border-color: $red;
+  }
+  &.inverted {
+    border-color: black;
+    background-color: black;
+    color: white;
+  }
 }
 
 .row {
@@ -86,6 +94,17 @@ code {
   img {
     max-width: 100%;
   }
+}
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  @media (max-width: $mobile) {
+    grid-template-columns: auto;
+  }
+  align-items: start;
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem;
 }
 
 .social-links {

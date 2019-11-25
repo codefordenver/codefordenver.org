@@ -5,7 +5,7 @@ import '../component-styles/Sponsors.scss';
 export function Sponsors() {
   return (
     <>
-      <div id="sponsors" className="text">
+      <div id="sponsors" className="page">
         <h2>Our sponsors</h2>
         <div className="row">
           <a href={ExternalURL.GARYCOMMUNITY}>
