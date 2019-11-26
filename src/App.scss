@@ -130,3 +130,17 @@ code {
 a {
   color: black;
 }
+
+/* For ScrollIntoView to work with fixed header */
+#us,
+#featured,
+#organization,
+#sponsors,
+#contact,
+#culture,
+#how,
+#join,
+#faq {
+  margin-top: -5rem;
+  padding-top: 5rem;
+}

@@ -8,6 +8,8 @@ import {
   faMeetup
 } from '@fortawesome/free-brands-svg-icons';
 import '../component-styles/Footer.scss';
+import { HashLink } from 'react-router-hash-link';
+import { FooterLink } from './FooterLink';
 
 export function Footer(router: RouteComponentProps) {
   const social__css: CSSProperties = { color: 'white', opacity: 0.9 };
@@ -49,10 +51,13 @@ export function Footer(router: RouteComponentProps) {
             <h4>Home</h4>
             <ul>
               <li>
-                <a href={PathURL.HOME_US}>What We Do</a>
+                <FooterLink to={PathURL.HOME_US} text="What We Do" />
               </li>
               <li>
-                <a href={PathURL.HOME_FEATURED}>Featured Projects</a>
+                <FooterLink
+                  to={PathURL.HOME_FEATURED}
+                  text="Featured Projects"
+                />
               </li>
             </ul>
           </span>
@@ -60,13 +65,16 @@ export function Footer(router: RouteComponentProps) {
             <h4>About</h4>
             <ul>
               <li>
-                <a href={PathURL.ABOUT_ORGANIZATION}>Organizations</a>
+                <FooterLink
+                  to={PathURL.ABOUT_ORGANIZATION}
+                  text="Organization"
+                />
               </li>
               <li>
-                <a href={PathURL.ABOUT_SPONSORS}>Sponsors</a>
+                <FooterLink to={PathURL.ABOUT_SPONSORS} text="Sponsors" />
               </li>
               <li>
-                <a href={PathURL.ABOUT_CONTACT}>Contact</a>
+                <FooterLink to={PathURL.ABOUT_CONTACT} text="Contact" />
               </li>
             </ul>
           </span>
@@ -74,16 +82,16 @@ export function Footer(router: RouteComponentProps) {
             <h4>Volunteer</h4>
             <ul>
               <li>
-                <a href={PathURL.VOLUNTEER_CULTURE}>Culture</a>
+                <FooterLink to={PathURL.VOLUNTEER_HOW} text="How We Work" />
               </li>
               <li>
-                <a href={PathURL.VOLUNTEER_HOW}>How We Work</a>
+                <FooterLink to={PathURL.VOLUNTEER_CULTURE} text="Culture" />
               </li>
               <li>
-                <a href={PathURL.VOLUNTEER_JOIN}>Join</a>
+                <FooterLink to={PathURL.VOLUNTEER_JOIN} text="Join Us" />
               </li>
               <li>
-                <a href={PathURL.VOLUNTEER_FAQ}>FAQ</a>
+                <FooterLink to={PathURL.VOLUNTEER_FAQ} text="FAQ" />
               </li>
             </ul>
           </span>

@@ -10,7 +10,7 @@ export function About() {
     <>
       <AboutBanner />
       <AboutOrg />
-      <Sponsors />
+      <Sponsors show={false} />
       <Contact />
     </>
   );

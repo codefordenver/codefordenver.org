@@ -25,12 +25,14 @@ export function Featured() {
     const assets = get(content, 'includes.Asset', []);
 
     return (
-      <div className="inverted text">
-        <h2>Featured Projects</h2>
-        <div id="Featured" className="row">
-          {items.map((c: any, i: number) => (
-            <Project key={i} {...contentfulDataMapper(c, assets)} />
-          ))}
+      <div id="featured">
+        <div className="inverted text">
+          <h2>Featured Projects</h2>
+          <div className="row">
+            {items.map((c: any, i: number) => (
+              <Project key={i} {...contentfulDataMapper(c, assets)} />
+            ))}
+          </div>
         </div>
       </div>
     );

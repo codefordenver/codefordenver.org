@@ -12,7 +12,7 @@ export function Home() {
       <Volunteer />
       <div className="separator" />
       <Featured />
-      <Sponsors />
+      <Sponsors show={true} />
     </>
   );
 }

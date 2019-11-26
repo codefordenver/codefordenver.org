@@ -2,11 +2,15 @@ import React from 'react';
 import { ExternalURL } from './Router';
 import '../component-styles/Sponsors.scss';
 
-export function Sponsors() {
+type Props = {
+  show?: boolean;
+};
+
+export function Sponsors(props: Props) {
   return (
     <>
-      <div id="sponsors" className="page">
-        <h2>Our sponsors</h2>
+      <div className="page">
+        <h2 hidden={!props.show}>Our sponsors</h2>
         <div className="row">
           <a href={ExternalURL.GARYCOMMUNITY}>
             <img

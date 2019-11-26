@@ -4,7 +4,7 @@ export function Volunteer() {
   return (
     <>
       <div className="split-image secondary">
-        <div>
+        <div id="us">
           <div className="text">
             <h2>What we do</h2>
             <p>

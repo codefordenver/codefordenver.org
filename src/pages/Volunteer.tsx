@@ -25,7 +25,7 @@ export function Volunteer() {
         </div>
         <script src="https://player.vimeo.com/api/player.js" />
         <div className="two-col-grid">
-          <div>
+          <div id="how">
             <h3>How we work</h3>
             <p>
               We build apps, software, and websites with non-profits, local
@@ -36,7 +36,7 @@ export function Volunteer() {
               members night once a month.
             </p>
           </div>
-          <div>
+          <div id="culture">
             <h3>Culture</h3>
             <p>
               Code for Denver is an intentionally inclusive community of problem
@@ -48,7 +48,7 @@ export function Volunteer() {
               learn, and build.
             </p>
           </div>
-          <div>
+          <div id="join">
             <h3>Join us</h3>
             <p>We meet on most Monday nights. Join us, everyone is welcome!</p>
             <p>
@@ -90,56 +90,61 @@ export function Volunteer() {
             </div>
           </div>
         </div>
-        <h2 id="FAQ">Frequently Asked Questions</h2>
-        <p className="secondary-text">How do you find projects?</p>
-        <p>
-          We source projects in a few ways. Most of our projects come our
-          members having a connection to a partner that needs our help, but we
-          also take project inquiries through email, find good projects in the
-          Code for America network, and partners showing up to our project
-          night.
-        </p>
-        <p className="secondary-text">What kind of projects do you work on?</p>
-        <p>
-          We focus on projects that help the community in some tangible way. We
-          work “with” not “for” our partners and hope to find things that are
-          universal and can be shared through the Code for America brigade
-          network.
-        </p>
-        <p className="secondary-text">
-          Can I get involved even if I’m not a programmer or interested in
-          programming?
-        </p>
-        <p>
-          Definitely. We do a lot of coding, but need problem solvers from all
-          professions and viewpoints to make truly inclusive, community focused
-          solutions. We have volunteers with backgrounds in design, marketing,
-          sales, organizing, nonprofits, and project management. All of it is
-          valued and useful for our mission.
-        </p>
-        <p className="secondary-text">
-          Can I get involved if I’m a beginner programmer or still in school?
-        </p>
-        <p>
-          Yes! We pride ourselves on being an inclusive community that will help
-          people apply the skills they are learning. Our members have a wide
-          range of experience levels and we love to welcome in new coders.
-        </p>
-        <p className="secondary-text">Where can I learn to program?</p>
-        <p>
-          There are a bunch of resources to chose from, including online free
-          and paid courses and schools or programs in the Denver area. We like
-          to recommend some of the learn-to-code meetups in Denver too,
-          especially the ones hosted by the Denver Public Library.
-        </p>
-        <p className="secondary-text">
-          How are you connected to Code for America?
-        </p>
-        <p>
-          We are a local chapter of Code for America, so we work closely with
-          them. But we are independent in the projects we work on, with a focus
-          on our local community.
-        </p>
+        <div id="faq">
+          <h2>Frequently Asked Questions</h2>
+          <p className="secondary-text">How do you find projects?</p>
+          <p>
+            We source projects in a few ways. Most of our projects come our
+            members having a connection to a partner that needs our help, but we
+            also take project inquiries through email, find good projects in the
+            Code for America network, and partners showing up to our project
+            night.
+          </p>
+          <p className="secondary-text">
+            What kind of projects do you work on?
+          </p>
+          <p>
+            We focus on projects that help the community in some tangible way.
+            We work “with” not “for” our partners and hope to find things that
+            are universal and can be shared through the Code for America brigade
+            network.
+          </p>
+          <p className="secondary-text">
+            Can I get involved even if I’m not a programmer or interested in
+            programming?
+          </p>
+          <p>
+            Definitely. We do a lot of coding, but need problem solvers from all
+            professions and viewpoints to make truly inclusive, community
+            focused solutions. We have volunteers with backgrounds in design,
+            marketing, sales, organizing, nonprofits, and project management.
+            All of it is valued and useful for our mission.
+          </p>
+          <p className="secondary-text">
+            Can I get involved if I’m a beginner programmer or still in school?
+          </p>
+          <p>
+            Yes! We pride ourselves on being an inclusive community that will
+            help people apply the skills they are learning. Our members have a
+            wide range of experience levels and we love to welcome in new
+            coders.
+          </p>
+          <p className="secondary-text">Where can I learn to program?</p>
+          <p>
+            There are a bunch of resources to chose from, including online free
+            and paid courses and schools or programs in the Denver area. We like
+            to recommend some of the learn-to-code meetups in Denver too,
+            especially the ones hosted by the Denver Public Library.
+          </p>
+          <p className="secondary-text">
+            How are you connected to Code for America?
+          </p>
+          <p>
+            We are a local chapter of Code for America, so we work closely with
+            them. But we are independent in the projects we work on, with a
+            focus on our local community.
+          </p>
+        </div>
       </div>
     </>
   );

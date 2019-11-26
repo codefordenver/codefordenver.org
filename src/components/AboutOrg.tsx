@@ -6,7 +6,7 @@ export function AboutOrg() {
   return (
     <div className="page">
       <div className="two-col-grid">
-        <div>
+        <div id="organization">
           <h3>Our Organization</h3>
           <p>
             We are a Code for America Brigade community with regular meetups and
@@ -25,7 +25,7 @@ export function AboutOrg() {
             governments and nonprofits through technology.
           </p>
         </div>
-        <div id="our-sponsors">
+        <div id="sponsors">
           <h3>Our Sponsors</h3>
           <p>
             We couldn’t do any of this work without our sponsors. If you’d like
