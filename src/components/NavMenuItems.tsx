@@ -12,7 +12,7 @@ export function NavMenuItems() {
       navTop.addEventListener('transitionend', handleTransitionEnd);
     }
     return () => {
-      let navTop = document.getElementById('nav=top');
+      let navTop = document.getElementById('nav-top');
       document.removeEventListener('click', handleDocumentClick);
       if (navTop != null) {
         navTop.removeEventListener('transitionend', handleTransitionEnd);

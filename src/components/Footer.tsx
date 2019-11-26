@@ -8,7 +8,6 @@ import {
   faMeetup
 } from '@fortawesome/free-brands-svg-icons';
 import '../component-styles/Footer.scss';
-import { HashLink } from 'react-router-hash-link';
 import { FooterLink } from './FooterLink';
 
 export function Footer(router: RouteComponentProps) {
