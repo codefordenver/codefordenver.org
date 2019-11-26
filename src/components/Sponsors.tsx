@@ -17,10 +17,10 @@ export function Sponsors() {
               }
             />
           </a>
-          <a href={ExternalURL.GALVANIZE}>
+          <a href={ExternalURL.WORKABILITY}>
             <img
-              alt="Galvanize Logo"
-              src={process.env.PUBLIC_URL + '/images/sponsors/galvanize.png'}
+              alt="Workability Logo"
+              src={process.env.PUBLIC_URL + '/images/sponsors/workAbility.png'}
             />
           </a>
           <a href={ExternalURL.JETBRAINS}>
