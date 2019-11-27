@@ -1,4 +1,6 @@
 import get from 'lodash/get';
+// import { object } from 'prop-types';
+// import { any } from 'bluebird';
 
 // Normalize data from contentful API
 export function contentfulDataMapper(item: any, assets: Object[]) {
@@ -10,10 +12,13 @@ export function contentfulDataMapper(item: any, assets: Object[]) {
   const thumbId = get(item, 'fields.thumbnail.sys.id');
   const thumbnailAsset = assets.find((a: any) => get(a, 'sys.id') === thumbId);
   const thumbnail = get(thumbnailAsset, 'fields.file.url');
-  // const screenShotsId = get(item, 'fields.screenShots.sys.id');
-  // const screenShotsAssets = assets.find((a: any) => get(a, 'sys.id') === screenShotsId);
-  // const screenShots = get(screenShotsAssets, 'fields.file.url');
 
+  const screenShotArray = get(item, 'fields.screenShots');
+  const screenShotIds = screenShotArray.map( (shot: any) =>  shot.sys.id )
+  const screenShotsAssets = screenShotIds.map((screenShotsId: any) => {
+    return assets.find((a: any) => get(a, 'sys.id') === screenShotsId)
+  });
+  const screenShots = screenShotsAssets.map((asset: any) => get(asset, 'fields.file.url')); 
 
   return {
     link,
@@ -21,7 +26,7 @@ export function contentfulDataMapper(item: any, assets: Object[]) {
     thumbnail,
     shortDescription,
     partner,
-    // screenShotsId,
+    screenShots,
     tech
   };
 }
