@@ -52,7 +52,7 @@ export function Volunteer() {
             <h3>Join us</h3>
             <p>We meet on most Monday nights. Join us, everyone is welcome!</p>
             <p>
-              RSVP on{' '}
+              RSVP on our{' '}
               <a className="secondary-text" href={ExternalURL.MEETUP}>
                 Meetup
               </a>{' '}
