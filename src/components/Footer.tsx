@@ -12,11 +12,6 @@ import { FooterLink } from './FooterLink';
 
 export function Footer(router: RouteComponentProps) {
   const social__css: CSSProperties = { color: 'white', opacity: 0.9 };
-  const meetup__css: CSSProperties = {
-    color: '#E14E54',
-    opacity: 0.9,
-    textDecoration: 'underline'
-  };
 
   return (
     <>
@@ -25,7 +20,7 @@ export function Footer(router: RouteComponentProps) {
           <p>We meet on most Monday nights. Join us, everyone is welcome!</p>
           <p>
             RSVP on our{' '}
-            <a style={meetup__css} href={ExternalURL.MEETUP}>
+            <a className="secondary-text" href={ExternalURL.MEETUP}>
               Meetup
             </a>{' '}
             page to see the full schedule of events and to let us know you’re

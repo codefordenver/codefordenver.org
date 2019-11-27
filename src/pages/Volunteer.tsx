@@ -52,15 +52,19 @@ export function Volunteer() {
             <h3>Join us</h3>
             <p>We meet on most Monday nights. Join us, everyone is welcome!</p>
             <p>
-              RSVP on <a href={ExternalURL.MEETUP}>Meetup</a> to see the full
-              schedule of events and to let us know you're coming.
+              RSVP on{' '}
+              <a className="secondary-text" href={ExternalURL.MEETUP}>
+                Meetup
+              </a>{' '}
+              to see the full schedule of events and to let us know you're
+              coming.
             </p>
             <p>
-              Galvanize Denver &ndash; Platte
+              WorkAbility &ndash; Uptown at the Sudler
               <br />
-              1644 Platte St
+              1576 Sherman St
               <br />
-              Denver, CO 80202
+              Denver, CO 80203
               <br />
               6pm-9pm
               <br />
@@ -82,7 +86,7 @@ export function Volunteer() {
               <div className="iframe-container">
                 <iframe
                   title="Code for Denver meeting location"
-                  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=Galvanize+-+Denver+(Platte)`}
+                  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=WorkAbility+-+Uptown+at+the+Sudler`}
                   allow="fullscreen"
                   allowFullScreen
                 />
