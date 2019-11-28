@@ -1,0 +1,10 @@
+@import '../variables';
+
+#sponsors {
+  img {
+    max-height: 300px;
+    @media (max-width: $mobile) {
+      max-width: 300px;
+    }
+  }
+}
