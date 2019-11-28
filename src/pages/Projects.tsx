@@ -3,7 +3,7 @@ import ContentfulContext from '../context/contentful';
 import { contentfulDataMapper } from '../helpers';
 import get from 'lodash.get';
 import { ProjectCard } from '../components/ProjectCard';
-import { Header } from 'semantic-ui-react';
+//! need to fix header
 
 export function Projects() {
   const content = useContext(ContentfulContext);
@@ -13,18 +13,15 @@ export function Projects() {
 
     return (
       <div className="bg-white">
-        <Header
-          style={{ padding: '1rem 2rem', fontSize: "2rem" }}
-          as="h1"
-          size="huge">
+        <h1>
+          style={{ padding: '1rem 2rem', fontSize: '2rem' }}
           Featured Projects
-        </Header>
+        </h1>
         <article style={{ border: 'none' }}>
           {items.map((c: any, i: number) => (
             <ProjectCard key={i} {...contentfulDataMapper(c, assets)} />
           ))}
         </article>
-
       </div>
     );
   }

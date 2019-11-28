@@ -3,15 +3,14 @@ import { Sponsors } from '../components/Sponsors';
 import { AboutBanner } from '../components/AboutBanner';
 import { AboutOrg } from '../components/AboutOrg';
 import { Contact } from '../components/Contact';
+import '../page-styles/About.scss';
 
 export function About() {
-  const show: boolean = false;
-
   return (
     <>
       <AboutBanner />
       <AboutOrg />
-      <Sponsors show={show} />
+      <Sponsors show={false} />
       <Contact />
     </>
   );

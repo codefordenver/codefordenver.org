@@ -1,0 +1,29 @@
+@import '../variables';
+
+#our-sponsors {
+  grid-column: 1 / -1;
+}
+
+#banner {
+  height: 55vh;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  place-items: center;
+}
+
+#about-header {
+  margin: 0 6vw;
+}
+
+.mission {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 2.75rem;
+  text-align: center;
+  grid-column: 2;
+  @media (max-width: $mobile) {
+    font-size: 7.65vw;
+  }
+}

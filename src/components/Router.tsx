@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import { Container, Loader, Segment } from 'semantic-ui-react';
 import { Nav } from './Nav';
 import { Footer } from './Footer';
 import { Home } from '../pages/Home';
@@ -9,20 +8,21 @@ import { Volunteer } from '../pages/Volunteer';
 import { Projects } from '../pages/Projects';
 import useAxios from 'axios-hooks';
 import ContentfulContext from '../context/contentful';
+import '../component-styles/Nav.scss';
 
 export enum PathURL {
   HOME = '/',
-  HOME_US = '/#Us',
-  HOME_FEATURED = '/#Featured',
+  HOME_US = '/#us',
+  HOME_FEATURED = '/#featured',
   ABOUT = '/about',
-  ABOUT_ORGANIZATION = '/about#Organization',
-  ABOUT_SPONSORS = '/about#Sponsors',
-  ABOUT_CONTACT = '/about#Contact',
+  ABOUT_ORGANIZATION = '/about#organization',
+  ABOUT_SPONSORS = '/about#sponsors',
+  ABOUT_CONTACT = '/about#contact',
   VOLUNTEER = '/volunteer',
-  VOLUNTEER_CULTURE = '/volunteer#Culture',
-  VOLUNTEER_HOW = '/volunteer#How',
-  VOLUNTEER_JOIN = '/volunteer#Join',
-  VOLUNTEER_FAQ = '/volunteer#FAQ',
+  VOLUNTEER_CULTURE = '/volunteer#culture',
+  VOLUNTEER_HOW = '/volunteer#how',
+  VOLUNTEER_JOIN = '/volunteer#join',
+  VOLUNTEER_FAQ = '/volunteer#faq',
   PROJECTS = '/projects',
   RESOURCES = '',
   RESOURCES_CURRENT_PROJECTS = '',
@@ -34,7 +34,7 @@ export enum ExternalURL {
   MEETUP = 'https://www.meetup.com/CodeForDenver/',
   OPEN_COLLECTIVE = 'https://opencollective.com/codefordenver',
   FACEBOOK = 'https://www.facebook.com/codefordenver/',
-  GALVANIZE = 'https://www.galvanize.com',
+  WORKABILITY = 'https://workability.works/',
   GARYCOMMUNITY = 'https://www.garycommunity.org',
   JETBRAINS = 'https://www.jetbrains.com'
 }
@@ -46,28 +46,17 @@ export function AppRouter() {
 
   if (error)
     return (
-      <Container style={{ textAlign: 'center' }}>
+      <div>
         <pre>{error.message}</pre>
-      </Container>
+      </div>
     );
 
   return (
     <Router>
       <ContentfulContext.Provider value={data}>
         <Nav>
-          <Segment
+          <div
             style={{
-              padding: '10em 0',
-              margin: '0',
-              display: loading ? 'block' : 'none'
-            }}
-          >
-            <Loader active={loading} />
-          </Segment>
-          <Segment
-            style={{
-              padding: '0',
-              margin: '0',
               display: loading ? 'none' : 'block'
             }}
           >
@@ -77,7 +66,7 @@ export function AppRouter() {
               <Route path="/volunteer" exact component={Volunteer} />
               <Route path="/projects" exact component={Projects} />
             </Switch>
-          </Segment>
+          </div>
           <Route component={Footer} />
         </Nav>
       </ContentfulContext.Provider>
