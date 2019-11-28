@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Segment, Image, Grid } from 'semantic-ui-react';
+import '../component-styles/ProjectCard.scss';
 
 type Props = {
   title: string;
@@ -13,54 +13,46 @@ type Props = {
 
 export function ProjectCard(props: Props) {
   const ScreenShots = (shot: string, i: number) => (
-    <Grid.Column key={i}>
+    <div key={i}>
       <img
         src={shot}
         alt={`${props.title} project screenshots`}
-        style={{ maxHeight: 200 }}
+        className="screen-shot-image"
       />
-    </Grid.Column>
+    </div>
   );
   return (
-    <Segment>
-      <div style={{ padding: '5vh 10vw' }}>
-        <Grid columns={2} verticalAlign="middle" stackable>
-          <Grid.Column>
-            <Header as="h3" style={{ color: '#E14E54' }}>
-              Project
-            </Header>
-            <Header as="h4" style={{ fontWeight: '800' }}>
-              {props.title}
-            </Header>
-            <Header as="h3" style={{ color: '#E14E54' }}>
-              Sponsor
-            </Header>
+    <div className="project-card">
+      <section className="top-section" id={props.title}>
+        <div className="two-col-grid">
+          <span>
+            <h3 className="secondary-text">Project</h3>
+            <h2>{props.title}</h2>
+            <h3 className="secondary-text">Sponsor</h3>
             <p>{props.partner}</p>
-          </Grid.Column>
-          <Grid.Column>
+          </span>
+          <span>
             <img
               src={props.thumbnail}
               alt={`${props.title} project logo`}
-              style={{ maxHeight: 300 }}
+              className="logo-img"
             />
-          </Grid.Column>
-        </Grid>
-        <p style={{ marginTop: '7vh' }}>{props.shortDescription}</p>
-        <Header as="h5">Technology and Tools Used:</Header>
+          </span>
+        </div>
+        <div className="spacing">
+          <p>{props.shortDescription}</p>
+        </div>
+        <h4>Technology and Tools Used:</h4>
         <p>{props.tech}</p>
-      </div>
-      <div style={{ backgroundColor: '#E14E54', padding: '5vh 10vw' }}>
-        <Header as="h3" className="white">
-          {props.title} Screenshots
-        </Header>
-        <Grid stackable columns={3}>
-          <Grid.Row columns="equal">
-            {props.screenShots.map((shot: any, i: number) =>
-              ScreenShots(shot, i)
-            )}
-          </Grid.Row>
-        </Grid>
-      </div>
-    </Segment>
+      </section>
+      <section className="secondary screen-shot-section">
+        <h3 className="white">{props.title} Screenshots</h3>
+        <div className="row">
+          {props.screenShots.map((shot: any, i: number) =>
+            ScreenShots(shot, i)
+          )}
+        </div>
+      </section>
+    </div>
   );
 }
