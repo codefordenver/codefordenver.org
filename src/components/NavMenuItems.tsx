@@ -110,6 +110,14 @@ export function NavMenuItems() {
           >
             Volunteer
           </NavHashLink>
+          <NavHashLink
+            to={PathURL.PROJECTS}
+            activeClassName="active-nav-button"
+            className="nav-button"
+            onClick={hideNav}
+          >
+            Featured Projects
+          </NavHashLink>
           <a
             id="donate-button"
             className="pill-button"
