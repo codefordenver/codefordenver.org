@@ -3,7 +3,6 @@ import ContentfulContext from '../context/contentful';
 import { contentfulDataMapper } from '../helpers';
 import get from 'lodash.get';
 import { ProjectCard } from '../components/ProjectCard';
-//! need to fix header
 
 export function Projects() {
   const content = useContext(ContentfulContext);
@@ -12,11 +11,8 @@ export function Projects() {
     const assets = get(content, 'includes.Asset', []);
 
     return (
-      <div className="bg-white">
-        <h1>
-          style={{ padding: '1rem 2rem', fontSize: '2rem' }}
-          Featured Projects
-        </h1>
+      <div>
+        <h1 className="page">Featured Projects</h1>
         <article style={{ border: 'none' }}>
           {items.map((c: any, i: number) => (
             <ProjectCard key={i} {...contentfulDataMapper(c, assets)} />
