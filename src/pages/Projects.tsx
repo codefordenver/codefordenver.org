@@ -12,7 +12,7 @@ export function Projects() {
 
     return (
       <article>
-        <h1 style={{ margin: '6vh 0vw 0vh 6vw' }} id="Featured">
+        <h1 style={{ margin: '3vh 0vw 0vh 6vw' }} id="Featured">
           Featured Projects
         </h1>
         {items.map((c: any, i: number) => (
