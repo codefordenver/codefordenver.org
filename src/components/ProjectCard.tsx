@@ -15,7 +15,7 @@ type Props = {
 export function ProjectCard(props: Props) {
   const ScreenShots = (shot: string, i: number) => (
     <div key={i}>
-      <a href={shot}>
+      <a href={shot} aria-label={`${props.title} screen shot blow up`}>
         <img
           src={shot}
           alt={`${props.title} project screenshots`}
@@ -31,7 +31,9 @@ export function ProjectCard(props: Props) {
           <span>
             <h3 className="secondary-text">Project</h3>
             <h2>
-              <a href={props.link}>{props.title}</a>
+              <a aria-label={`${props.title} git hub link`} href={props.link}>
+                {props.title}
+              </a>
             </h2>
             <h3 className="secondary-text">Sponsor</h3>
             <p>{props.partner}</p>
