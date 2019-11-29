@@ -4,7 +4,7 @@ import '../component-styles/ProjectCard.scss';
 type Props = {
   projId: string;
   title: string;
-  shortDescription: string;
+  description: string;
   thumbnail: string;
   partner: string;
   link: string;
@@ -15,16 +15,18 @@ type Props = {
 export function ProjectCard(props: Props) {
   const ScreenShots = (shot: string, i: number) => (
     <div key={i}>
-      <img
-        src={shot}
-        alt={`${props.title} project screenshots`}
-        className="screen-shot-image"
-      />
+      <a href={shot}>
+        <img
+          src={shot}
+          alt={`${props.title} project screenshots`}
+          className="screen-shot-image"
+        />
+      </a>
     </div>
   );
   return (
-    <div className="project-card" id={props.projId}>
-      <section className="top-section">
+    <section id={props.projId} className="project-card">
+      <div className="top-section">
         <div className="two-col-grid">
           <span>
             <h3 className="secondary-text">Project</h3>
@@ -32,7 +34,7 @@ export function ProjectCard(props: Props) {
             <h3 className="secondary-text">Sponsor</h3>
             <p>{props.partner}</p>
           </span>
-          <span>
+          <span className="logo-container">
             <img
               src={props.thumbnail}
               alt={`${props.title} project logo`}
@@ -41,19 +43,20 @@ export function ProjectCard(props: Props) {
           </span>
         </div>
         <div className="spacing">
-          <p>{props.shortDescription}</p>
+          <p>{props.description}</p>
         </div>
-        <h4>Technology and Tools Used:</h4>
+        <h3>Technology and Tools Used:</h3>
         <p>{props.tech}</p>
-      </section>
-      <section className="secondary screen-shot-section">
-        <h3 className="white">{props.title} Screenshots</h3>
+        {/* <h3>Checkout it out on GitHub <a href={props.link}>here.</a></h3> */}
+      </div>
+      <div className="secondary screen-shot-section">
+        <h2 className="white">{props.title} Screenshots</h2>
         <div className="row">
           {props.screenShots.map((shot: any, i: number) =>
             ScreenShots(shot, i)
           )}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
