@@ -12,10 +12,16 @@ export function Projects() {
 
     return (
       <div>
-        <h1 className="page">Featured Projects</h1>
+        <h1 className="page" id="Featured">
+          Featured Projects
+        </h1>
         <article style={{ border: 'none' }}>
           {items.map((c: any, i: number) => (
-            <ProjectCard key={i} {...contentfulDataMapper(c, assets)} />
+            <ProjectCard
+              key={i}
+              {...contentfulDataMapper(c, assets)}
+              projId={`${i}`}
+            />
           ))}
         </article>
       </div>

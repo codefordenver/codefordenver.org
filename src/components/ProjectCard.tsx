@@ -2,6 +2,7 @@ import React from 'react';
 import '../component-styles/ProjectCard.scss';
 
 type Props = {
+  projId: string;
   title: string;
   shortDescription: string;
   thumbnail: string;
@@ -22,8 +23,8 @@ export function ProjectCard(props: Props) {
     </div>
   );
   return (
-    <div className="project-card">
-      <section className="top-section" id={props.title}>
+    <div className="project-card" id={props.projId}>
+      <section className="top-section">
         <div className="two-col-grid">
           <span>
             <h3 className="secondary-text">Project</h3>
