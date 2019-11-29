@@ -24,6 +24,10 @@ export enum PathURL {
   VOLUNTEER_JOIN = '/volunteer#join',
   VOLUNTEER_FAQ = '/volunteer#faq',
   PROJECTS = '/projects',
+  PROJECTS_FEATURED = '/projects#Featured',
+  PROJECTS_0 = '/projects#0',
+  PROJECTS_1 = '/projects#1',
+  PROJECTS_2 = '/projects#2',
   RESOURCES = '',
   RESOURCES_CURRENT_PROJECTS = '',
   RESOURCES_MEMBERS = ''
