@@ -25,7 +25,7 @@ export function ProjectCard(props: Props) {
     </div>
   );
   return (
-    <section id={props.projId} className="project-card">
+    <section id={`project${props.projId}`} className="project-card">
       <div className="top-section">
         <div className="two-col-grid">
           <span>
@@ -47,7 +47,6 @@ export function ProjectCard(props: Props) {
         </div>
         <h3>Technology and Tools Used:</h3>
         <p>{props.tech}</p>
-        {/* <h3>Checkout it out on GitHub <a href={props.link}>here.</a></h3> */}
       </div>
       <div className="secondary screen-shot-section">
         <h2 className="white">{props.title} Screenshots</h2>

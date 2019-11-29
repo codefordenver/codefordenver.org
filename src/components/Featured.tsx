@@ -17,7 +17,7 @@ const Project = (props: IProject) => (
     <HashLink
       className="hash_link_white"
       aria-label={`${props.title} project link`}
-      to={`/projects/#${props.projId}`}
+      to={`/projects/#project${props.projId}`}
       scroll={(el: Element) =>
         el.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
