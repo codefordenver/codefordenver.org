@@ -30,7 +30,9 @@ export function ProjectCard(props: Props) {
         <div className="two-col-grid">
           <span>
             <h3 className="secondary-text">Project</h3>
-            <h2>{props.title}</h2>
+            <h2>
+              <a href={props.link}>{props.title}</a>
+            </h2>
             <h3 className="secondary-text">Sponsor</h3>
             <p>{props.partner}</p>
           </span>
