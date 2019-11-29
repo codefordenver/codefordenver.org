@@ -11,20 +11,18 @@ export function Projects() {
     const assets = get(content, 'includes.Asset', []);
 
     return (
-      <div>
-        <h1 className="page" id="Featured">
+      <article>
+        <h1 style={{ margin: '6vh 0vw 0vh 6vw' }} id="Featured">
           Featured Projects
         </h1>
-        <article style={{ border: 'none' }}>
-          {items.map((c: any, i: number) => (
-            <ProjectCard
-              key={i}
-              {...contentfulDataMapper(c, assets)}
-              projId={`${i}`}
-            />
-          ))}
-        </article>
-      </div>
+        {items.map((c: any, i: number) => (
+          <ProjectCard
+            key={i}
+            {...contentfulDataMapper(c, assets)}
+            projId={`${i}`}
+          />
+        ))}
+      </article>
     );
   }
   return null;
