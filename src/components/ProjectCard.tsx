@@ -29,7 +29,6 @@ export function ProjectCard(props: Props) {
       <div className="top-section">
         <div className="two-col-grid">
           <span>
-            <h3 className="secondary-text">Project</h3>
             <h2>
               <a aria-label={`${props.title} git hub link`} href={props.link}>
                 {props.title}
