@@ -6,7 +6,6 @@ import { Home } from '../pages/Home';
 import { About } from '../pages/About';
 import { Volunteer } from '../pages/Volunteer';
 import { Projects } from '../pages/Projects';
-import { Project } from '../pages/ProjectDetail';
 import useAxios from 'axios-hooks';
 import ContentfulContext from '../context/contentful';
 import '../component-styles/Nav.scss';
@@ -25,6 +24,10 @@ export enum PathURL {
   VOLUNTEER_JOIN = '/volunteer#join',
   VOLUNTEER_FAQ = '/volunteer#faq',
   PROJECTS = '/projects',
+  PROJECTS_FEATURED = '/projects#featured',
+  PROJECTS_0 = '/projects#project0',
+  PROJECTS_1 = '/projects#project1',
+  PROJECTS_2 = '/projects#project2',
   RESOURCES = '',
   RESOURCES_CURRENT_PROJECTS = '',
   RESOURCES_MEMBERS = ''
@@ -66,7 +69,6 @@ export function AppRouter() {
               <Route path="/about" exact component={About} />
               <Route path="/volunteer" exact component={Volunteer} />
               <Route path="/projects" exact component={Projects} />
-              <Route path="/projects/:name" component={Project} />
             </Switch>
           </div>
           <Route component={Footer} />

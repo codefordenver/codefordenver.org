@@ -1,0 +1,31 @@
+@import '../variables';
+
+.project-card {
+  padding-top: 5vh;
+}
+.spacing {
+  margin-top: 5vh;
+  p {
+    white-space: pre-line;
+  }
+}
+
+.top-section {
+  padding: 2vh 6vw;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-img {
+  max-height: 300px;
+}
+
+.screen-shot-section {
+  padding: 2vh 6vw;
+}
+
+.screen-shot-image {
+  max-height: 200px;
+}
