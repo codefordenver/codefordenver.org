@@ -1,0 +1,51 @@
+@import '../variables';
+
+#footer-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  @media (max-width: $tablet) {
+    grid-template-columns: auto;
+  }
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}
+
+#footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  align-items: start;
+  justify-items: center;
+  @media (max-width: 773px) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @media (max-width: 419px) {
+    grid-template-columns: auto;
+  }
+  span {
+    padding: 1rem;
+    text-align: center;
+
+    h4 {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 0.25rem 0;
+
+        a {
+          color: white;
+          opacity: 0.5;
+          transition: opacity 250ms ease;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

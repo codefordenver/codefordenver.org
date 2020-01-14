@@ -1,18 +1,29 @@
-import React from 'react';
-import { Menu } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import { PathURL } from '../components/Router';
+import React, { useContext } from 'react';
+import ContentfulContext from '../context/contentful';
+import { contentfulDataMapper } from '../helpers';
+import get from 'lodash.get';
+import { ProjectCard } from '../components/ProjectCard';
 
 export function Projects() {
-  return (
-    <>
-      <Menu.Item as={Link} to={`${PathURL.PROJECTS}/project_one`}>
-        Example Project 1
-      </Menu.Item>
+  const content = useContext(ContentfulContext);
+  if (content) {
+    const items = get(content, 'items', []).slice(0, 3);
+    const assets = get(content, 'includes.Asset', []);
 
-      <Menu.Item as={Link} to={`${PathURL.PROJECTS}/project_two`}>
-        Example Project 2
-      </Menu.Item>
-    </>
-  );
+    return (
+      <article>
+        <h1 style={{ margin: '3vh 0vw 0vh 6vw' }} id="Featured">
+          Featured Projects
+        </h1>
+        {items.map((c: any, i: number) => (
+          <ProjectCard
+            key={i}
+            {...contentfulDataMapper(c, assets)}
+            projId={`${i}`}
+          />
+        ))}
+      </article>
+    );
+  }
+  return null;
 }

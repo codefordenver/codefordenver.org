@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600&display=swap');
+@import 'variables';
+
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.content {
+  z-index: 0;
+}
+
+.separator {
+  height: 4rem;
+}
+
+.text {
+  padding: 4vh 6vw;
+}
+
+.split-image {
+  display: flex;
+
+  > * {
+    width: 50%;
+    @media (max-width: $tablet) {
+      font-size: 1.7vw;
+    }
+    @media (max-width: $mobile) {
+      font-size: 1rem;
+      width: 100%;
+    }
+  }
+}
+
+.inverted {
+  background-color: #1b1c1d;
+  color: white;
+}
+
+.secondary {
+  background-color: $red;
+  color: white;
+}
+
+.secondary-text {
+  text-decoration-color: $red;
+  color: $red;
+}
+
+.pill-button,
+.pill-button:hover {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border: 0.05rem solid;
+  border-radius: 8rem;
+  &.secondary {
+    border-color: $red;
+  }
+  &.inverted {
+    border-color: black;
+    background-color: black;
+    color: white;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+  > * {
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  @media (max-width: $mobile) {
+    grid-template-columns: auto;
+  }
+  align-items: start;
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem;
+}
+
+.social-links {
+  a {
+    margin-right: 0.5rem;
+
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.page {
+  padding: 0 6vw 4vh;
+}
+
+.desktop-only {
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+a {
+  color: black;
+}
+
+/* For ScrollIntoView to work with fixed header */
+#us,
+#featured,
+#organization,
+#sponsors,
+#contact,
+#culture,
+#how,
+#join,
+#faq {
+  margin-top: -5rem;
+  padding-top: 5rem;
+}

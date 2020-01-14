@@ -1,24 +1,32 @@
 import React, { useContext } from 'react';
-import { Grid, Header, List, Segment } from 'semantic-ui-react';
 import ContentfulContext from '../context/contentful';
 import get from 'lodash.get';
-import { Image } from 'semantic-ui-react';
 import { contentfulDataMapper } from '../helpers';
+import { HashLink } from 'react-router-hash-link';
 
 interface IProject {
   title: string;
   shortDescription: string;
   thumbnail: string;
+  link: string;
+  projId: string;
 }
 
 const Project = (props: IProject) => (
-  <Grid.Column>
-    <Image src={props.thumbnail} size="small" width={200} />
-    <Header inverted as="h4" content={props.title} />
-    <List link inverted>
-      <List.Item as="p">{props.shortDescription}</List.Item>
-    </List>
-  </Grid.Column>
+  <span className="project">
+    <HashLink
+      className="hash_link_white"
+      aria-label={`${props.title} project link`}
+      to={`/projects/#project${props.projId}`}
+      scroll={(el: Element) =>
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    >
+      <img alt={`${props.title} Project Logo`} src={props.thumbnail} />
+      <h4>{props.title}</h4>
+      <p>{props.shortDescription}</p>
+    </HashLink>
+  </span>
 );
 
 export function Featured() {
@@ -29,22 +37,21 @@ export function Featured() {
     const assets = get(content, 'includes.Asset', []);
 
     return (
-      <Segment id="Featured" inverted vertical style={{ padding: '2em' }}>
-        <Header
-          as="h2"
-          content="Featured Projects"
-          style={{ marginBottom: '2em' }}
-        />
-        <Grid divided inverted stackable>
-          <Grid.Row columns="equal">
+      <div id="featured">
+        <div className="inverted text">
+          <h2>Featured Projects</h2>
+          <div className="row">
             {items.map((c: any, i: number) => (
-              <Project key={i} {...contentfulDataMapper(c, assets)} />
+              <Project
+                key={i}
+                {...contentfulDataMapper(c, assets)}
+                projId={`${i}`}
+              />
             ))}
-          </Grid.Row>
-        </Grid>
-      </Segment>
+          </div>
+        </div>
+      </div>
     );
   }
-
   return null;
 }
