@@ -1,0 +1,123 @@
+/* Global Styles */
+/* mixins, colors, etc. */
+
+$cfd-red: #E14E54;
+$navy: #181E34;
+$white: white;
+$light-grey: #C4C4C4;
+
+$breakpoints: (
+  'small':  ( min-width:  767px ),
+  'medium': ( min-width:  992px ),
+  'large':  ( min-width: 1200px )
+) !default;
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+/* Structural Responsive Needs */
+
+html, body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* typeography */
+
+h1 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+  font-size: 36.7616px;
+  line-height: 45px;
+  letter-spacing: 2.50647px;
+  
+  color: $cfd-red;
+
+  // This is not what we need for the headings. We need to add font stroke
+  border: 4.17745px solid $white;
+
+  @include respond-to('small') {
+    font-size: 88px;
+    line-height: 107px;
+    letter-spacing: 6px;
+
+    border: 10px solid $white;
+  }
+}
+
+h2 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 41px;
+  display: flex;
+  align-items: center;
+
+  color: $cfd-red;
+}
+
+h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+
+  color: $navy;
+
+  .h3-alternate {
+    color: $white;
+  }
+}
+
+h4 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  color: $navy;
+}
+
+h5 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+
+  color: $cfd-red;
+}
+
+p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: $navy;
+}
