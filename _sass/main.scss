@@ -7,9 +7,9 @@ $white: white;
 $light-grey: #C4C4C4;
 
 $breakpoints: (
-  'small':  ( min-width:  767px ),
-  'medium': ( min-width:  992px ),
-  'large':  ( min-width: 1200px )
+  'small':  ( min-width: 576px ),
+  'medium': ( min-width: 768px ),
+  'large':  ( min-width: 992px )
 ) !default;
 
 @mixin respond-to($breakpoint) {
@@ -38,30 +38,26 @@ html, body {
 /* typeography */
 
 h1 {
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
   text-align: center;
   font-size: 36.7616px;
   line-height: 45px;
   letter-spacing: 2.50647px;
-  
   color: $cfd-red;
 
   // This is not what we need for the headings. We need to add font stroke
   border: 4.17745px solid $white;
 
-  @include respond-to('small') {
+  @include respond-to('medium') {
     font-size: 88px;
     line-height: 107px;
     letter-spacing: 6px;
-
     border: 10px solid $white;
   }
 }
 
 h2 {
-  font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 34px;
@@ -73,7 +69,6 @@ h2 {
 }
 
 h3 {
-  font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -89,18 +84,15 @@ h3 {
 }
 
 h4 {
-  font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
   /* identical to box height */
-
   color: $navy;
 }
 
 h5 {
-  font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -113,7 +105,6 @@ h5 {
 }
 
 p {
-  font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
