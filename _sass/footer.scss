@@ -1,2 +1,45 @@
 /* Footer Styles */
 
+footer {
+	max-height: 265px;
+	color: $navy;
+}
+
+.wrapper {
+	max-height: 190px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer_nav {
+	text-align: right;
+	letter-spacing: .1px;
+	margin: 41px 16px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 200%;
+	color: #181E34;
+}
+
+.footer_stamp {
+	border-left: 1px solid #181E34;
+	padding: 12px 15px;
+}
+
+p {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: #181E34;
+}
