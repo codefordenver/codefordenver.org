@@ -4,17 +4,15 @@
   background-color: $navy;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .faq-container {
   color: $white;
-  padding-top: 280px;
-  padding-bottom: 100px;
+  padding-top: 22rem;
+  padding-bottom: 10rem;
   line-height: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
-  flex-flow: column wrap;
 
   .pattern-img {
     position: absolute;
@@ -27,7 +25,6 @@
     position: relative;
     left: 1rem;
     top: 1rem;
-    right: 1rem;
     font-size: 1.5rem;
     letter-spacing: 2px;  
     font-weight: bold;
@@ -43,5 +40,35 @@
     margin: 0;
     color: $white;
     padding-bottom: 4rem;
+  }
+}
+
+@media ( max-width: 576px ){
+  .faq-container {
+    padding-top: 10rem;
+    padding-bottom: 100px;
+    
+    .pattern-img {
+      left: 2rem;
+      width: 230px;
+      height: 70px;
+    }
+
+    dt {
+      position: relative;
+      top: 1rem;
+      left: 0.5rem;
+      overflow-wrap: break-word;
+      font-size: 1.5rem;
+      letter-spacing: 2px;  
+      font-weight: bold;
+      z-index: 2;
+      padding-bottom: .25rem;
+    }
+
+    dd {
+      position: relative;
+      left: 0.5rem;
+    }
   }
 }
