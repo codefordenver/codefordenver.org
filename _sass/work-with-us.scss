@@ -8,13 +8,15 @@
     min-height: 750px;
 
     .work-pattern {
-        position: relative;
+        position: absolute;
         z-index: 1;
-        opacity: .3;
+        transform: translate(-2rem, 1rem)
     }
 
     .work-container {
-        position: absolute;
+        position: relative;
+        left: 2rem;
+        top: -1rem;
         border: 2px solid $cfd-red;
         box-sizing: border-box;
         background-color: $white;
@@ -68,13 +70,13 @@
     #work-with-us {
         .work-pattern {
             margin-top: 15rem;
-            left: -1rem;
-            top: 1rem;
+            // left: -1rem;
+            // top: 1rem;
             width: 728px;
             height: 357px;
         }
         .work-container {
-            margin-top: 15rem;
+            // margin-top: 15rem;
             width: 728px;
 
             .text-container {
@@ -88,14 +90,11 @@
     #work-with-us {
         .work-pattern {
             margin-top: 15rem;
-            left: -1rem;
-            top: 1rem;
             width: 657px;
             height: 387px;
         }
 
         .work-container {
-            margin-top: 15rem;
             width: 657px;
 
             .text-container {
@@ -109,16 +108,15 @@
     #work-with-us {
         .work-pattern {
             margin-top: 8rem;
-            left: -1rem;
-            top: 1rem;
             width: 322px;
-            height: 469px;
+            height: 447px;
+            transform: translate(-1rem, 1rem)
         }
 
         .work-container {
-            margin-top: 8rem;
             width: 322px;
-            
+            left: 1rem;
+
             .text-container {
                 padding: 0rem 2rem;
             }
