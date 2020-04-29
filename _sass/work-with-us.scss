@@ -7,7 +7,7 @@
     align-items: center;
     min-height: 750px;
 
-    img {
+    .work-pattern {
         position: relative;
         z-index: 1;
         opacity: .3;
@@ -65,57 +65,63 @@
 }    
 
 @media ( min-width: 992px ){
-    img {
-        margin-top: 15rem;
-        left: -1rem;
-        top: 1rem;
-        width: 728px;
-        height: 372px;
-    }
-    .work-container {
-        margin-top: 15rem;
-        width: 728px;
+    #work-with-us {
+        .work-pattern {
+            margin-top: 15rem;
+            left: -1rem;
+            top: 1rem;
+            width: 728px;
+            height: 357px;
+        }
+        .work-container {
+            margin-top: 15rem;
+            width: 728px;
 
-        .text-container {
-            padding: 0px 90px;
+            .text-container {
+                padding: 0px 90px;
+            }
         }
     }
 }
 
 @media ( max-width: 992px ){
-    img {
-        margin-top: 15rem;
-        left: -1rem;
-        top: 1rem;
-        width: 657px;
-        height: 387px;
-    }
+    #work-with-us {
+        .work-pattern {
+            margin-top: 15rem;
+            left: -1rem;
+            top: 1rem;
+            width: 657px;
+            height: 387px;
+        }
 
-    .work-container {
-        margin-top: 15rem;
-        width: 657px;
+        .work-container {
+            margin-top: 15rem;
+            width: 657px;
 
-        .text-container {
-            padding: 0px 90px;
+            .text-container {
+                padding: 0px 90px;
+            }
         }
     }
 }
 
 @media ( max-width: 576px ){
-    img {
-        margin-top: 8rem;
-        left: -1rem;
-        top: 1rem;
-        width: 322px;
-        height: 469px;
-    }
+    #work-with-us {
+        .work-pattern {
+            margin-top: 8rem;
+            left: -1rem;
+            top: 1rem;
+            width: 322px;
+            height: 469px;
+        }
 
-    .work-container {
-        margin-top: 8rem;
-        width: 322px;
-        
-        .text-container {
-            padding: 0rem 2rem;
+        .work-container {
+            margin-top: 8rem;
+            width: 322px;
+            
+            .text-container {
+                padding: 0rem 2rem;
+            }
         }
     }
 }
