@@ -1,2 +1,67 @@
 /* Work with Us Section Styles */
 
+@media ( min-width: 992px ){
+    #work-with-us {
+        background-color: $navy;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        .work-container {
+            margin-top: 15rem;
+            margin-bottom: 8rem;
+            width: 728px;
+            height: 372px;
+            border: 2px solid $cfd-red;
+            box-sizing: border-box;
+            background-color: $white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            .text-container {
+                text-align: left;
+                padding-top: 1rem;
+    
+                h3 {
+                    color: #000;
+                }
+    
+                p {
+                    width: 540px;
+                    padding-top: 1rem;
+                    color: #000;
+                }
+    
+                ul {
+                    width: 540px;
+                    padding: 0;
+                    list-style-type: none;
+                    font-size: .875rem;
+    
+                    li {
+                        padding-left: 10px;
+                    }
+                }
+            }
+            
+            button {
+                font-family: 'Montserrat';
+                background-color: $cfd-red;
+                color: $white;
+                width: 160px;
+                height: 60px;
+                border-radius: 10px;
+                font-weight: 900;
+                font-size: 20px;
+                line-height: 24px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                padding: 0px 20px;
+                margin-top: .875rem;
+                cursor: pointer;
+            }
+        }
+    }    
+}
