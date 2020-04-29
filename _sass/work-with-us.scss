@@ -5,35 +5,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 750px;
+
+    img {
+        position: relative;
+        z-index: 1;
+        opacity: .3;
+    }
 
     .work-container {
-        margin-bottom: 8rem;
+        position: absolute;
         border: 2px solid $cfd-red;
         box-sizing: border-box;
         background-color: $white;
         display: flex;
         flex-direction: column;
         align-items: center;
+        z-index: 2;
 
         .text-container {
             text-align: left;
             padding-top: 1rem;
 
-            h3 {
-                color: #000;
-            }
-
             p {
-                // width: 540px;
                 padding-top: 1rem;
-                color: #000;
             }
 
             ul {
-                // width: 540px;
                 padding: 0;
                 list-style-type: none;
                 font-size: .875rem;
+                color: $navy;
 
                 li {
                     padding-left: 10px;
@@ -63,6 +65,13 @@
 }    
 
 @media ( min-width: 992px ){
+    img {
+        margin-top: 15rem;
+        left: -1rem;
+        top: 1rem;
+        width: 728px;
+        height: 372px;
+    }
     .work-container {
         margin-top: 15rem;
         width: 728px;
@@ -74,6 +83,14 @@
 }
 
 @media ( max-width: 992px ){
+    img {
+        margin-top: 15rem;
+        left: -1rem;
+        top: 1rem;
+        width: 657px;
+        height: 387px;
+    }
+
     .work-container {
         margin-top: 15rem;
         width: 657px;
@@ -85,6 +102,14 @@
 }
 
 @media ( max-width: 576px ){
+    img {
+        margin-top: 8rem;
+        left: -1rem;
+        top: 1rem;
+        width: 322px;
+        height: 469px;
+    }
+
     .work-container {
         margin-top: 8rem;
         width: 322px;
