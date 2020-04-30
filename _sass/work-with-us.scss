@@ -1,2 +1,125 @@
 /* Work with Us Section Styles */
 
+#work-with-us {
+    background-color: $navy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 750px;
+
+    .work-pattern {
+        position: absolute;
+        z-index: 1;
+        transform: translate(-2rem, 1rem)
+    }
+
+    .work-container {
+        position: relative;
+        left: 2rem;
+        top: -1rem;
+        border: 2px solid $cfd-red;
+        box-sizing: border-box;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+
+        .text-container {
+            text-align: left;
+            padding-top: 1rem;
+
+            p {
+                padding-top: 1rem;
+            }
+
+            ul {
+                padding: 0;
+                list-style-type: none;
+                font-size: .875rem;
+                color: $navy;
+
+                li {
+                    padding-left: 10px;
+                }
+            }
+        }
+        
+        button {
+            font-family: 'Montserrat';
+            background-color: $cfd-red;
+            color: $white;
+            width: 160px;
+            height: 60px;
+            border-radius: 10px;
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 0px 20px;
+            margin-top: .875rem;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+    }
+}    
+
+@media ( min-width: 992px ){
+    #work-with-us {
+        .work-pattern {
+            margin-top: 15rem;
+            // left: -1rem;
+            // top: 1rem;
+            width: 728px;
+            height: 357px;
+        }
+        .work-container {
+            // margin-top: 15rem;
+            width: 728px;
+
+            .text-container {
+                padding: 0px 90px;
+            }
+        }
+    }
+}
+
+@media ( max-width: 992px ){
+    #work-with-us {
+        .work-pattern {
+            margin-top: 15rem;
+            width: 657px;
+            height: 387px;
+        }
+
+        .work-container {
+            width: 657px;
+
+            .text-container {
+                padding: 0px 90px;
+            }
+        }
+    }
+}
+
+@media ( max-width: 576px ){
+    #work-with-us {
+        .work-pattern {
+            margin-top: 8rem;
+            width: 322px;
+            height: 447px;
+            transform: translate(-1rem, 1rem)
+        }
+
+        .work-container {
+            width: 322px;
+            left: 1rem;
+
+            .text-container {
+                padding: 0rem 2rem;
+            }
+        }
+    }
+}
