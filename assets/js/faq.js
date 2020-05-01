@@ -29,7 +29,7 @@ function displayFAQs(faqs){
         const div = document.createElement('div')
 
         div.innerHTML = `
-            <img src="../assets/img/Frame.png" class='pattern-img'>
+            <div class='faq-pattern pattern-diagonal-lines-md'></div>
             <dt>${faq.question}</dt>
             <dd>${faq.answer}</dd>
         `
