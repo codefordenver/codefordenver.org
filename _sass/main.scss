@@ -203,3 +203,10 @@ p {
     color: $navy;
   }
 }
+
+/* Diagonal Pattern */
+
+.pattern-diagonal-lines-md {
+  background-image: repeating-linear-gradient(-45deg, rgb(59,59,59) 0, rgb(59,59,59) 1px, transparent 0, transparent 50%);
+  background-size: 15px 15px; 
+}
