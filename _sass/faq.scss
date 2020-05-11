@@ -14,17 +14,16 @@
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
 
-  .pattern-img {
+  .faq-pattern {
     position: absolute;
     width: 344px;
     height: 70px;
     z-index: 1;
+    transform: translate(-1.5rem, -1rem)
   }
   
   dt {
     position: relative;
-    left: 1rem;
-    top: 1rem;
     font-size: 1.5rem;
     letter-spacing: 2px;  
     font-weight: bold;
@@ -34,11 +33,9 @@
 
   dd {
     position: relative;
-    left: 1rem;
-    top: 1rem;
-    right: 1rem;
     margin: 0;
     color: $white;
+    z-index: 2;
     padding-bottom: 4rem;
   }
 }
@@ -46,29 +43,12 @@
 @media ( max-width: 576px ){
   .faq-container {
     padding-top: 10rem;
-    padding-bottom: 100px;
+    padding-bottom: 3rem;
     
-    .pattern-img {
-      left: 2rem;
+    .faq-pattern {
+      position: absolute;
       width: 230px;
       height: 70px;
-    }
-
-    dt {
-      position: relative;
-      top: 1rem;
-      left: 0.5rem;
-      overflow-wrap: break-word;
-      font-size: 1.5rem;
-      letter-spacing: 2px;  
-      font-weight: bold;
-      z-index: 2;
-      padding-bottom: .25rem;
-    }
-
-    dd {
-      position: relative;
-      left: 0.5rem;
     }
   }
 }
