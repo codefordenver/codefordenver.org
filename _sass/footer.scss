@@ -1,25 +1,20 @@
 /* Footer Styles */
 
 footer {
-	max-height: 265px;
 	color: $navy;
 }
 
 .wrapper {
-	max-height: 190px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+  align-items: center;
+  padding: 2rem 0;
 }
 
 .footer_nav {
 	text-align: right;
 	letter-spacing: .1px;
 	margin: 41px 16px;
-}
-
-ul {
-	list-style-type: none;
 }
 
 a {
