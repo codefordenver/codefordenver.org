@@ -1,10 +1,46 @@
 /* Volunteer Styles */
 
 #volunteer {
-  
-}
+  h3 {
+    margin-top: 0;
+  }
 
-.volunteer-grid {
-  padding: 150px 50px;
-  display: grid;
+  .volunteer-grid {
+    display: grid;
+    grid-gap: 90px;
+    grid-template-columns: 540px auto;
+    margin: auto;
+    max-width: 960px;
+    padding: 150px 50px;
+  }
+
+  .volunteer-texts-container {
+    display: grid;
+  }
+
+  .volunteer-img,
+  .volunteer-img-wrapper {
+    max-width: 445px;
+  }
+
+  .volunteer-img-wrapper {
+    position: relative;
+
+    .pattern-diagonal-lines-md {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      right: 2em;
+      top: 2em;
+      z-index: -1;
+    }
+
+    &:nth-of-type(1) {
+      margin-bottom: calc(80px + 1em);
+    }
+  }
+
+  .volunteer-address p {
+    margin: 0;
+  }
 }
