@@ -136,6 +136,17 @@ a {
   font-weight: bold;
 }
 
+.button-link {
+  background-color: $cfd-red;
+  border-radius: 10px;
+  color: $white;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
 /* responsive css that respond to medium sized screens or larger */
 
 @include respond-to('medium') {

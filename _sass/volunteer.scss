@@ -5,13 +5,43 @@
     margin-top: 0;
   }
 
+  .volunteer-how-we-work {
+    grid-area: howWeWork;
+  }
+
+  .volunteer-our-culture {
+    grid-area: ourCulture;
+  }
+
+  .volunteer-come-together {
+    grid-area: comeTogether;
+  }
+
+  .volunteer-img-how-we-work {
+    align-self: start;
+    grid-area: imgHowWeWork;
+    justify-self: center;
+  }
+
+  .volunteer-img-our-culture {
+    align-self: start;
+    grid-area: imgOurCulture;
+    justify-self: center;;
+  }
+
   .volunteer-grid {
+    column-gap: 90px;
     display: grid;
-    grid-gap: 90px;
-    grid-template-columns: 540px auto;
+    grid-template-areas:
+      "howWeWork imgHowWeWork"
+      "ourCulture imgHowWeWork"
+      "comeTogether imgOurCulture"
+      "comeTogether imgOurCulture";
+    grid-template-columns: 50% 50%;
     margin: auto;
-    max-width: 960px;
+    max-width: 1024px;
     padding: 150px 50px;
+    row-gap: 30px;
   }
 
   .volunteer-texts-container {
@@ -42,5 +72,9 @@
 
   .volunteer-address p {
     margin: 0;
+  }
+
+  .button-link {
+    margin-top: 24px;
   }
 }
