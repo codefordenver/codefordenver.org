@@ -30,31 +30,56 @@
   }
 
   .volunteer-grid {
-    column-gap: 90px;
     display: grid;
-    grid-template-areas:
-      "howWeWork imgHowWeWork"
-      "ourCulture imgHowWeWork"
-      "comeTogether imgOurCulture"
-      "comeTogether imgOurCulture";
-    grid-template-columns: 50% 50%;
     margin: auto;
-    max-width: 1024px;
-    padding: 150px 50px;
+    padding: 50px 15px 100px;
+    grid-template-areas:
+      "howWeWork"
+      "imgHowWeWork"
+      "ourCulture"
+      "imgOurCulture"
+      "comeTogether"
+    ;
     row-gap: 30px;
+
+    @include respond-to('medium') {
+      column-gap: 90px;
+      grid-template-areas:
+        "howWeWork imgHowWeWork"
+        "ourCulture imgHowWeWork"
+        "comeTogether imgOurCulture"
+        "comeTogether imgOurCulture";
+      grid-template-columns: 50% 50%;
+      max-width: 1024px;
+      padding: 150px 50px;
+    }
   }
 
-  .volunteer-texts-container {
-    display: grid;
+  .volunteer-text-block {
+    margin: auto;
+    width: 225px;
+
+    @include respond-to('medium') {
+      width: inherit;
+    }
   }
 
   .volunteer-img,
   .volunteer-img-wrapper {
-    max-width: 445px;
+    max-width: 100%;
+
+    @include respond-to('medium') {
+      max-width: 445px;
+    }
   }
 
   .volunteer-img-wrapper {
+    margin-bottom: 40px;
     position: relative;
+
+    @include respond-to('medium') {
+      margin-bottom: 0;
+    }
 
     .pattern-diagonal-lines-md {
       height: 100%;
@@ -63,10 +88,6 @@
       right: 2em;
       top: 2em;
       z-index: -1;
-    }
-
-    &:nth-of-type(1) {
-      margin-bottom: calc(80px + 1em);
     }
   }
 
