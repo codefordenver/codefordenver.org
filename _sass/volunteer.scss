@@ -1,10 +1,101 @@
 /* Volunteer Styles */
 
 #volunteer {
-  
-}
+  h3 {
+    margin-top: 0;
+  }
 
-.volunteer-grid {
-  padding: 150px 50px;
-  display: grid;
+  .volunteer-how-we-work {
+    grid-area: howWeWork;
+  }
+
+  .volunteer-our-culture {
+    grid-area: ourCulture;
+  }
+
+  .volunteer-come-together {
+    grid-area: comeTogether;
+  }
+
+  .volunteer-img-how-we-work {
+    align-self: start;
+    grid-area: imgHowWeWork;
+    justify-self: center;
+  }
+
+  .volunteer-img-our-culture {
+    align-self: start;
+    grid-area: imgOurCulture;
+    justify-self: center;;
+  }
+
+  .volunteer-grid {
+    display: grid;
+    margin: auto;
+    padding: 50px 15px 100px;
+    grid-template-areas:
+      "howWeWork"
+      "imgHowWeWork"
+      "ourCulture"
+      "imgOurCulture"
+      "comeTogether"
+    ;
+    row-gap: 30px;
+
+    @include respond-to('medium') {
+      column-gap: 90px;
+      grid-template-areas:
+        "howWeWork imgHowWeWork"
+        "ourCulture imgHowWeWork"
+        "comeTogether imgOurCulture"
+        "comeTogether imgOurCulture";
+      grid-template-columns: 50% 50%;
+      max-width: 1024px;
+      padding: 150px 50px;
+    }
+  }
+
+  .volunteer-text-block {
+    margin: auto;
+    width: 225px;
+
+    @include respond-to('medium') {
+      width: inherit;
+    }
+  }
+
+  .volunteer-img,
+  .volunteer-img-wrapper {
+    max-width: 100%;
+
+    @include respond-to('medium') {
+      max-width: 445px;
+    }
+  }
+
+  .volunteer-img-wrapper {
+    margin-bottom: 40px;
+    position: relative;
+
+    @include respond-to('medium') {
+      margin-bottom: 0;
+    }
+
+    .pattern-diagonal-lines-md {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      right: 2em;
+      top: 2em;
+      z-index: -1;
+    }
+  }
+
+  .volunteer-address p {
+    margin: 0;
+  }
+
+  .button-link {
+    margin-top: 24px;
+  }
 }
